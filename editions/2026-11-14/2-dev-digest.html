@@ -1,16 +1,361 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Dev Digest · 2026-11-14</title><style>
-:root{--bg:#faf8f3;--fg:#1b1b1b;--mut:#666;--card:#fff;--bd:#ddd6c8;--ac:#8a1c1c;--hl:#fff4cc}
-@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#a0a0a0;--card:#1c1c1c;--bd:#333;--ac:#ff8a80;--hl:#3a3216}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
-.w{max-width:800px;margin:0 auto;padding:0 16px 40px}h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
-.mast{text-align:center;border-bottom:3px double var(--fg);padding:20px 0 12px;margin-bottom:12px}.mast h1{font-size:2.2rem;margin:0}.mast p{margin:4px 0;color:var(--mut);font-size:.9rem}
-nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 0}nav a{padding:12px 14px;border:1px solid var(--bd);border-radius:8px;text-decoration:none;color:var(--fg);background:var(--card);font-size:.9rem}nav a.cur{background:var(--ac);color:#fff;border-color:var(--ac)}
-.box{background:var(--hl);border-left:4px solid var(--ac);padding:12px 16px;border-radius:6px;margin:14px 0}.box h2{margin:0 0 6px;font-size:1.1rem}
-.toc a{display:block;padding:10px 0;color:var(--ac)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:14px 0}.card h3{margin:0 0 4px;font-size:1.2rem}.meta{color:var(--mut);font-size:.82rem}
-.why{background:var(--hl);padding:8px 10px;border-radius:6px;margin:8px 0}
-details{margin-top:8px}summary{cursor:pointer;padding:12px 0;color:var(--ac);font-weight:600}
-pre{background:#0d1117;color:#e6edf3;padding:10px;border-radius:6px;overflow-x:auto;font-size:.82rem}
-a{color:var(--ac)}ul.rel{padding-left:20px}.big{display:block;padding:16px;margin:12px 0;border:1px solid var(--bd);border-radius:12px;background:var(--card);text-decoration:none;color:var(--fg)}.big b{font-family:Georgia,serif;font-size:1.3rem;color:var(--ac)}
-footer{color:var(--mut);font-size:.8rem;margin-top:30px}
-</style></head><body><div class="w"><div class="mast"><h1>The Dev Digest</h1><p>2026-11-14 · Edition No. 1 · ~11 min read · 11 stories</p></div><nav><a href="1-ai-engineer.html">1. The AI Engineer</a><a href="2-dev-digest.html" class=cur>2. The Dev Digest</a><a href="3-daily-extras.html">3. The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav><div class="box"><h2>Top 3 in 30 seconds</h2><ol><li>Spring Boot 4.2, Framework 7.1 and Cloud 2026.0.0 due November 19</li><li>Support clock: Boot 3.5 is EOL, 4.0 ends Dec 31, 2026</li><li>JDK 27 reported out with G1 as default GC; Valhalla aimed at JDK 28</li></ol></div><div class="toc"><a href="#s0">Java &amp; Spring (3)</a><a href="#s1">Creator &amp; career (India) (3)</a><a href="#s2">Security (2)</a><a href="#s3">Payments &amp; infrastructure (3)</a></div><h2 id="s0">Java &amp; Spring</h2><article class="card"><h3>Spring Boot 4.2, Framework 7.1 and Cloud 2026.0.0 due November 19</h3><div class="meta">Spring release calendar via InfoQ · Scheduled Nov 19, 2026</div><p>Search results show Boot 4.2.0, Framework 7.1.0 and Spring Cloud 2026.0.0 on the release calendar for 19 November, with 4.0.10 and 4.1.3 patches the same day. Milestones M1 (Aug 20) and M2 (Sep 25) are out. GA is scheduled, not confirmed.</p><div class="why">💡 <b>Why it matters to you:</b> Next week&#x27;s release means a new Spring Cloud train for your microservices projects.</div><details><summary>Read deeper</summary><p>Boot 4.1 shipped June 10, 2026. Compare the 4.2 release notes for the Java baseline before upgrading.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://spring.io/blog/2026/09/25/spring-boot-4-2-0-M2-available-now/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://spring.io/blog/2026/08/20/spring-boot-4-2-0-M1-available-now/">Boot 4.2.0-M1</a></li></ul></details></article><article class="card"><h3>Support clock: Boot 3.5 is EOL, 4.0 ends Dec 31, 2026</h3><div class="meta">ecorpit / HeroDevs · 2026</div><p>One support calendar says Spring Boot 3.5 reached open-source end of life on June 30, 2026, Boot 4.0 ends December 31, 2026 and Boot 4.1 ends July 31, 2027.</p><div class="why">💡 <b>Why it matters to you:</b> Interviews and client projects still on 3.x are on unsupported ground; migrating to 4.1 is a strong tutorial topic.</div><details><summary>Read deeper</summary><p>This comes from a third-party calendar, so confirm on spring.io/projects/spring-boot.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://ecorpit.com/spring-boot-4-1-end-of-support-2027/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://www.herodevs.com/blog-posts/spring-boot-versions-eol-dates-and-latest-releases-april-2026">HeroDevs EOL guide</a></li></ul></details></article><article class="card"><h3>JDK 27 reported out with G1 as default GC; Valhalla aimed at JDK 28</h3><div class="meta">InfoWorld / Linuxiac · Sep 2026</div><p>Reports say JDK 27 is generally available with G1 as the default collector and mostly incremental feature changes, while the big Valhalla work is expected in JDK 28. Sources conflict on dates.</p><div class="why">💡 <b>Why it matters to you:</b> Stay on the 21 or 25 LTS for production; use 27 to keep content current.</div><details><summary>Read deeper</summary><p>Verify on jdk.java.net.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://www.infoworld.com/article/4229750/jdk-27-the-quiet-before-the-storm.html">Original source</a></li><li><a target="_blank" rel="noopener" href="https://nipafx.dev/inside-java-newscast-113/">Inside Java Newscast #113</a></li></ul></details></article><h2 id="s1">Creator &amp; career (India)</h2><article class="card"><h3>Naukri: AI/ML hiring +32% YoY while general software grows 1%</h3><div class="meta">CareerIndia · Oct 2026 report</div><p>October data shows white-collar hiring up 14% year on year, AI and ML roles up 32% and general software and QA hiring up just 1%, driven by mid-senior demand.</p><div class="why">💡 <b>Why it matters to you:</b> This is the data point behind your move into AI engineering.</div><details><summary>Read deeper</summary><p>Hiring-site data has commercial interest; use it as direction.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://www.careerindia.com/news/india-job-market-2026-ai-ml-hiring-surge-october-report-011-68141.html">Original source</a></li><li><a target="_blank" rel="noopener" href="https://yourstory.com/ai-story/hiring-ai-professionals-india-rises-59-percent-linkedin-report">LinkedIn AI hiring +59.5%</a></li></ul></details></article><article class="card"><h3>Interviews shift toward working with AI tools</h3><div class="meta">Business Insider via Storyboard18 · 2026</div><p>An ex-Google engineer argues DSA and system design prep is no longer enough and companies now assess how candidates work with AI tools. Forward Deployed Engineer postings reportedly grew nearly 19x in a year.</p><div class="why">💡 <b>Why it matters to you:</b> Show agent projects with evals in your portfolio and videos.</div><details><summary>Read deeper</summary><p>Opinion piece, not survey data.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://www.storyboard18.com/trending/ex-google-engineer-says-ai-has-redefined-tech-job-interviews-and-hiring-skills-88012.htm">Original source</a></li><li><a target="_blank" rel="noopener" href="https://taggd.in/blogs/how-to-hire-ai-engineers/">Taggd AI hiring guide</a></li></ul></details></article><article class="card"><h3>Indian AI startup funding up 265% YoY in Q3 to $438M</h3><div class="meta">Inc42 · Q3 2026</div><p>AI funding rose 265% YoY to $438M in Q3, taking nine-month AI funding past $1.1B. Agent deals include Runable ($21M) and Gnani.ai voice agents ($10M Series B).</p><div class="why">💡 <b>Why it matters to you:</b> Voice and SMB-agent products are funded niches: ideas to teach.</div><details><summary>Read deeper</summary><p>Overall startup funding is weak; AI is the exception.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://inc42.com/features/indian-ai-startup-funding-surges-265-yoy-in-q3-will-momentum-continue/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://inc42.com/buzz/ai-agent-platform-runable-raises-21-mn-to-help-small-businesses-grow/">Runable raises $21M</a></li></ul></details></article><h2 id="s2">Security</h2><article class="card"><h3>MCP TypeScript SDK flaw can route one client&#x27;s responses to another</h3><div class="meta">Wiz vulnerability database · Nov 5, 2026</div><p>CVE-2026-111770 against @modelcontextprotocol/server describes a message-routing flaw where one HTTP client&#x27;s responses and notifications can reach another client. I could not confirm severity.</p><div class="why">💡 <b>Why it matters to you:</b> If you run a shared MCP server, upgrade and avoid shared session state.</div><details><summary>Read deeper</summary><p>A related CVE-2026-111769 (MEDIUM 6.5) hit claude-agent-acp the same day.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://www.wiz.io/vulnerability-database/cve/cve-2026-111770">Original source</a></li><li><a target="_blank" rel="noopener" href="https://www.ox.security/blog/mcp-supply-chain-advisory-rce-vulnerabilities-across-the-ai-ecosystem">Ox Security MCP advisory</a></li></ul></details></article><article class="card"><h3>Spring AI MCP advisories to patch: SSRF (CVE-2026-45609) and session allocation (CVE-2026-59279)</h3><div class="meta">Spring security / Corgea · May and Aug 2026</div><p>mcp-security has a 7.2 HIGH SSRF when Dynamic Client Registration is enabled, fixed in 0.1.9. A separate HIGH issue allows unbounded persistent session allocation via repeated initialize requests.</p><div class="why">💡 <b>Why it matters to you:</b> Directly in your Spring AI + MCP stack.</div><details><summary>Read deeper</summary><p>Older than 7 days but relevant.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://spring.io/security/cve-2026-59279">Original source</a></li><li><a target="_blank" rel="noopener" href="https://corgea.com/advisories/vulnerabilities/CVE-2026-45609">CVE-2026-45609 details</a></li></ul></details></article><h2 id="s3">Payments &amp; infrastructure</h2><article class="card"><h3>UPI MDR framework: charges above ₹2,000 from Oct 15</h3><div class="meta">Inc42 · Sep-Oct 2026</div><p>The government notified a framework on Sept 14 effective Oct 15; one report says 0.4% on merchant payments above ₹2,000. Sources differ on pass-through to customers.</p><div class="why">💡 <b>Why it matters to you:</b> Affects pricing in Razorpay-integrated apps.</div><details><summary>Read deeper</summary><p>Confirm against NPCI circulars.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://inc42.com/?p=572596">Original source</a></li><li><a target="_blank" rel="noopener" href="https://razorpay.com/docs/payments/payment-methods/upi.md">Razorpay UPI docs</a></li></ul></details></article><article class="card"><h3>UPI 30% app market-share cap deadline remains Dec 31, 2026</h3><div class="meta">Ecorpit · Nov 1, 2026</div><p>As of Nov 1 one source found no further extension; it has been deferred twice since 2020. Razorpay is also deprecating UPI Collect in favour of Intent and QR.</p><div class="why">💡 <b>Why it matters to you:</b> Build checkout around UPI Intent and QR.</div><details><summary>Read deeper</summary><p>Verify status before shipping.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://ecorpit.com/upi-30-percent-market-cap-deadline-fintech-2027/">Original source</a></li></ul></details></article><article class="card"><h3>Redis Software for Kubernetes 8.2.6-21 adds Gateway API support</h3><div class="meta">Redis docs · Oct 2026</div><p>Adds Gateway API support for the REST API, UI, metrics and Active-Active databases; lists Kubernetes 1.36 and 1.35 support.</p><div class="why">💡 <b>Why it matters to you:</b> Brief: relevant if you teach Redis on Kubernetes.</div><details><summary>Read deeper</summary><p>Enterprise operator release, not Redis OSS.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://redis.io/docs/latest/operate/kubernetes/release-notes/8-2-6-releases/8-2-6-21-october2026/">Original source</a></li></ul></details></article><nav><a href="1-ai-engineer.html">1. The AI Engineer</a><a href="2-dev-digest.html" class=cur>2. The Dev Digest</a><a href="3-daily-extras.html">3. The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav><footer>Compiled from sources reachable on 2026-11-14. Items marked unconfirmed come from secondary reports.</footer></div></body></html>
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>The Dev Digest · Saturday, November 14, 2026</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class='wrap'>
+<nav class="top"><a href="1-ai-engineer.html">The AI Engineer</a><a class="cur" href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class='mast'><h1>The Dev Digest</h1><div class='tag'>Java &amp; Spring, Node &amp; Python, career, security and the rest of the stack</div><div class='meta'>Saturday, November 14, 2026 · Edition No. 1 · 24 items · ~13 min read</div></header>
+<section class='top3'><h3>⚡ Top 3 in 30 seconds</h3><ol>
+<li>Node.js shipped 16 security fixes (7 High) on Nov 11 — patch and rebuild your Docker images for 22.x/24.x/26.x.</li>
+<li>Spring Boot 4.2.0-RC2 and Spring Cloud 2026.0.0-RC2 are out; Spring Pulsar is leaving Spring for the Apache project (2.0.8 is the last Spring release).</li>
+<li>Indian startups raised ~$255M in a week (GIVA $100M) while AI hiring keeps climbing — Spring + AI skills sit in the shortage zone.</li>
+</ol></section>
+<section class='toc'><h3>In this edition</h3>
+<a href='#java-spring-ecosystem'>Java &amp; Spring ecosystem (4)</a>
+<a href='#node-mern-python-backends'>Node / MERN &amp; Python backends (4)</a>
+<a href='#creator-career-india-focus'>Creator &amp; career (India focus) (3)</a>
+<a href='#security'>Security (4)</a>
+<a href='#microservices-spring-cloud'>Microservices &amp; Spring Cloud (2)</a>
+<a href='#databases-devops'>Databases &amp; DevOps (2)</a>
+<a href='#payments-integrations'>Payments &amp; integrations (2)</a>
+<a href='#frontend-react-ecosystem'>Frontend: React ecosystem (3)</a>
+</section>
+<h2 id='java-spring-ecosystem'>Java &amp; Spring ecosystem</h2>
+<article class="story">
+<h3>Spring Boot 4.2.0-RC2 is out — focus on startup performance and upgrade checks</h3>
+<div class="src">Spring Blog · Nov 6, 2026</div>
+<p>The second release candidate of Spring Boot 4.2 is on Maven Central with 99 enhancements, docs improvements, dependency upgrades and fixes. Highlights called out in the post: X-Forwarded-Prefix support with Reactor Netty and spring.data.redis.database now applying to master/replica connections.</p>
+<div class="why">💡 Why it matters to you: 4.2 GA is the version your Spring AI 2.1 and Spring Cloud 2026.0 (Paddington) build on — start a branch of your project against RC2 now.</div>
+<details><summary>Read deeper</summary>
+<p>The blog post lists little beyond those two changes; the release notes on the wiki carry the upgrade instructions. An ADT Mag article cited in Josh Long&#x27;s Nov 3 roundup says the 4.2 release candidate focuses on startup performance and upgrade checks (I haven&#x27;t read that article).</p>
+<p>Context: Spring Boot 3.5 has reached end of support, which prompted community migration guides to Boot 4 (one on Medium by Mirfan Arshad). Maintenance releases 4.0.9 and 4.1.2 shipped Oct 23 if you&#x27;re not ready to jump.</p>
+<pre><code>&lt;!-- pom.xml: try RC2 on a branch --&gt;
+&lt;parent&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+  &lt;version&gt;4.2.0-RC2&lt;/version&gt;
+&lt;/parent&gt;
+&lt;!-- RC artifacts need the Spring milestone repository --&gt;</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/06/spring-boot-4-2-0-RC2-available-now" target="_blank" rel="noopener">Original: Spring Boot 4.2.0-RC2</a></li>
+<li><a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.2.0-RC2-Release-Notes" target="_blank" rel="noopener">Release notes (wiki)</a></li>
+<li><a href="https://spring.io/blog/2026/11/03/this-week-in-spring-november-3rd-2026" target="_blank" rel="noopener">This Week in Spring (Nov 3)</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Hibernate ORM 8.0.0.CR1 published; 7.4.15.Final alongside</h3>
+<div class="src">Hibernate GitHub releases · Nov 12, 2026</div>
+<p>Hibernate ORM 8.0.0.CR1 (candidate release) was tagged on Nov 12, following 8.0.0.Beta4 on Oct 28; 7.4.15.Final shipped Nov 6 and 6.6.59.Final on Oct 18. The 8.0 branch had 8 commits after CR1.</p>
+<div class="why">💡 Why it matters to you: Hibernate 8 will eventually be what Spring Data JPA sits on — read the migration guide before a surprise lands in your Boot 4.x upgrade.</div>
+<details><summary>Read deeper</summary>
+<p>The release page doesn&#x27;t list changes or baselines; it points to a “What&#x27;s New” guide, a Migration Guide, a Jira list and API-status reports. I haven&#x27;t read those, so I can&#x27;t tell you the Java or Jakarta baseline.</p>
+<p>Practical advice: pin Hibernate through Spring Boot&#x27;s dependency management rather than overriding it, and run your Testcontainers integration tests against the CR in a throwaway branch.</p>
+<ul class="links">
+<li><a href="https://github.com/hibernate/hibernate-orm/releases" target="_blank" rel="noopener">Original: Hibernate ORM releases</a></li>
+<li><a href="https://github.com/hibernate/hibernate-orm/releases/tag/8.0.0.CR1" target="_blank" rel="noopener">8.0.0.CR1 tag</a></li>
+</ul></details></article>
+<article class="story">
+<h3>JDK 27 is GA: G1 default everywhere and post-quantum hybrid key exchange for TLS 1.3</h3>
+<div class="src">Oracle / InfoWorld / HappyCoders · Sep 15, 2026 (background)</div>
+<p>JDK 27 reached general availability on Sep 15 with nine JEPs, including JEP 523 (G1 as the default garbage collector in all environments) and JEP 527 (post-quantum hybrid key exchange for TLS 1.3).</p>
+<div class="why">💡 Why it matters to you: Plan the next non-LTS test cycle: G1-by-default affects small containers, and PQC key exchange touches your TLS and HTTP client behaviour.</div>
+<details><summary>Read deeper</summary>
+<p>Schedule recap: Rampdown Phase One began June 4, release candidates in August, GA mid-September. This is two months old, but it&#x27;s the current feature release and I found no newer JDK news in the last week.</p>
+<p>For Spring users the question is Java 21 vs 25 LTS vs 27 — stay on LTS in production, use 27 to try new features in tutorials.</p>
+<ul class="links">
+<li><a href="https://www.oracle.com/news/announcement/oracle-releases-java-27-2026-09-15/" target="_blank" rel="noopener">Oracle press release</a></li>
+<li><a href="https://www.infoworld.com/article/4202901/jdk-27-the-new-features-of-java-27.html" target="_blank" rel="noopener">InfoWorld: new features of Java 27</a></li>
+<li><a href="https://www.happycoders.eu/java/java-27-features/" target="_blank" rel="noopener">HappyCoders: Java 27 features</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring for Apache Pulsar moves to the ASF — 2.0.8 is the last Spring release</h3>
+<div class="src">Spring Blog · Nov 10, 2026</div>
+<p>Spring for Apache Pulsar is moving into the Apache Pulsar project, becoming “Apache Pulsar support for Spring”. Version 2.0.8 is the final Spring release; the Boot starter is discontinued from the Spring side and the Spring Cloud Stream binder ships one last time in Spring Cloud Stream 5.1.0.</p>
+<div class="why">💡 Why it matters to you: Using Pulsar? Plan to change dependency coordinates and imports; Kafka/RabbitMQ users are unaffected.</div>
+<details><summary>Read deeper</summary>
+<p>Existing apps keep running on 2.0.8 (with Spring Boot 4.2.0, the last line that includes the starter), but updates, patches and fixes come only from the new Apache project. No dates were given for Spring Cloud Stream 5.1.0.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/10/spring-pulsar-new-home-asf" target="_blank" rel="noopener">Original: New Home for Spring for Apache Pulsar</a></li>
+<li><a href="https://spring.io/blog/2026/11/05/spring-cloud-2026-0-0-RC2-has-been-released" target="_blank" rel="noopener">Related: Spring Cloud 2026.0.0-RC2</a></li>
+</ul></details></article>
+<h2 id='node-mern-python-backends'>Node / MERN &amp; Python backends</h2>
+<article class="story">
+<h3>Node.js 27 alpha: V8 15.6, Iterator.zip, Math.sumPrecise — and a bigger default heap</h3>
+<div class="src">Node.js blog · Nov 5 &amp; Nov 12, 2026</div>
+<p>The first Node.js 27 alpha (Nov 12) upgrades V8 from 14.6 to 15.6 (notes published Nov 5). New on-by-default JS features include Math.sumPrecise(), Iterator.zip/zipKeyed and iterator join/includes. Sorting uses PowerSort instead of TimSort for larger arrays.</p>
+<div class="why">💡 Why it matters to you: Your MERN projects aren&#x27;t affected yet (27 is alpha), but the V8 notes are a free “what&#x27;s coming in JavaScript” tutorial.</div>
+<details><summary>Read deeper</summary>
+<p>Potential breakers: Math function last-bit differences, Math.random() sequences for a given seed, error.stack no longer read through the prototype chain, new structured-clone serialization that Node 26 and older cannot read, and a default old-generation limit of half of RAM (clamped 256 MB–4 GB) on 4–15 GB machines — so an 8 GB host now gets 4 GB. Set --max-old-space-size explicitly if you relied on the old limit.</p>
+<p>asm.js is no longer compiled to WebAssembly, and Debugger.setScriptSource is removed.</p>
+<pre><code>[0.1, 0.2, 0.3].reduce((a, b) =&gt; a + b); // 0.6000000000000001
+Math.sumPrecise([0.1, 0.2, 0.3]);        // 0.6
+
+Iterator.zipKeyed({ id: [1, 2], name: [&#x27;a&#x27;, &#x27;b&#x27;] }).toArray();
+// [{ id: 1, name: &#x27;a&#x27; }, { id: 2, name: &#x27;b&#x27; }]</code></pre>
+<ul class="links">
+<li><a href="https://nodejs.org/en/blog/announcements/notable-v8-changes-from-node-js-26-to-27-alpha" target="_blank" rel="noopener">Original: Notable V8 changes 26→27</a></li>
+<li><a href="https://nodejs.org/en/blog/release/v27.0.0-alpha.0.1.0" target="_blank" rel="noopener">Node 27.0.0-alpha.0.1.0</a></li>
+</ul></details></article>
+<article class="story">
+<h3>FastAPI 0.162.x: Python 3.10 dropped, cancellation cleanup fixes, Python 3.15 support</h3>
+<div class="src">FastAPI GitHub releases · Nov 10–13, 2026</div>
+<p>FastAPI 0.162.6 drops Python 3.10 (breaking), 0.162.5 and 0.162.7 fix dependency cleanup on cancellation for sync and async-yield dependencies, 0.162.4 requires AnyIO 4.1.0+, and 0.162.3 added Python 3.15 support and locked Pydantic 2.14.3.</p>
+<div class="why">💡 Why it matters to you: If your AI backends use FastAPI, make sure your Docker base image is Python 3.11+ before bumping.</div>
+<details><summary>Read deeper</summary>
+<p>The cancellation fixes matter for streaming LLM endpoints: when a client disconnects, dependencies with yield (DB sessions, HTTP clients) now clean up correctly. 0.162.5 also replaces the pydantic-ai dependency with pydantic-ai-slim[openai].</p>
+<pre><code># Dockerfile
+FROM python:3.12-slim   # 3.11+ required from FastAPI 0.162.6</code></pre>
+<ul class="links">
+<li><a href="https://github.com/tiangolo/fastapi/releases" target="_blank" rel="noopener">Original: FastAPI releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Pydantic: V1 officially ends with 1.10.27; v2.14.3 adds speed-ups and security fixes</h3>
+<div class="src">Pydantic GitHub releases · Oct 29 – Nov 4, 2026</div>
+<p>Pydantic 1.10.27 is the final V1 release, so the pydantic.v1 namespace is fully end-of-life. v2.14.2 (Oct 29) addressed two security advisories, and v2.14.3 (Nov 4) brings serialization/validation performance work and fixes a RecursionError with defer_build.</p>
+<div class="why">💡 Why it matters to you: FastAPI + SQLAlchemy services: move off any lingering pydantic.v1 imports now, and take 2.14.3 for the advisories.</div>
+<details><summary>Read deeper</summary>
+<p>V1&#x27;s last release itself carries three security fixes (linear-time unique_items checks, ignoring internal __pydantic attributes on dataclass extras, accepting only “.” as the decimal separator in ISO 8601 durations). 2.14.0 (Oct 8) dropped Python 3.9 and added Python 3.15 support.</p>
+<p>Behaviour change to test: JSON validation now treats keys that match only an unused alias or field name as extra data, matching Python-mode validation.</p>
+<ul class="links">
+<li><a href="https://github.com/pydantic/pydantic/releases" target="_blank" rel="noopener">Original: Pydantic releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Socket.IO: engine.io-client 6.6.8 cookie and typing fixes; ack memory leak fixed in 4.8.4</h3>
+<div class="src">Socket.IO GitHub releases · Nov 10, 2026 (and Sep 25)</div>
+<p>engine.io-client 6.6.8 fixes cookie handling (honouring Max-Age=0 and unparseable expiry attributes), preserves &#x27;=&#x27; in query values and fixes TypeScript typings. The earlier socket.io 4.8.4 (Sep 25) fixed a memory leak where pending acks weren&#x27;t cleaned up on timeout.</p>
+<div class="why">💡 Why it matters to you: Running a chat or live-dashboard MERN app? The 4.8.4 ack leak fix matters for long-lived servers using emitWithAck.</div>
+<details><summary>Read deeper</summary>
+<p>4.8.4 also stops uWebSockets.js from serving missing client files, rejects stateful regexps for dynamic namespaces and corrects emitWithAck typings. Low drama, but upgrade-worthy.</p>
+<ul class="links">
+<li><a href="https://github.com/socketio/socket.io/releases" target="_blank" rel="noopener">Original: Socket.IO releases</a></li>
+</ul></details></article>
+<h2 id='creator-career-india-focus'>Creator &amp; career (India focus)</h2>
+<article class="story">
+<h3>Indian startups raised about $255M in the week of Nov 2–6 — GIVA&#x27;s $100M leads</h3>
+<div class="src">Inc42 / YourStory / Entrackr · Nov 2–8, 2026</div>
+<p>Inc42 counts 20 Indian startups raising $255M in Nov 2–6 (up 96% from $130.3M the week before); YourStory says $263M across 23 deals; BeStartup lists GIVA&#x27;s $100M round as the largest. Inc42&#x27;s tally for Nov 10–14 so far is 22 startups raising $162.9M, down 32%.</p>
+<div class="why">💡 Why it matters to you: Funded sectors are your hiring pool and your sales pool — and “weekly funding roundup” is an easy recurring content format for your channel.</div>
+<details><summary>Read deeper</summary>
+<p>Tallies differ by outlet (Entrackr: 24 startups, $242.9M for Nov 3–8; BeStartup: 22 deals, $290.6M for Nov 2–7) because they count different deals. The Nov 10–14 figure is from a week still closing as of today, so it will change.</p>
+<p>Other items from the week: altM raised $10.3M and Shiprocket swung to a Q2 profit (daily roundup).</p>
+<ul class="links">
+<li><a href="https://inc42.com/buzz/from-giva-to-eloelo-group-indian-startups-raised-255-mn-this-week/" target="_blank" rel="noopener">Inc42: $255M this week</a></li>
+<li><a href="https://yourstory.com/2026/11/weekly-funding-roundup-oct-31-nov-6-sharp-rise-in-capital-inflow" target="_blank" rel="noopener">YourStory weekly roundup Oct 31–Nov 6</a></li>
+<li><a href="https://entrackr.com/report/weekly-funding-report/funding-and-acquisitions-in-indian-startup-this-week-nov-03-nov-08-10638657" target="_blank" rel="noopener">Entrackr: Nov 3–8</a></li>
+</ul></details></article>
+<article class="story">
+<h3>India AI hiring: Naukri data cites ~42% YoY growth in AI jobs — but numbers vary widely</h3>
+<div class="src">Naukri career guide / YourStory (secondary) · 2026 (Q1 data)</div>
+<p>Naukri JobSpeak data, cited in Naukri&#x27;s career guide, shows AI jobs in India up 42% year-on-year in Q1 2026; other sources give 32% or ~40%. A LinkedIn report cited by YourStory has AI hiring up 59.5%. Bengaluru remains the top hub, and senior AI talent is described as scarce.</p>
+<div class="why">💡 Why it matters to you: Backend engineers who add RAG, agents and evals to Java/Spring are in the shortage zone — put “Spring AI + pgvector + evals” on your CV and course titles.</div>
+<details><summary>Read deeper</summary>
+<p>Salary figures are all over the place (one source says ₹10–12 LPA national average, another ₹28–42 LPA median for ML engineers at product companies/GCCs/AI-first startups) because they measure different populations. Most of these are edtech and recruiter blogs, so treat them as directional. Check Naukri, LinkedIn or Glassdoor before negotiating.</p>
+<ul class="links">
+<li><a href="https://www.naukri.com/career-advice/ai-jobs-career-guide-india" target="_blank" rel="noopener">Naukri: AI jobs career guide</a></li>
+<li><a href="https://yourstory.com/ai-story/hiring-ai-professionals-india-rises-59-percent-linkedin-report" target="_blank" rel="noopener">YourStory: AI hiring up 59.5% (LinkedIn)</a></li>
+<li><a href="https://resources.instahyre.com/blog/ai-engineer-salary-in-india/" target="_blank" rel="noopener">Instahyre: AI engineer salary in India</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Content idea mine: Spring community pushes “harness engineering”, spec-driven dev and a new Spring AI book</h3>
+<div class="src">This Week in Spring (Nov 3 &amp; Nov 10) · Nov 3–10, 2026</div>
+<p>Josh Long&#x27;s roundups point to SivaLabs videos on harness engineering for Java/Spring Boot and on spec-driven development, a new book “Building Intelligent Applications with Spring AI” by John Blum, and Craig Walls&#x27;s recipes on MCP apps with rich UIs, faster-embedding RAG and Session Memory migration.</p>
+<div class="why">💡 Why it matters to you: These are the topics Spring developers are already searching for — and gaps for your project-based tutorials (e.g. Spring AI 2.1 DecisionModel or Message Parts).</div>
+<details><summary>Read deeper</summary>
+<p>Also noted: a Nov 3 hands-on for running Cloud Foundry locally in kind with a Spring Boot app, and an analysis of four Java formatters (Long suggests adding the Spring Java formatter plugin to the comparison).</p>
+<p>I haven&#x27;t watched the videos or read the book; the roundup gives titles and one-line descriptions only.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/10/this-week-in-spring-november-10th-2026" target="_blank" rel="noopener">This Week in Spring — Nov 10</a></li>
+<li><a href="https://spring.io/blog/2026/11/03/this-week-in-spring-november-3rd-2026" target="_blank" rel="noopener">This Week in Spring — Nov 3</a></li>
+</ul></details></article>
+<h2 id='security'>Security</h2>
+<article class="story">
+<h3>Node.js patches 16 vulnerabilities (7 High) across 22.x, 24.x and 26.x</h3>
+<div class="src">Node.js blog · Nov 11, 2026</div>
+<p>The Nov 11 security releases — v22.23.5, v24.22.3 and v26.13.1 — fix 16 CVEs: 7 High, 6 Medium and 3 Low, mostly in HTTP/2 and TLS, plus updated llhttp, undici and sqlite. End-of-life lines are also affected.</p>
+<div class="why">💡 Why it matters to you: Any Express/Socket.IO server in production should be on these builds today — especially if it terminates HTTPS/HTTP2 itself.</div>
+<details><summary>Read deeper</summary>
+<p>Highlights: CVE-2026-123863 (unauthenticated HTTP/2 remote crash, 24.x/26.x), CVE-2026-123864 (HTTPS use-after-free that can leak server heap including TLS keys), CVE-2026-123872 (TLS 1.2 client-cert auth bypass via servername change during renegotiation), CVE-2026-123867 (mTLS bypass with a CA-only SNI context) and CVE-2026-123871 (proxy credentials exposed in error messages and logs).</p>
+<p>If you run behind nginx or a cloud load balancer that terminates TLS, exposure is smaller, but still patch. Rebuild Docker images — updating the host Node isn&#x27;t enough.</p>
+<pre><code>node --version        # want &gt;= 22.23.5 / 24.22.3 / 26.13.1
+docker build --pull --no-cache -t myapp .</code></pre>
+<ul class="links">
+<li><a href="https://nodejs.org/en/blog/vulnerability/november-2026-security-releases" target="_blank" rel="noopener">Original: November 2026 security releases</a></li>
+<li><a href="https://nodejs.org/en/blog/release/v26.13.1" target="_blank" rel="noopener">Node 26.13.1 release</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring Security 7.2.0-RC1: nonce-based CSP and better WebAuthn registration</h3>
+<div class="src">Spring Security GitHub releases · Oct 22, 2026</div>
+<p>Spring Security 7.2.0-RC1 adds support for nonce-based Content Security Policy and improved no-script handling on the WebAuthn registration page. Patch releases 7.1.2 and 7.0.8 shipped the same day with OAuth2/resource-server and thread-safety fixes.</p>
+<div class="why">💡 Why it matters to you: Passkeys (WebAuthn) and nonce CSP are the modern answers for your JWT/OAuth2 apps — and for React front ends that inline scripts.</div>
+<details><summary>Read deeper</summary>
+<p>7.1.2 fixes include a reactive WebSession ID that no longer changes after token refresh, null-safe OAuth2 filters, and a TokenType comparison by value instead of reference; 7.0.8 fixes SecurityContextHolderThreadLocalAccessor sharing a SecurityContext across threads and a HeaderWriterFilter race with async requests.</p>
+<p>The GitHub advisories page for spring-security lists no published advisories as of today.</p>
+<ul class="links">
+<li><a href="https://github.com/spring-projects/spring-security/releases" target="_blank" rel="noopener">Original: Spring Security releases</a></li>
+<li><a href="https://github.com/spring-projects/spring-security/security/advisories" target="_blank" rel="noopener">Security advisories page</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Redis patches a &gt;4GB cluster-bus heap overflow; 8.12 RC3 tightens TLS session resumption</h3>
+<div class="src">Redis GitHub releases · Oct 26 &amp; Nov 12, 2026</div>
+<p>Redis 8.10.3 and 8.8.4 (Oct 26) fix a heap buffer overflow when propagating a PUBLISH/SPUBLISH message larger than 4GB over the cluster bus. 8.12 RC3 (Nov 12, pre-release) makes TLS session resumption enforce current listener and client-auth settings.</p>
+<div class="why">💡 Why it matters to you: If your Spring apps use Redis for sessions or caching in cluster mode, patch to 8.10.3 / 8.8.4 and keep it off the public internet.</div>
+<details><summary>Read deeper</summary>
+<p>Also in the 8.12 release candidates: new sorted-set commands ZMOVE/BZMOVE/ZMOVEMEMBER, per-member set expiration (SEXPIRE family), the BLESS command to protect keys from eviction, SLOWLOG CPU-time reporting and compressed bitmaps — useful if you teach caching with Spring Data Redis. RCs are not for production.</p>
+<ul class="links">
+<li><a href="https://github.com/redis/redis/releases" target="_blank" rel="noopener">Original: Redis releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>RBI issues revised cyber-resilience directions for non-bank payment operators (reported)</h3>
+<div class="src">ecorpit (secondary; unconfirmed) · Nov 5, 2026</div>
+<p>One report says the RBI issued revised Master Directions on Cyber Resilience and Digital Payment Security Controls for non-bank payment system operators on Nov 5, with payment aggregators covered. It describes 6-hour incident reporting and a 12-hour hold, but I could not confirm those details from RBI itself.</p>
+<div class="why">💡 Why it matters to you: If you integrate Razorpay or other PAs into client apps, expect tighter incident-reporting and security questionnaires flowing down to merchants.</div>
+<details><summary>Read deeper</summary>
+<p>Related background: RBI&#x27;s authentication directions require two factors for digital payments from Apr 1, 2026, and payment aggregators face merchant re-KYC under the September 2025 Master Direction. Read the original circular on rbi.org.in before advising a client.</p>
+<ul class="links">
+<li><a href="https://ecorpit.com/rbi-cyber-resilience-payment-apps-november-2026/" target="_blank" rel="noopener">ecorpit summary</a></li>
+<li><a href="https://entrackr.com/news/zero-mdr-on-upi-gaming-ban-and-now-re-kyc-govt-puts-payment-aggregators-in-a-bind-10481623" target="_blank" rel="noopener">Entrackr: zero MDR and re-KYC pressure</a></li>
+</ul></details></article>
+<h2 id='microservices-spring-cloud'>Microservices &amp; Spring Cloud</h2>
+<article class="story">
+<h3>Spring Cloud 2026.0.0-RC2 “Paddington”: GCS config backend, Gateway response cache, nested Feign query maps</h3>
+<div class="src">Spring Blog · Nov 5, 2026</div>
+<p>The second release candidate of the Spring Cloud 2026.0.0 train (on Spring Boot 4.2.0-RC2) lets Config Server use Google Cloud Storage as a backend, adds a LocalResponseCache filter to Spring Cloud Gateway Server Web MVC, and sends nested objects in @SpringQueryMap as nested query parameters in OpenFeign.</p>
+<div class="why">💡 Why it matters to you: Gateway response caching and nested Feign params remove two classic microservice workarounds.</div>
+<details><summary>Read deeper</summary>
+<p>Modules are at 5.1.0-RC2 (Build, Circuitbreaker, Commons, Config, Consul, Function, Gateway, Kubernetes, Netflix, OpenFeign, Stream, Task, Vault, Zookeeper). Note that Spring Pulsar&#x27;s Cloud Stream binder is moving to the Apache project after Spring Cloud Stream 5.1.0.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/05/spring-cloud-2026-0-0-RC2-has-been-released" target="_blank" rel="noopener">Original: Spring Cloud 2026.0.0-RC2</a></li>
+<li><a href="https://spring.io/blog/2026/11/10/spring-pulsar-new-home-asf" target="_blank" rel="noopener">Related: Spring Pulsar move</a></li>
+</ul></details></article>
+<article class="story">
+<h3>A Bootiful Podcast: Atomikos founder Guy Pardon on distributed transactions and data integrity</h3>
+<div class="src">Spring Blog podcast · Nov 12, 2026</div>
+<p>Josh Long interviews Atomikos&#x27;s founder about transactions across distributed systems. A good listen before you reach for sagas.</p>
+<div class="why">💡 Why it matters to you: Interview prep and tutorial depth: knowing when XA / two-phase commit still beats sagas or the outbox pattern is a senior-level system-design answer.</div>
+<details><summary>Read deeper</summary>
+<p>The post is a podcast listing, so I can&#x27;t summarise its content beyond the topic. Earlier, on Nov 5, Josh Long also interviewed Temporal.io&#x27;s Cornelia Davis — durable-execution workflows are the other popular alternative to hand-rolled sagas.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/12/a-bootiful-podcast-guy-pardon" target="_blank" rel="noopener">Original: Guy Pardon episode</a></li>
+<li><a href="https://spring.io/blog/2026/11/05/a-bootiful-podcast-cornelia-davis" target="_blank" rel="noopener">Related: Cornelia Davis (Temporal) episode</a></li>
+</ul></details></article>
+<h2 id='databases-devops'>Databases &amp; DevOps</h2>
+<article class="story">
+<h3>PostgreSQL 14 reaches end of life on Nov 12</h3>
+<div class="src">PostgreSQL project (via search coverage) · Nov 12, 2026</div>
+<p>PostgreSQL 14 stopped receiving fixes on Nov 12, 2026; coverage advises running the latest 14.x patch and planning an upgrade. The last security update I found (Aug 13) fixed 11 vulnerabilities in 18.x–14.x, including CVE-2026-6471 (logical-decoding code execution for roles with REPLICATION privilege).</p>
+<div class="why">💡 Why it matters to you: If any client is still on Postgres 14 (or RDS 14), put the upgrade to 17/18 on the roadmap — pgvector features also favour newer versions.</div>
+<details><summary>Read deeper</summary>
+<p>PostgreSQL 19 Beta 1 arrived June 4 with items such as native REPACK and parallel autovacuum; one source says SQL/PGQ graph queries were reverted from 19 on Sep 7 (single secondary source). I did not find a November Postgres release.</p>
+<ul class="links">
+<li><a href="https://postgresql.org/about/news/postgresql-184-1710-1614-1518-and-1423-released-3297" target="_blank" rel="noopener">PostgreSQL 18.4/17.10 security release</a></li>
+<li><a href="https://www.postgresql.org/about/news/postgresql-19-beta-1-released-3313/" target="_blank" rel="noopener">PostgreSQL 19 Beta 1</a></li>
+<li><a href="https://www.postgresql.org/docs/release/14.24" target="_blank" rel="noopener">Release notes 14.24</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Kubernetes v1.38.0-beta.0 lands; patch releases for 1.35–1.37 on Oct 28</h3>
+<div class="src">Kubernetes GitHub releases · Nov 6, 2026</div>
+<p>Kubernetes v1.38.0-beta.0 was tagged on Nov 6 after alpha.3 on Oct 28; v1.37.2, v1.36.6 and v1.35.10 shipped on Oct 28. The release pages point to CHANGELOG files rather than summarising changes.</p>
+<div class="why">💡 Why it matters to you: Managed clusters (EKS/GKE) will lag, but check what your 1.35 cluster&#x27;s end-of-life date looks like.</div>
+<details><summary>Read deeper</summary>
+<p>I didn&#x27;t read the changelogs, so I can&#x27;t list 1.38&#x27;s features. For hands-on learning, kind plus a Spring Boot Jib image — the setup Josh Long used for Cloud Foundry locally — is a quick lab.</p>
+<ul class="links">
+<li><a href="https://github.com/kubernetes/kubernetes/releases" target="_blank" rel="noopener">Original: Kubernetes releases</a></li>
+<li><a href="https://spring.io/blog/2026/11/03/this-week-in-spring-november-3rd-2026" target="_blank" rel="noopener">Cloud Foundry in kind (Spring roundup)</a></li>
+</ul></details></article>
+<h2 id='payments-integrations'>Payments &amp; integrations</h2>
+<article class="story">
+<h3>Zero-MDR UPI squeezes payment aggregators; RBI backs a targeted MDR framework</h3>
+<div class="src">Entrackr / NewKerala (secondary) · Sep–Nov 2026</div>
+<p>Entrackr says zero MDR on UPI, a gaming ban and a merchant re-KYC requirement under RBI&#x27;s Sept 2025 PA Master Direction have squeezed aggregators like Razorpay, Paytm, PhonePe and Cashfree. A Sept 16 report says RBI backed the government&#x27;s MDR framework as important for sustainability; a targeted MDR on select high-value merchant payments is described by one explainer (unverified).</p>
+<div class="why">💡 Why it matters to you: Expect pricing changes and tighter onboarding from Indian PAs — good to know before quoting a client a “free UPI” checkout.</div>
+<details><summary>Read deeper</summary>
+<p>Razorpay&#x27;s Java SDK 1.4.10 (Jul 29) exposes structured API error data (code, description, field, reason, source, step, metadata) in RazorpayException, so you no longer parse response bodies — worth adopting in your error-handling.</p>
+<p>Verify rule specifics with NPCI and RBI circulars; the secondary sources don&#x27;t agree on details.</p>
+<ul class="links">
+<li><a href="https://entrackr.com/news/zero-mdr-on-upi-gaming-ban-and-now-re-kyc-govt-puts-payment-aggregators-in-a-bind-10481623" target="_blank" rel="noopener">Entrackr: zero MDR, gaming ban, re-KYC</a></li>
+<li><a href="https://www.newkerala.com/news/a/rbi-backs-governments-mdr-framework-calls-it-important-757.htm" target="_blank" rel="noopener">NewKerala: RBI backs MDR framework</a></li>
+<li><a href="https://github.com/razorpay/razorpay-java/releases" target="_blank" rel="noopener">razorpay-java releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Stripe API: Endive release breaks and adds; Financial Addresses v2 and Plaid tokens in preview</h3>
+<div class="src">Stripe changelog · Sep 30 – Oct 28, 2026</div>
+<p>Stripe&#x27;s 2026-09-30 “Endive” release carries both breaking changes and features (later Endive versions are additive only): platform-initiated vs Stripe account rejections are distinguished, BLIK failures return specific decline codes and Payout Methods change shape. On Oct 28 Stripe updated the Financial Addresses v2 API shape and added Plaid processor tokens for ACH Direct Debit (preview).</p>
+<div class="why">💡 Why it matters to you: Pin your API version and read the changelog diff before bumping the Stripe SDK in a Spring Boot checkout.</div>
+<details><summary>Read deeper</summary>
+<p>Earlier, the 2026-08-26 “Dahlia” release added the Billie payment method and removed the payment-method-types parameter from several APIs. I found no November changelog entries in the search results, which may just reflect indexing lag.</p>
+<ul class="links">
+<li><a href="https://docs.stripe.com/changelog" target="_blank" rel="noopener">Stripe changelog</a></li>
+<li><a href="https://docs.stripe.com/changelog/endive/2026-10-28/financial-addresses-v2-api-shape-updates" target="_blank" rel="noopener">Financial Addresses v2 shape update</a></li>
+<li><a href="https://docs.stripe.com/changelog/endive/2026-10-28/us-bank-account-external-token-parameter-support" target="_blank" rel="noopener">Plaid tokens for ACH</a></li>
+</ul></details></article>
+<h2 id='frontend-react-ecosystem'>Frontend: React ecosystem</h2>
+<article class="story">
+<h3>React 19.3.1 (and 19.2.9/19.1.10/19.0.9): Server Components transport hardened</h3>
+<div class="src">React GitHub releases · Oct 14, 2026</div>
+<p>React shipped patch releases across all four 19.x lines on Oct 14, each “improving the React Server Components transport protocol”. 19.3.0 (Sep 9) added ViewTransition and addTransitionType APIs, Fragment Refs and a browser() API for browser-only subtrees during SSR.</p>
+<div class="why">💡 Why it matters to you: If you use Next.js App Router or RSC at all, update React on every line you deploy — the same-day backports to 19.0–19.2 suggest it&#x27;s security-flavoured, though the notes don&#x27;t say so.</div>
+<details><summary>Read deeper</summary>
+<p>The release notes give no detail beyond the transport change, so I can&#x27;t call it a security fix — read the commits before deciding urgency. 19.3 also integrates Trusted Types and lets transitions render independently, with a DEV warning for conditional use() calls.</p>
+<ul class="links">
+<li><a href="https://github.com/facebook/react/releases" target="_blank" rel="noopener">Original: React releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Vite 8.3.8: Rolldown 1.2.18 and a flurry of patch releases on 8.1–8.3</h3>
+<div class="src">Vite GitHub releases · Nov 9–11, 2026</div>
+<p>Vite 8.3.7 (Nov 9) updates Rolldown to v1.2.18; 8.3.8 (Nov 11) fixes inline worker asset emission, rejects CSS entrypoints when build.cssCodeSplit is false, includes a Sass import optimisation and Windows fixes. Patches 8.2.5, 8.2.6 and 8.1.7 shipped Nov 9.</p>
+<div class="why">💡 Why it matters to you: Your React + Vite apps get free bugfixes — just bump the minor you&#x27;re on.</div>
+<details><summary>Read deeper</summary>
+<p>One 8.3.8 change (build transform metadata) was reverted within the same release. The 8.1/8.2 patch notes were links only, so I can&#x27;t say what changed there.</p>
+<ul class="links">
+<li><a href="https://github.com/vitejs/vite/releases" target="_blank" rel="noopener">Original: Vite releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Next.js 16.4.6 and Tailwind CSS 4.3.4/4.3.5: Turbopack loader for Tailwind, compressed route handlers</h3>
+<div class="src">Next.js &amp; Tailwind GitHub releases · Nov 2–12, 2026</div>
+<p>Tailwind 4.3.4 (Nov 2) adds the @tailwindcss/turbopack loader for Next.js; 4.3.5 (Nov 6) fixes color-mix crashes and canonicalization speed. Next.js 16.4.6 (Nov 9) pins Tailwind 4.3.3 in create-next-app, auto-compresses route handler responses and fixes Turbopack dev GC; 16.5.0 canaries continue daily.</p>
+<div class="why">💡 Why it matters to you: If you use Next + Tailwind v4, the new loader is the supported path with Turbopack — try it on a side project before touching production.</div>
+<details><summary>Read deeper</summary>
+<p>Next.js 16.4.6 is a backport release that doesn&#x27;t include everything on canary. Canary 16.5.0 items include next/image distortion detection and Turbopack memory fixes — canary builds aren&#x27;t for production.</p>
+<ul class="links">
+<li><a href="https://github.com/vercel/next.js/releases" target="_blank" rel="noopener">Next.js releases</a></li>
+<li><a href="https://github.com/tailwindlabs/tailwindcss/releases" target="_blank" rel="noopener">Tailwind CSS releases</a></li>
+</ul></details></article>
+<nav class="bot"><a href="1-ai-engineer.html">The AI Engineer</a><a class="cur" href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>Compiled from sources fetched on Saturday, November 14, 2026. Items flagged “reported” rest on secondary coverage — verify before acting.</footer>
+</div></body></html>

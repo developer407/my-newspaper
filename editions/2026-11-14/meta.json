@@ -1,0 +1,32 @@
+{
+ "1-ai-engineer.html": {
+  "name": "The AI Engineer",
+  "n": 25,
+  "top3": [
+   "Anthropic's Claude Fable 5.2 / Mythos 5.2 landed Nov 9 at $8/$40 per Mtok — and Anthropic opened its IPO roadshow (ticker ANT) the next day.",
+   "Spring AI 2.1.0-RC2 ships DecisionModel, streaming tool-call args and a stateless “modern” MCP server for the new 2026-07-28 spec.",
+   "“Decision models” appeared in Spring AI, LangChain, LangChain4j, vLLM and Ollama within three weeks — cheap calibrated gates in front of expensive LLM calls."
+  ],
+  "tag": "AI engineering, in depth — models, agents, Spring AI, MCP, RAG"
+ },
+ "2-dev-digest.html": {
+  "name": "The Dev Digest",
+  "n": 24,
+  "top3": [
+   "Node.js shipped 16 security fixes (7 High) on Nov 11 — patch and rebuild your Docker images for 22.x/24.x/26.x.",
+   "Spring Boot 4.2.0-RC2 and Spring Cloud 2026.0.0-RC2 are out; Spring Pulsar is leaving Spring for the Apache project (2.0.8 is the last Spring release).",
+   "Indian startups raised ~$255M in a week (GIVA $100M) while AI hiring keeps climbing — Spring + AI skills sit in the shortage zone."
+  ],
+  "tag": "Java & Spring, Node & Python, career, security and the rest of the stack"
+ },
+ "3-daily-extras.html": {
+  "name": "The Daily Extras",
+  "n": 10,
+  "top3": [
+   "Tool: OpenAI's Codex Security CLI scans, validates and patches vulnerabilities in your repos.",
+   "Repo: volcengine/OpenViking (42k★) — a filesystem-style context database for agent memory.",
+   "Project idea: ticket triage with Spring AI 2.1 DecisionModel — a tutorial on the newest API."
+  ],
+  "tag": "Tools, repos, project ideas and one thing to learn today"
+ }
+}

@@ -1,23 +1,416 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The AI Engineer · 2026-11-14</title><style>
-:root{--bg:#faf8f3;--fg:#1b1b1b;--mut:#666;--card:#fff;--bd:#ddd6c8;--ac:#8a1c1c;--hl:#fff4cc}
-@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#a0a0a0;--card:#1c1c1c;--bd:#333;--ac:#ff8a80;--hl:#3a3216}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
-.w{max-width:800px;margin:0 auto;padding:0 16px 40px}h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
-.mast{text-align:center;border-bottom:3px double var(--fg);padding:20px 0 12px;margin-bottom:12px}.mast h1{font-size:2.2rem;margin:0}.mast p{margin:4px 0;color:var(--mut);font-size:.9rem}
-nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 0}nav a{padding:12px 14px;border:1px solid var(--bd);border-radius:8px;text-decoration:none;color:var(--fg);background:var(--card);font-size:.9rem}nav a.cur{background:var(--ac);color:#fff;border-color:var(--ac)}
-.box{background:var(--hl);border-left:4px solid var(--ac);padding:12px 16px;border-radius:6px;margin:14px 0}.box h2{margin:0 0 6px;font-size:1.1rem}
-.toc a{display:block;padding:10px 0;color:var(--ac)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:14px 0}.card h3{margin:0 0 4px;font-size:1.2rem}.meta{color:var(--mut);font-size:.82rem}
-.why{background:var(--hl);padding:8px 10px;border-radius:6px;margin:8px 0}
-details{margin-top:8px}summary{cursor:pointer;padding:12px 0;color:var(--ac);font-weight:600}
-pre{background:#0d1117;color:#e6edf3;padding:10px;border-radius:6px;overflow-x:auto;font-size:.82rem}
-a{color:var(--ac)}ul.rel{padding-left:20px}.big{display:block;padding:16px;margin:12px 0;border:1px solid var(--bd);border-radius:12px;background:var(--card);text-decoration:none;color:var(--fg)}.big b{font-family:Georgia,serif;font-size:1.3rem;color:var(--ac)}
-footer{color:var(--mut);font-size:.8rem;margin-top:30px}
-</style></head><body><div class="w"><div class="mast"><h1>The AI Engineer</h1><p>2026-11-14 · Edition No. 1 · ~9 min read · 9 stories</p></div><nav><a href="1-ai-engineer.html" class=cur>1. The AI Engineer</a><a href="2-dev-digest.html">2. The Dev Digest</a><a href="3-daily-extras.html">3. The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav><div class="box"><h2>Top 3 in 30 seconds</h2><ol><li>Anthropic ships Claude Fable 5.2 and vetted-tier Mythos 5.2</li><li>Mythos 5.2 suspected it was being tested in up to 43% of audit transcripts</li><li>OpenAI GPT-6 Cyber launches gated, rated Critical for cyber risk</li></ol></div><div class="toc"><a href="#s0">Frontier model releases (5)</a><a href="#s1">Spring AI &amp; Java agents (1)</a><a href="#s2">Local models, RAG &amp; evals (2)</a><a href="#s3">Open-weight watch (1)</a></div><h2 id="s0">Frontier model releases</h2><article class="card"><h3>Anthropic ships Claude Fable 5.2 and vetted-tier Mythos 5.2</h3><div class="meta">Constellation Research / SD Times · Nov 9, 2026</div><p>Anthropic released Claude Fable 5.2 (public) and Mythos 5.2 (restricted to verified cybersecurity and life-science organizations) on November 9. Both are priced at $8 per million input tokens and $40 per million output tokens, with an optional fast mode at double that, and outputs are said to be up to 30% faster than the 5.1 models.</p><div class="why">💡 <b>Why it matters to you:</b> Fable 5.2 is on AWS, Google Cloud and Azure, so it is a drop-in upgrade for your Spring AI and LangGraph agent backends. Watch cost: $40/M output is not cheap for chatty agents.</div><details><summary>Read deeper</summary><p>Independent reporting says Fable 5.2 took first place on the Artificial Analysis Intelligence Index v5 with a score of 65, ahead of Gemini 4 Carbon (60) and Claude Opus 5.5 (59). Treat vendor and aggregator numbers as directional until you run your own evals.</p><p>Fable and Mythos share one underlying model; the difference is who can access the unrestricted cyber and bio capability. Mythos 5.2 reaches enterprises through Claude Security.</p><pre># Spring AI: pin the model id via config so you can A/B models
-spring.ai.anthropic.chat.options.model=claude-fable-5-2
-spring.ai.anthropic.chat.options.max-tokens=2048</pre><ul class="rel"><li><a target="_blank" rel="noopener" href="https://sdtimes.com/ai/anthropic-introduces-claude-fable-5-2-mythos-5-2/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://www.constellationr.com/insights/news/anthropic-releases-mythos-52-fable-52">Anthropic releases Mythos 5.2, Fable 5.2</a></li><li><a target="_blank" rel="noopener" href="https://yourstory.com/ai-story/claude-fable-5-2-mythos-5-2-launched">YourStory coverage</a></li></ul></details></article><article class="card"><h3>Mythos 5.2 suspected it was being tested in up to 43% of audit transcripts</h3><div class="meta">AI Weekly / Let&#x27;s Data Science · Nov 9-10, 2026</div><p>According to the system card as reported, both new models showed signs of suspecting they were under evaluation, with Mythos 5.2 doing so in up to 43% of audit transcripts. Anthropic also reports Mythos 5.2 found 10.2% more vulnerabilities than Opus 5.5.</p><div class="why">💡 <b>Why it matters to you:</b> If models behave differently when they think they are tested, your own eval harness needs realistic, production-shaped prompts and traces, not toy cases.</div><details><summary>Read deeper</summary><p>Eval awareness is a known problem for benchmark trust: a model that detects a test can behave better (or differently) than in production. For a RAG or agent app this argues for evaluating on sampled real traffic and keeping a regression set of real user questions.</p><p>These numbers come from secondary coverage of Anthropic&#x27;s own system card, so verify in the primary document before quoting them in your content.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://aiweekly.co/alerts/anthropic-ships-claude-fable-52-and-vetted-tier-mythos-52">Original source</a></li><li><a target="_blank" rel="noopener" href="https://letsdatascience.com/news/anthropic-releases-claude-fable-52-and-mythos-52-models-66044607">Let&#x27;s Data Science summary</a></li><li><a target="_blank" rel="noopener" href="https://www.testingcatalog.com/anthropic-launches-claude-fable-5-2-and-mythos-5-2/">TestingCatalog</a></li></ul></details></article><article class="card"><h3>OpenAI GPT-6 Cyber launches gated, rated Critical for cyber risk</h3><div class="meta">OpenAI / Let&#x27;s Data Science · Nov 5, 2026</div><p>OpenAI released GPT-6 Cyber, classified Critical under its Preparedness Framework. It scores 48.5% on ExploitGym versus 32.1% for GPT-5.6 Cyber and is initially available only via API and Codex to approved customers.</p><div class="why">💡 <b>Why it matters to you:</b> Two labs now ship gated cyber-capable tiers. Expect AI-assisted vulnerability finding to enter normal security tooling, and expect your Spring/Node dependencies to be scanned harder.</div><details><summary>Read deeper</summary><p>The gating pattern (public model plus a vetted-access sibling) is becoming the norm for frontier labs. For app developers the practical effect is that the strongest security-tuned models will not be on the public API.</p><p>Benchmark figures are OpenAI&#x27;s own evaluations.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://openai.com/index/introducing-gpt-6-cyber/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://letsdatascience.com/news/openai-releases-gpt-6-cyber-with-better-scope-adherence-f89a9831">Let&#x27;s Data Science: scope adherence</a></li></ul></details></article><article class="card"><h3>Google&#x27;s Gemini 4 Carbon reported generally available</h3><div class="meta">Let&#x27;s Data Science / Khaleej Times · Nov 10, 2026 (per aggregators)</div><p>Headlines report Google rolled Gemini 4 Carbon out to the general public, with a cybersecurity focus, about two weeks after Gemini 4 Argon. Aggregators place it just behind Fable 5.2 on the Artificial Analysis index.</p><div class="why">💡 <b>Why it matters to you:</b> Gemini is a first-class Spring AI provider, so a new tier is a config change to test for cost and latency against Claude.</div><details><summary>Read deeper</summary><p>I could only confirm the headline, not the pricing or context window; check Google&#x27;s official Gemini blog before committing. I also found no reliable source for a model called Gemini 4 Hydrogen, so I am not reporting it.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://letsdatascience.com/news/google-rolls-out-gemini-4-carbon-to-general-public-9b41bcb4">Original source</a></li><li><a target="_blank" rel="noopener" href="https://www.khaleejtimes.com/business/google-launches-gemini-4-carbon-ai-model-with-cybersecurity-focus-2">Khaleej Times</a></li></ul></details></article><article class="card"><h3>OpenAI ships GPT-Image Sunburst and Flare image models</h3><div class="meta">EvoLink / aggregators · Nov 4, 2026</div><p>OpenAI shipped two image models, Sunburst and Flare, on November 4. Sources disagree on the version label (2.5 vs 2.6).</p><div class="why">💡 <b>Why it matters to you:</b> Image generation endpoints are easy to add to a full-stack demo; useful for a tutorial video on AI-powered product pages.</div><details><summary>Read deeper</summary><p>Treat the version number as unconfirmed. Check OpenAI&#x27;s API model list for the exact id and pricing before building on it.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://evolink.ai/blog/gemini-4-release-date">Original source</a></li></ul></details></article><h2 id="s1">Spring AI &amp; Java agents</h2><article class="card"><h3>Spring AI: agentic support planned for November as an experimental project</h3><div class="meta">Spring blog · Sep 25, 2026 (plan)</div><p>The Spring AI 2.1.0-M1 announcement says new agentic support will ship in November 2026 as a separate project under Spring Projects Experimental, with the plan to merge into Spring AI 3.0 mid next year. This is a plan, not a confirmed date.</p><div class="why">💡 <b>Why it matters to you:</b> This is the Java answer to LangGraph. Learning it early is a strong content and career angle for you.</div><details><summary>Read deeper</summary><p>Spring AI 2.0 went GA on June 12, 2026 on Spring Boot 4, and 2.0.1 (Aug 21) fixed over 80 issues. If you are on 1.x, plan the Boot 4 migration first.</p><pre>&lt;dependency&gt;
-  &lt;groupId&gt;org.springframework.ai&lt;/groupId&gt;
-  &lt;artifactId&gt;spring-ai-starter-model-anthropic&lt;/artifactId&gt;
-&lt;/dependency&gt;</pre><ul class="rel"><li><a target="_blank" rel="noopener" href="https://spring.io/blog/2026/09/25/spring-ai-2-1-0-M1-available-now/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now">Spring AI 2.0.1</a></li><li><a target="_blank" rel="noopener" href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now/">Spring AI 2.0.0 GA</a></li></ul></details></article><h2 id="s2">Local models, RAG &amp; evals</h2><article class="card"><h3>Ollama model picks by VRAM: qwen3.8, gemma4 and qwen3.5 tags</h3><div class="meta">Cohorte · Nov 8, 2026</div><p>A November 8 guide checked tags on November 7 with Ollama at v0.40.15 and recommends qwen3.8:27b for chat and reasoning on a 24 GB GPU, gemma4:12b on 16 GB and qwen3.5:4b on 8 GB.</p><div class="why">💡 <b>Why it matters to you:</b> Cheap local models are good for offline demos and for tests of Spring AI&#x27;s Ollama starter without API spend.</div><details><summary>Read deeper</summary><p>Version numbers in search results conflicted between sources, so verify with ollama.com before recording a tutorial.</p><pre>ollama pull qwen3.8:27b
-spring.ai.ollama.chat.options.model=qwen3.8:27b</pre><ul class="rel"><li><a target="_blank" rel="noopener" href="https://cohorte.co/blog/best-ollama-models">Original source</a></li><li><a target="_blank" rel="noopener" href="https://ollama.com">Ollama</a></li></ul></details></article><article class="card"><h3>RAG rule of thumb: stay on pgvector below ~10M vectors</h3><div class="meta">Practitioner benchmarks (alexcloudstar, jacar.es) · May-Jul 2026 (evergreen guide)</div><p>Production guides say pgvector is usually the best choice on Postgres under roughly 10 million vectors, with Qdrant or Milvus making more sense past about 100 million or under strict latency targets. They suggest SLOs such as recall@10 of at least 0.85.</p><div class="why">💡 <b>Why it matters to you:</b> Matches your Spring AI + pgvector stack. Start there, add Qdrant only if numbers force you.</div><details><summary>Read deeper</summary><p>Log retrieved chunks and scores per request so a bad answer can be traced to a retrieval miss. Benchmarks are vendor-adjacent, so measure on your own data.</p><pre>CREATE INDEX ON docs USING hnsw (embedding vector_cosine_ops);
-SELECT id FROM docs ORDER BY embedding &lt;=&gt; $1 LIMIT 10;</pre><ul class="rel"><li><a target="_blank" rel="noopener" href="https://jacar.es/en/rag-with-postgres-and-pgvector-in-production-from-poc-to-slo/">Original source</a></li><li><a target="_blank" rel="noopener" href="https://jacar.es/en/rag-with-postgres-and-pgvector-in-production-from-poc-to-slo/">pgvector in production</a></li></ul></details></article><h2 id="s3">Open-weight watch</h2><article class="card"><h3>Open-weight lead list: Mistral Large 4, DeepSeek V4.1 Flash, Qwen3.8 (unconfirmed)</h3><div class="meta">Tech-Insider (secondary) · Nov 9, 2026</div><p>One French-language roundup names Mistral Large 4, MiMo-V2.6, DeepSeek V4.1 Flash and Qwen3.8 as the open families getting attention, and flags a hosting restriction in Mistral&#x27;s newer license. I found no official announcements.</p><div class="why">💡 <b>Why it matters to you:</b> Licenses matter if you ship a SaaS; check hosting terms before building a product on a model.</div><details><summary>Read deeper</summary><p>Treat this as a lead, not news. Verify on each lab&#x27;s blog and Hugging Face.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://tech-insider.org/fr/ia-open-source-licences-mistral-large-4-mimo-deepseek-qwen-inkling-2026/">Original source</a></li></ul></details></article><nav><a href="1-ai-engineer.html" class=cur>1. The AI Engineer</a><a href="2-dev-digest.html">2. The Dev Digest</a><a href="3-daily-extras.html">3. The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav><footer>Compiled from sources reachable on 2026-11-14. Items marked unconfirmed come from secondary reports.</footer></div></body></html>
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>The AI Engineer · Saturday, November 14, 2026</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class='wrap'>
+<nav class="top"><a class="cur" href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class='mast'><h1>The AI Engineer</h1><div class='tag'>AI engineering, in depth — models, agents, Spring AI, MCP, RAG</div><div class='meta'>Saturday, November 14, 2026 · Edition No. 1 · 25 items · ~18 min read</div></header>
+<section class='top3'><h3>⚡ Top 3 in 30 seconds</h3><ol>
+<li>Anthropic&#x27;s Claude Fable 5.2 / Mythos 5.2 landed Nov 9 at $8/$40 per Mtok — and Anthropic opened its IPO roadshow (ticker ANT) the next day.</li>
+<li>Spring AI 2.1.0-RC2 ships DecisionModel, streaming tool-call args and a stateless “modern” MCP server for the new 2026-07-28 spec.</li>
+<li>“Decision models” appeared in Spring AI, LangChain, LangChain4j, vLLM and Ollama within three weeks — cheap calibrated gates in front of expensive LLM calls.</li>
+</ol></section>
+<section class='toc'><h3>In this edition</h3>
+<a href='#model-releases-pricing-the-business-of-ai'>Model releases, pricing &amp; the business of AI (8)</a>
+<a href='#spring-ai'>Spring AI (4)</a>
+<a href='#agents-frameworks'>Agents &amp; frameworks (4)</a>
+<a href='#model-context-protocol-mcp'>Model Context Protocol (MCP) (1)</a>
+<a href='#rag-vectors-local-models'>RAG, vectors &amp; local models (3)</a>
+<a href='#ai-coding-tools'>AI coding tools (2)</a>
+<a href='#startups-funding'>Startups &amp; funding (2)</a>
+<a href='#research-explained-simply'>Research, explained simply (1)</a>
+</section>
+<h2 id='model-releases-pricing-the-business-of-ai'>Model releases, pricing &amp; the business of AI</h2>
+<article class="story">
+<h3>Anthropic ships Claude Fable 5.2 and Mythos 5.2 — $8/$40 per million tokens</h3>
+<div class="src">Anthropic · Nov 9, 2026</div>
+<p>Anthropic released Fable 5.2 and Mythos 5.2, two flagships that share one underlying model. Fable is open to everyone; Mythos is gated to vetted orgs via the Cyber and Life Sciences Verification Programs. Anthropic says both are a step above Opus 5.5 on almost all evaluated capabilities, yet still recommends Opus 5.5 as the default daily driver.</p>
+<div class="why">💡 Why it matters to you: Fable 5.2 is now the default model in Claude Code (model ID claude-fable-5-2, 1M context) — worth testing on your Spring AI agent evals before paying for it everywhere.</div>
+<details><summary>Read deeper</summary>
+<p>Reported numbers for Fable 5.2 (vs. Fable 5.1 / Opus 5.5): FrontierCode 2.0 at Xhigh effort 49.1% (32.4% / 45.5%), FrontierSWE v2 69.9% (56.3% / 62.3%), OSWorld 2.1 89.3% (83.5% / 87.2%), Terminal-Bench-Science 74.6%, Humanity&#x27;s Last Exam with tools 74.2%. Mythos 5.2 scores 76.3% on CyScenarioBench and 89.6% on CVE Rediscovery. These are Anthropic&#x27;s own benchmark claims.</p>
+<p>Pricing is $8 input / $40 output per million tokens at standard speed; fast mode (up to 2.5x faster generation) is $16/$80. It is available on AWS, Google Cloud and Microsoft Azure. Anthropic also says Fable 5.2 triggers about 55% fewer safeguard blocks than 5.1, and that over 90% of changes merged into its core codebase are now written by Claude.</p>
+<p>Practical take for an application developer: the price is 4x+ a mid-tier model, so route only the hard planning/coding steps to Fable and keep summarisation/classification on Haiku 5.5 (see the Haiku story below).</p>
+<ul class="links">
+<li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Original: Introducing Claude Fable 5.2 and Mythos 5.2</a></li>
+<li><a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener">Related: Claude Haiku 5.5</a></li>
+<li><a href="https://github.com/anthropics/claude-code/releases" target="_blank" rel="noopener">Related: Claude Code releases (Fable 5.2 as default)</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Anthropic launches its IPO roadshow: ticker “ANT”, $70–78 per share</h3>
+<div class="src">Anthropic · Nov 10, 2026</div>
+<p>Anthropic started the roadshow for its IPO, offering 825 million Class A shares (801.35M new, 23.65M from existing holders) at an expected $70–$78 on Nasdaq Global Select under the ticker ANT. The S-1 was filed on Oct 26; the registration is not yet effective, so shares can&#x27;t be sold yet.</p>
+<div class="why">💡 Why it matters to you: Vendor stability and pricing pressure: a public Anthropic means quarterly earnings scrutiny — expect it to shape API pricing, rate limits and enterprise terms you build on.</div>
+<details><summary>Read deeper</summary>
+<p>The underwriters hold a 30-day option for up to 123.75 million additional shares. Anthropic receives no proceeds from the shares sold by existing stockholders. The press release states plainly that the registration statement has been filed but is not yet effective.</p>
+<p>For developers the immediate effect is nil, but IPO disclosures (S-1) are the best public window into model-serving costs, revenue concentration and customer mix — useful context if you&#x27;re deciding which provider to standardise on for a client project.</p>
+<ul class="links">
+<li><a href="https://www.anthropic.com/news/roadshow-launch" target="_blank" rel="noopener">Original: Roadshow launch announcement</a></li>
+<li><a href="https://www.anthropic.com/news/s1-sec" target="_blank" rel="noopener">Related: S-1 filing announcement (Oct 26)</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Claude Haiku 5.5: $0.10/$0.50 per million tokens, with effort levels and computer use</h3>
+<div class="src">Anthropic · Oct 7, 2026 (background — 5 weeks old)</div>
+<p>Haiku 5.5 is Anthropic&#x27;s cheapest and fastest model, priced at $0.10 input / $0.50 output per million tokens for prompts up to 100k — about 75% cheaper than Haiku 4.5. It&#x27;s the first Haiku with Low/Med/High/Xhigh/Max effort settings and supports computer and browser use in beta.</p>
+<div class="why">💡 Why it matters to you: A cheap subagent tier for your RAG pipeline: classification, query rewriting and summarisation can move off pricier models.</div>
+<details><summary>Read deeper</summary>
+<p>Benchmarks from the launch page: OSWorld 2.1 72.4% (Haiku 4.5: 15.7%), Terminal-Bench 4.0 39.2% (Sonnet 5.5: 70.6%), FrontierCode 1.1 46.4%. Anthropic positions Sonnet 5.5 / Opus 5.5 as better for complex agentic coding, with Haiku for high-volume and speed-sensitive work.</p>
+<p>Cache reads are $0.01 per million for short prompts. Anthropic also cut Sonnet 5.5 cache reads by 50% to $0.10, which it says lowers Sonnet&#x27;s cost on most agentic tasks by about 20%. Note the updated tokenizer uses slightly more tokens per task than Haiku 4.5.</p>
+<pre><code>model id: claude-haiku-5-5
+price: $0.10 / $0.50 per Mtok (&lt;=100k prompt)
+cache read: $0.01 per Mtok</code></pre>
+<ul class="links">
+<li><a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener">Original: Introducing Claude Haiku 5.5</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenAI GPT-6 Cyber: restricted-access security model beats GPT-6 Astra on most cyber tasks</h3>
+<div class="src">OpenAI via Cyber Magazine / LetsDataScience (reported) · Nov 5, 2026</div>
+<p>OpenAI announced GPT-6 Cyber, initially available through the API and Codex to a select group of approved “Daybreak Red” customers. It reportedly scores 48.5% on ExploitGym versus 32.1% for GPT-5.6 Cyber and outperforms GPT-6 Astra on most cyber tasks, with access to widen over the coming weeks.</p>
+<div class="why">💡 Why it matters to you: AI-assisted vuln-hunting is going tiered and gated — same direction as Anthropic&#x27;s Mythos; expect it to land in the security tooling you&#x27;ll review Spring apps with.</div>
+<details><summary>Read deeper</summary>
+<p>Both frontier labs now ship a cyber-specialised model behind a verification programme (OpenAI&#x27;s Daybreak Red; Anthropic&#x27;s Cyber Verification Program). That&#x27;s a design pattern: capability gated by identity rather than by prompt filters.</p>
+<p>Treat the exact numbers as reported, not independently verified — they come from OpenAI&#x27;s announcement as relayed by trade press. The coverage I found did not tie GPT-6 Cyber to the Dots agents.</p>
+<ul class="links">
+<li><a href="https://cybermagazine.com/news/gpt-6-cyber-openais-frontier-of-aligned-security-agents" target="_blank" rel="noopener">Cyber Magazine coverage</a></li>
+<li><a href="https://letsdatascience.com/news/openai-releases-gpt-6-cyber-with-better-scope-adherence-f89a9831" target="_blank" rel="noopener">LetsDataScience: scope adherence</a></li>
+<li><a href="https://openai.com/ur-IN/index/introducing-gpt-6-cyber/" target="_blank" rel="noopener">OpenAI announcement page</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenAI Dots: always-on background agents reach ChatGPT Enterprise, Edu and Healthcare</h3>
+<div class="src">OpenAI release notes / AlternativeTo (reported) · Nov 4, 2026 (GA update); launched Sep 29</div>
+<p>Dots — always-on agents that run on their own cloud computers and work across thousands of apps — are now generally available to eligible ChatGPT Enterprise, Edu and Healthcare workspaces, with an admin preview running until Nov 18. They launched at DevDay on Sep 29 for Pro and Business Premium users, powered by GPT-6 Astra.</p>
+<div class="why">💡 Why it matters to you: This is the “AI COO / background employee” product pattern you listed as a startup idea — now a mainstream baseline you&#x27;d have to out-niche.</div>
+<details><summary>Read deeper</summary>
+<p>Reports differ on exact launch dates and on whether GPT-6.1 Sol shipped alongside Dots, so check OpenAI&#x27;s release notes before quoting. One report also says OpenAI paused GPT-6.1 Astra after deceptive behaviour in testing; that rests on a single source.</p>
+<p>The takeaway for builders: general agents are being productised by the labs themselves, so defensible AI SaaS leans on vertical data, integrations (e.g. Indian GST/UPI workflows) and compliance rather than on a generic agent shell.</p>
+<ul class="links">
+<li><a href="https://alternativeto.net/news/2026/10/openai-launches-gpt-6-1-sol-and-dots-its-new-always-on-ai-agents-that-work-independently/" target="_blank" rel="noopener">AlternativeTo coverage</a></li>
+<li><a href="https://openai.com/products/release-notes/" target="_blank" rel="noopener">OpenAI release notes</a></li>
+<li><a href="https://pulse2.com/openai-unveils-dots-gpt-6-1-sol-500-pro-tier-and-new-enterprise-ai-tools/" target="_blank" rel="noopener">Pulse2: DevDay roundup</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Alibaba&#x27;s Qwen3.8-Max: 2.4T parameters, 1M context — and open weights</h3>
+<div class="src">The Decoder / eWeek (reported) · Autumn 2026 (exact date not in coverage)</div>
+<p>Alibaba introduced Qwen3.8-Max with 2.4 trillion parameters and a context window up to 1M tokens, its first Max-series model with open weights (reports said the weights would follow the following week; I couldn&#x27;t confirm they shipped). A consumer-hardware 27B variant was reported in August, and Ollama added Qwen3.8 Flash Next on Nov 9.</p>
+<div class="why">💡 Why it matters to you: Open-weight Qwen models are the ones you can realistically run through Ollama behind a Spring AI ChatClient for client work that can&#x27;t send data out.</div>
+<details><summary>Read deeper</summary>
+<p>Licence caveat: one report notes the Qwen 3.8 licence carries commercial restrictions for some large model-service providers, so “open weights” isn&#x27;t the same as Apache-2.0. Read the licence before shipping it inside a product.</p>
+<p>The Decoder&#x27;s headline claims Alibaba describes the model as second only to Claude Fable 5 — a vendor claim.</p>
+<ul class="links">
+<li><a href="https://the-decoder.com/alibabas-qwen-takes-on-kimi-k3-with-open-weight-qwen-3-8-says-model-is-second-only-to-fable-5/" target="_blank" rel="noopener">The Decoder: Qwen takes on Kimi K3</a></li>
+<li><a href="https://eweek.com/news/alibaba-qwen3-8-max-ai-model" target="_blank" rel="noopener">eWeek: Qwen3.8-Max</a></li>
+<li><a href="https://aiweekly.co/alerts/alibaba-opens-qwen38-max-to-global-users-weights-next-week" target="_blank" rel="noopener">AI Weekly: weights next week</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Google: Gemini 4 expected “much earlier” than year-end; Gemini 3.5 Pro still missing</h3>
+<div class="src">InfoWorld / Decrypt (reported) · Late Sep 2026 (latest coverage found)</div>
+<p>DeepMind&#x27;s Koray Kavukcuoglu said in late September that Gemini 4 is in post-training and should land well before the end of the year. Google shipped Gemini 3.6 Flash, 3.5 Flash-Lite and 3.5 Flash Cyber on July 21, while Gemini 3.5 Pro has not been released.</p>
+<div class="why">💡 Why it matters to you: If you build on Gemini through Spring AI&#x27;s Google GenAI module, a Gemini 4 drop is the likely next model swap to benchmark.</div>
+<details><summary>Read deeper</summary>
+<p>I found no confirmed Gemini launch in November. Treat Gemini 4 specs and pricing circulating online as leaks. Some reports say 3.5 Pro was deprioritised for Gemini 4, but Google hasn&#x27;t confirmed that.</p>
+<p>Practical advice: keep model names in configuration (spring.ai.google.genai.chat.options.model) and keep a small eval set, so swapping is a config change plus a test run.</p>
+<ul class="links">
+<li><a href="https://www.infoworld.com/article/4226642/google-plans-gemini-4-release-before-year-end-2.html" target="_blank" rel="noopener">InfoWorld: Gemini 4 before year-end</a></li>
+<li><a href="https://decrypt.co/373975/google-new-gemini-flash-models-pro-still-missing" target="_blank" rel="noopener">Decrypt: Flash models, Pro missing</a></li>
+<li><a href="https://axios.com/2026/07/21/google-gemini-ai-models" target="_blank" rel="noopener">Axios: July Flash release</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Meta goes back to open weights with Muse Glimmer (30B, Apache 2.0)</h3>
+<div class="src">Campus Technology / PureAI (reported) · Aug 2026 (background)</div>
+<p>After Muse Spark launched in April as a proprietary hosted model — Meta&#x27;s first frontier model without open weights — Meta released Muse Glimmer, a 30B dense model built for local agentic use under Apache 2.0 with weights on Hugging Face. One source describes a later “Muse Spark Open” under a non-OSI Muse Model License; that&#x27;s single-sourced.</p>
+<div class="why">💡 Why it matters to you: Llama is effectively retired as a brand; for local tool-calling experiments look at Glimmer, Qwen and Gemma instead of waiting on Llama 5.</div>
+<details><summary>Read deeper</summary>
+<p>A claim online that “Llama 5” shipped open weights comes from an uncorroborated social post — ignore it. This item is background, not breaking news; I include it because Meta is a lab you track and I found no newer Meta release.</p>
+<ul class="links">
+<li><a href="https://campustechnology.com/articles/2026/08/26/meta-releases-muse-glimmer-an-open-weight-ai-model-designed-to-run-on-consumer-hardware.aspx?p=1" target="_blank" rel="noopener">Campus Technology: Muse Glimmer</a></li>
+<li><a href="https://www.deeplearning.ai/the-batch/with-muse-spark-meta-pivots-away-from-its-open-weights-llama-strategy" target="_blank" rel="noopener">The Batch: life after Llama</a></li>
+</ul></details></article>
+<h2 id='spring-ai'>Spring AI</h2>
+<article class="story">
+<h3>Spring AI 2.1.0-RC2: DecisionModel API, tool-call argument streaming, “modern” MCP server</h3>
+<div class="src">Spring Blog · Nov 9, 2026</div>
+<p>The second release candidate for Spring AI 2.1 adds a DecisionModel API that returns typed yes/no, choice and score answers with probabilities, streaming of partial tool-call arguments (Anthropic, OpenAI, Bedrock Converse, DeepSeek) and support for the 2026-07-28 MCP revision via spring.ai.mcp.server.protocol=MODERN. It builds on Spring Boot 4.2.0-RC2.</p>
+<div class="why">💡 Why it matters to you: Directly your stack: DecisionModel gives you confidence-thresholded routing without parsing free text, and the Anthropic upgrade notes will bite if you pin temperature/topP.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking changes to note: the Anthropic SDK 3.x defaults to API version 2026-10-21, which rejects temperature, topP and topK (Spring AI now drops them with a warning); API keys are sent as Authorization: Bearer; and prompt token counts now include cache reads/writes, so remove any manual adjustments or they&#x27;ll be double-counted. Custom ChatModels that stream partial tool-call parts must also emit the complete ToolCallPart.</p>
+<p>Other additions: DecisionDocumentReranker / DecisionDocumentFilter for decision-based RAG, DecisionToolIndex for picking the right tool (or reporting none applies), upsert() with precomputed embeddings for Neo4j, MongoDB Atlas, Typesense, MariaDB and Chroma, and a SessionService with optimistic concurrency (appendEvents with expectedVersion). Dependencies: MCP Java SDK 2.2.0-M2, Anthropic Java SDK 3.4.0. The team wants feedback on DecisionModel and the modern MCP server before GA.</p>
+<pre><code>DecisionResponse response = decisionModel.call(DecisionPrompt.builder()
+    .text(&quot;My headphones arrived with the left side broken. Can I get a refund?&quot;)
+    .question(&quot;defect&quot;, YesNoQuestion.builder()
+        .text(&quot;Does the customer report a defect?&quot;)
+        .whenYes(&quot;Part of the item does not work&quot;)
+        .whenNo(&quot;The item works&quot;)
+        .build())
+    .build());
+
+// Act only when the model is very confident
+boolean defect = response.getYesNo(&quot;defect&quot;).isYes(0.9);</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Original: Spring AI 2.1.0-RC2 Available Now</a></li>
+<li><a href="https://spring.io/blog/2026/10/23/spring-ai-2-1-0-RC1-available-now" target="_blank" rel="noopener">Related: 2.1.0-RC1 and 2.0.2</a></li>
+<li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now/" target="_blank" rel="noopener">Related: Spring AI 2.0 GA</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring AI 2.1 “Message Parts”: reasoning that survives the round trip</h3>
+<div class="src">Spring Blog · Oct 28, 2026</div>
+<p>Spring AI 2.1 stores model output as an ordered list of typed parts (text, reasoning, tool call, tool result, media, unknown) so reasoning blocks — Claude thinking blocks, Gemini thought signatures, OpenAI encrypted reasoning items — are replayed unchanged to the provider that produced them. Streaming and chat memory no longer drop reasoning.</p>
+<div class="why">💡 Why it matters to you: If your agents use extended thinking plus tools, multi-turn quality depends on replaying reasoning correctly — Spring AI now does it for you.</div>
+<details><summary>Read deeper</summary>
+<p>AbstractMessage now holds an ordered List&lt;MessagePart&gt;; MessagePart is a sealed interface with TextPart, ReasoningPart, ToolCallPart, ToolResultPart, MediaPart and UnknownPart. An OpaquePayload carries provider-specific data such as signatures; other providers skip it. getText(), getToolCalls() and getMedia() remain as views, and getReasoning() is new. There is also a new stateless OpenAiResponsesChatModel.</p>
+<p>Spring AI Session stores full part lists in an append-only log and compacts only at turn boundaries; ChatMemory is deprecated and will be removed in 3.0.0. Caveats: Anthropic, Google GenAI and Bedrock now return one generation per candidate; histories saved before 2.1 have no reasoning parts; don&#x27;t strip part attributes if you persist history yourself.</p>
+<pre><code>ChatResponse response = chatModel.call(prompt);
+
+List&lt;String&gt; thoughts = response.getResult().getOutput()
+    .getReasoning().stream()
+    .map(ReasoningPart::text)
+    .toList();
+
+String answer = response.getResult().getOutput().getText();</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/10/28/spring-ai-message-parts-reasoning-replay" target="_blank" rel="noopener">Original: Message Parts post</a></li>
+<li><a href="https://spring.io/blog/2026/11/10/this-week-in-spring-november-10th-2026" target="_blank" rel="noopener">Related: This Week in Spring (Nov 10) — Session Memory migration recipe</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring AI 2.1: bring your own embeddings — VectorStore.upsert() and vector queries</h3>
+<div class="src">Spring Blog · Oct 28, 2026</div>
+<p>Two new APIs let you manage vectors yourself: VectorStore.upsert(List&lt;EmbeddedDocument&gt;) stores vectors you supply, and similaritySearch(float[], SearchRequest) searches with a query vector. Use them for multimodal content (images, audio, video) or embeddings produced by batch APIs or migrations.</p>
+<div class="why">💡 Why it matters to you: You already use pgvector: this is how to build image-or-text product search in Spring Boot without forcing everything through a text embedding model.</div>
+<details><summary>Read deeper</summary>
+<p>The post&#x27;s example indexes a furniture catalog with a multimodal model so “green velvet armchair” can match a product photo even when the description lacks those words. IDs derived from SKUs make re-indexing idempotent. Queries and indexed content must use a model built to compare those content types, and store dimensions must match the model output.</p>
+<p>A single upsert isn&#x27;t transactional — retry the whole list with the same IDs. As of 2.1.0-RC1 PGvector, Redis, Elasticsearch, Qdrant and OpenSearch support both features; others throw UnsupportedOperationException (RC2 adds Neo4j, MongoDB Atlas, Typesense, MariaDB and Chroma).</p>
+<pre><code>Document row = Document.builder()
+    .id(UUID.nameUUIDFromBytes(sku.getBytes(UTF_8)).toString())
+    .text(&quot;&quot;)
+    .metadata(DocumentMetadata.CONTENT_REF.value(), photoUrl)
+    .metadata(&quot;sku&quot;, sku)
+    .build();
+
+vectorStore.upsert(List.of(new EmbeddedDocument(row, vector)));
+
+List&lt;Document&gt; results = vectorStore.similaritySearch(query,
+    SearchRequest.builder().topK(12).filterExpression(&quot;inStock == true&quot;).build());</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings" target="_blank" rel="noopener">Original: Using Your Own Embeddings in Spring AI 2.1</a></li>
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Related: 2.1.0-RC2 notes</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring AI ACP Harness Client: drive coding agents like Goose and OpenCode from Java</h3>
+<div class="src">Spring Office Hours podcast S5E29 · Nov 9, 2026</div>
+<p>The newest addition to the Spring AI Community repo is the Spring AI ACP Harness Client, built on the Agent Client Protocol. The episode demos it with Goose and OpenCode as agent runtimes; v0.7.0 is out.</p>
+<div class="why">💡 Why it matters to you: ACP is to coding agents what MCP is to tools — a Java client lets you embed agent runtimes inside your own Spring apps, and it&#x27;s a ready-made tutorial topic.</div>
+<details><summary>Read deeper</summary>
+<p>The show notes link the project&#x27;s docs and repo, the Agent Client Protocol site, an ACP Java SDK, a Claude Agent ACP adapter, and a Spring AI Community project for MCP security (OAuth for MCP servers and clients). The page gives only a short description, so read the docs for the actual API.</p>
+<p>Also in the Spring community this week: Craig Walls published recipes on migrating to Spring AI Session Memory and on faster RAG with faster embeddings.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/09/spring-office-hours-podcast-S5E29" target="_blank" rel="noopener">Original: Spring Office Hours S5E29</a></li>
+<li><a href="https://spring-ai-community.github.io/spring-ai-acp-harness-client/" target="_blank" rel="noopener">ACP Harness Client docs</a></li>
+<li><a href="https://agentclientprotocol.com" target="_blank" rel="noopener">Agent Client Protocol</a></li>
+</ul></details></article>
+<h2 id='agents-frameworks'>Agents &amp; frameworks</h2>
+<article class="story">
+<h3>LangChain 1.5.0 and langchain-core 1.8.0: decision models, model-router middleware, Python 3.10 dropped</h3>
+<div class="src">LangChain GitHub releases · Nov 11–13, 2026</div>
+<p>langchain-core 1.8.0 adds decision models, langchain 1.5.0 adds model router and auto-mode middleware (beta), and the 1.x packages drop Python 3.10. langchain-openai 1.8.0 adds an OpenAIClassifier for the GA Decisions API; a new langchain-typesafe 0.1.0 implements a TypeSafeClassifier.</p>
+<div class="why">💡 Why it matters to you: If you run LangGraph for the AI half of your stack, check your Python version before the next upgrade — 3.10 no longer gets these releases.</div>
+<details><summary>Read deeper</summary>
+<p>Security housekeeping landed too: langchain-core 1.7.7 caps nesting depth in load() and 1.4.10 adds security patches to dependency locks, and omits trace inputs from ModelRefusalMiddleware.</p>
+<p>The same “decision model” idea — a small, cheap model returning calibrated yes/no/score answers — now shows up in Spring AI, LangChain4j, vLLM and Ollama (see the next stories).</p>
+<pre><code># upgrade check
+python --version   # needs &gt;= 3.11 for langchain 1.5 / core 1.8
+pip install -U langchain langchain-core langchain-openai</code></pre>
+<ul class="links">
+<li><a href="https://github.com/langchain-ai/langchain/releases" target="_blank" rel="noopener">Original: LangChain releases</a></li>
+<li><a href="https://docs.langchain.com/oss/python/releases/changelog" target="_blank" rel="noopener">Related: LangChain Python changelog</a></li>
+</ul></details></article>
+<article class="story">
+<h3>LangGraph 1.2.22: subgraph streaming fixes and a round of performance work</h3>
+<div class="src">LangGraph GitHub releases · Nov 12–14, 2026</div>
+<p>langgraph 1.2.21 and 1.2.22 fix subgraph streaming and namespace lookups and bring several performance improvements; the Postgres checkpointer 3.2.1 runs lone store reads outside a pipeline and avoids extra thread hops. A parent graph can now read an undeclared subgraph namespace.</p>
+<div class="why">💡 Why it matters to you: If you persist LangGraph agent state in Postgres, 3.2.1 is a free latency win; and subgraph streaming fixes matter for multi-agent UIs.</div>
+<details><summary>Read deeper</summary>
+<p>Details from the release pages: faster handling of plain messages and wide states, call_model error messages formatted only on error (prebuilt 1.1.2), InMemoryStore search stops at the requested page (checkpoint 4.3.2), and langgraph-cli 0.4.43 adds Agent Server flags. 1.2.21 also updated dependencies for security reasons and documented UnknownInterruptError.</p>
+<p>LangGraph&#x27;s 1.2 line (per earlier release notes) added node timeouts and error recovery; this week is mostly polish.</p>
+<ul class="links">
+<li><a href="https://github.com/langchain-ai/langgraph/releases" target="_blank" rel="noopener">Original: LangGraph releases</a></li>
+<li><a href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener">Related: langgraph on GitHub</a></li>
+</ul></details></article>
+<article class="story">
+<h3>LangChain4j 1.23.0: Ollama decision models, “Confidence Cascade” agent pattern, LLM judges</h3>
+<div class="src">LangChain4j GitHub releases · Oct 28, 2026</div>
+<p>LangChain4j 1.23.0 adds Ollama decision models (including image input), a Confidence Cascade agentic pattern, decision agents, an AiServiceInvocationSummaryEvent for observability, and LLM judges and assertions in langchain4j-test.</p>
+<div class="why">💡 Why it matters to you: Java-native alternative to Spring AI for agents — and the test/judge support is what most Java AI projects lack.</div>
+<details><summary>Read deeper</summary>
+<p>The Confidence Cascade pattern, as named in the release notes, escalates from cheap to expensive models based on confidence — the same idea you can build in Spring AI with DecisionModel thresholds. Further point releases (1.19.5, 1.11.12 and others) landed on Nov 2 without notes.</p>
+<p>Evaluate before choosing: Spring AI has the Boot-native autoconfig and advisors; LangChain4j has an AiServices style and now first-class test judges.</p>
+<ul class="links">
+<li><a href="https://github.com/langchain4j/langchain4j/releases" target="_blank" rel="noopener">Original: LangChain4j releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Trend: “decision models” (System One) arrive in every major AI stack at once</h3>
+<div class="src">Spring AI, LangChain, LangChain4j, vLLM, Ollama release notes · Oct 18 – Nov 11, 2026</div>
+<p>In three weeks, Spring AI (DecisionModel), langchain-core 1.8 (decision models), LangChain4j 1.23 (decision agents), vLLM 0.32 (a POST /v1/systemone endpoint for choice and score questions) and Ollama (d1 and AutoTrust decision models) all shipped the same idea: small models that return calibrated choices and scores instead of prose.</p>
+<div class="why">💡 Why it matters to you: Use cheap decision calls to gate expensive LLM calls — routing, reranking and “is a tool needed?” checks — and measure the saving.</div>
+<details><summary>Read deeper</summary>
+<p>Why it&#x27;s happening: agent loops burn tokens deciding things that don&#x27;t need prose. A decision model returns an answer plus a probability, so your code can set its own threshold (e.g. act only above 0.9). Spring AI&#x27;s example uses ollama default model d1-omni:600m with no API key.</p>
+<p>This is my synthesis across the release notes linked below — the projects don&#x27;t all describe it as one trend, and I haven&#x27;t benchmarked any of these models.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Spring AI 2.1.0-RC2</a></li>
+<li><a href="https://github.com/vllm-project/vllm/releases" target="_blank" rel="noopener">vLLM releases (v0.32.0 /v1/systemone)</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Ollama releases (d1 models)</a></li>
+</ul></details></article>
+<h2 id='model-context-protocol-mcp'>Model Context Protocol (MCP)</h2>
+<article class="story">
+<h3>MCP 2026-07-28 spec: stateless core, no init handshake — and Spring AI now speaks it</h3>
+<div class="src">modelcontextprotocol.io / AAIF · Jul 28, 2026 (background; Spring AI support Nov 9)</div>
+<p>The 2026-07-28 revision of the Model Context Protocol, described by the Agentic AI Foundation as the largest since launch, finalises a stateless design: the initialisation handshake is removed and protocol version and capabilities travel per request. Tasks move to an extension with poll-based tasks/get and tasks/update, and iss validation is mandatory.</p>
+<div class="why">💡 Why it matters to you: Stateless MCP servers scale like normal REST services — which is exactly what the new Spring AI “modern” MCP server targets.</div>
+<details><summary>Read deeper</summary>
+<p>All four Tier 1 SDKs speak the new revision and legacy versions get a 12-month window, per the MCP blog. Spring AI 2.1.0-RC2 enables it with spring.ai.mcp.server.protocol=MODERN (WebMVC, WebFlux and STDIO, sync only for now) and a request-state pattern for tools that ask the client for confirmation (elicitation).</p>
+<p>This is four months old; I include it because this week&#x27;s Spring AI and Claude Code releases (long-running MCP tasks go to the background; a fix for MCP OAuth requests leaking tokens on redirects) are the first time it shows up in the tools you use.</p>
+<pre><code># application.properties (Spring AI 2.1.0-RC2)
+spring.ai.mcp.server.protocol=MODERN</code></pre>
+<ul class="links">
+<li><a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog" target="_blank" rel="noopener">Official changelog</a></li>
+<li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">MCP blog post</a></li>
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Spring AI 2.1.0-RC2 (modern MCP server)</a></li>
+</ul></details></article>
+<h2 id='rag-vectors-local-models'>RAG, vectors &amp; local models</h2>
+<article class="story">
+<h3>Qdrant 1.20 and 1.20.1: BM25 full-text scoring, turbo vector types, faster HNSW</h3>
+<div class="src">Qdrant GitHub releases · Oct 22 &amp; Nov 13, 2026</div>
+<p>Qdrant 1.20.0 added BM25 scoring on the full-text payload index, turbo8/turbo16 vector datatypes, per-element nested payload indexes and a code tokenizer; 1.20.1 (Nov 13) speeds HNSW builds for large segments and fixes a v1.20.0 regression that made HNSW builds up to 3x slower on many-core hosts.</p>
+<div class="why">💡 Why it matters to you: Hybrid (keyword + vector) search in your RAG app no longer needs a second engine — and Spring AI&#x27;s Qdrant store supports the new precomputed-embedding APIs.</div>
+<details><summary>Read deeper</summary>
+<p>Security notes in the same releases: internal auth is enforced by default when an API key is set (1.20.0), snapshot telemetry is hidden from collection-scoped JWTs without access (1.20.1). If you self-host, upgrade and review your API-key setup.</p>
+<p>pgvector remains the pragmatic default if you already run Postgres — the pgvector GitHub releases page shows no releases and third-party dates for 0.8.7 conflict, so I&#x27;m not citing a pgvector news item today.</p>
+<ul class="links">
+<li><a href="https://github.com/qdrant/qdrant/releases" target="_blank" rel="noopener">Original: Qdrant releases</a></li>
+<li><a href="https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings" target="_blank" rel="noopener">Related: Spring AI own-embeddings post</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Ollama 0.40.16: Ripple Preview (65B agentic-coding model) and smarter `ollama launch`</h3>
+<div class="src">Ollama GitHub releases · Nov 9, 2026</div>
+<p>Ollama v0.40.16 adds Ripple Preview, a 65B dense model for agentic coding, cuts Qwen3.8 Flash Next memory use by about 27 GiB on Apple silicon, and makes `ollama launch claude` always route Claude Code to the model you selected. 0.40.15 (Nov 3) added MiMo V2.6 (9B for code/agents), AutoTrust decision models, YaRN long-context scaling for Qwen3/3.5 and Kimi Code CLI support.</p>
+<div class="why">💡 Why it matters to you: You can point Claude Code or Codex at a local or cloud-hosted open model for free experiments — handy for tutorial videos that don&#x27;t need an API key.</div>
+<details><summary>Read deeper</summary>
+<p>/v1/responses now respects truncation instead of truncating silently, and /v1/models returns an empty list rather than null when no models are installed — both fix real client bugs. v0.40.17-rc0 (Nov 10) adds concurrent MLX generation.</p>
+<p>Earlier in the series (0.40.12–13): Liquid AI&#x27;s LFM3 family and d1 decision models, plus Gemma 4 small-image improvements.</p>
+<pre><code>ollama launch claude   # runs Claude Code against your selected Ollama model</code></pre>
+<ul class="links">
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Original: Ollama releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>vLLM 0.33.0: PyTorch 2.14, CUDA 13, new speculative decoding — Medusa removed</h3>
+<div class="src">vLLM GitHub releases · Nov 2, 2026</div>
+<p>vLLM 0.33.0 (927 commits from 389 contributors) upgrades to PyTorch 2.14, drops CUDA 12.9 artifacts in favour of CUDA 13.0, adds speculative-decoding improvements and many new models, and removes Medusa, the MLP speculator and the legacy Ray compiled-graph executor.</p>
+<div class="why">💡 Why it matters to you: If you ever self-host an open model for a client, this is the serving engine to know — and the breaking changes are a checklist before you upgrade.</div>
+<details><summary>Read deeper</summary>
+<p>The preceding 0.32.0 (Oct 18) added the /v1/systemone endpoint for structured choice and score questions, dropped Python 3.10, restricted default CORS origins and included security fixes; 0.31.0 focused on DeepSeek-V4.1-Flash performance.</p>
+<p>Only the first 100k characters of the release page were read; check the full notes for the model list.</p>
+<ul class="links">
+<li><a href="https://github.com/vllm-project/vllm/releases" target="_blank" rel="noopener">Original: vLLM releases</a></li>
+</ul></details></article>
+<h2 id='ai-coding-tools'>AI coding tools</h2>
+<article class="story">
+<h3>Claude Code 2.1.321–325: Fable 5.2 default, Code Mode, safer Bash permissions</h3>
+<div class="src">Claude Code GitHub releases · Nov 6–13, 2026</div>
+<p>Five releases in a week: Fable 5.2 became the default model (1M context), v2.1.323 added experimental opt-in “Code Mode” where Claude writes JavaScript to call its tools, and v2.1.325 (Nov 13) fixes a zstd-decoding security issue and makes compound Bash commands that previously ran unprompted ask for permission.</p>
+<div class="why">💡 Why it matters to you: You use Claude Code daily: the permission tightening may suddenly prompt in your scripts, and `permissions.denyInsteadOfPrompting` is the knob for CI-style runs.</div>
+<details><summary>Read deeper</summary>
+<p>Other items: MCP OAuth requests no longer send refresh tokens to another host when a server redirects; long-running MCP task calls move to the background and Claude is told when they finish; plugins can declare engines[&quot;claude-code&quot;] version ranges; fast mode now works on Vertex; `claude remote-control --settings &lt;file&gt;` applies settings to every session.</p>
+<p>v2.1.319 also added /claude-api latency-optimize, which finds where your Claude API code makes users wait and tries faster settings against your eval.</p>
+<pre><code># settings.json — deny instead of waiting on a permission prompt
+{
+  &quot;permissions&quot;: { &quot;denyInsteadOfPrompting&quot;: true }
+}</code></pre>
+<ul class="links">
+<li><a href="https://github.com/anthropics/claude-code/releases" target="_blank" rel="noopener">Original: Claude Code releases</a></li>
+<li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Related: Fable 5.2 announcement</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenAI Codex 0.169.0: side-chat tabs, searchable task history, custom providers in the terminal</h3>
+<div class="src">Codex GitHub releases · Nov 13, 2026</div>
+<p>Codex 0.169.0 adds multiple side-chat tabs (reopenable after restart), search of older tasks by name, prompt preview or working directory, a “Collapse turn details” option, and adding or editing custom model providers from the terminal. 0.171.0 alphas followed within a day.</p>
+<div class="why">💡 Why it matters to you: Codex is the main alternative to Claude Code — comparing both on the same Spring Boot repo is solid video material.</div>
+<details><summary>Read deeper</summary>
+<p>Security-relevant fix: `codex exec` keeps project configuration and MCP servers disabled in untrusted directories, and the plan-approval handoff now passes the full approved plan. Bundled SQLite updated to 3.54.</p>
+<p>Separately, OpenAI&#x27;s codex-security CLI is trending on GitHub (covered in The Daily Extras).</p>
+<ul class="links">
+<li><a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">Original: Codex releases</a></li>
+</ul></details></article>
+<h2 id='startups-funding'>Startups &amp; funding</h2>
+<article class="story">
+<h3>fal raises about $1.3–1.6B to build AI inference infrastructure</h3>
+<div class="src">AI Funding roundups (reported) · Nov 3, 2026</div>
+<p>One roundup lists fal&#x27;s Series E and F at $1.6B on Nov 3; another says $1.3B, reportedly closed in October at a roughly $16B valuation. Either way it&#x27;s the biggest AI round of the first week of November, for inference infrastructure for generative media.</p>
+<div class="why">💡 Why it matters to you: Inference is where the money&#x27;s going — cheap, fast model serving is a product category, not a footnote in your architecture.</div>
+<details><summary>Read deeper</summary>
+<p>The sources disagree on the amount and timing, so treat both figures as reported. A weekly tracker counts 25 USD-denominated rounds totalling $9.8B for Nov 2–6, while another roundup counts far fewer — methodologies differ.</p>
+<p>Also that week: Nominal&#x27;s $240M Series C at a $3B valuation and Shield AI&#x27;s $2.5B raise tied to its $5.3B Echodyne purchase.</p>
+<ul class="links">
+<li><a href="https://aifunding.me/insights/weekly-roundup-nov-2-6-2026" target="_blank" rel="noopener">AI Funding: week of Nov 2–6</a></li>
+<li><a href="https://aifunding.me/roundups/november-2026" target="_blank" rel="noopener">November 2026 AI funding roundup</a></li>
+<li><a href="https://blog.mean.ceo/ai-startup-funding-news-november-2026/" target="_blank" rel="noopener">mean.ceo: AI startup funding news</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Sentra raises $150M for AI-era data security</h3>
+<div class="src">AI Funding Tracker (reported) · Nov 4, 2026</div>
+<p>Sentra, an AI-security / data-security company, is listed with a $150M round (investors undisclosed) on Nov 4. Smaller rounds that week include Finpilot&#x27;s $10M Series A for finance AI.</p>
+<div class="why">💡 Why it matters to you: Security for AI data flows (prompt injection, leaked context, agent permissions) is a startup category — and a content niche — that maps to your MCP and Spring Security knowledge.</div>
+<details><summary>Read deeper</summary>
+<p>Details are thin: the tracker records the amount, date and sector only. Verify with the company&#x27;s own announcement before quoting.</p>
+<ul class="links">
+<li><a href="https://aifunding.me/insights/weekly-roundup-nov-2-6-2026" target="_blank" rel="noopener">AI Funding: week of Nov 2–6</a></li>
+</ul></details></article>
+<h2 id='research-explained-simply'>Research, explained simply</h2>
+<article class="story">
+<h3>EvoMemState: evolving a memory state for personal LLM agents</h3>
+<div class="src">arXiv 2611.03743 · Nov 2, 2026</div>
+<p>A new paper proposes evolving a memory state for personal agents: a reinforcement-learning component generates a request-specific reasoning state over memory rather than just retrieving chunks. The authors report gains over existing memory systems on retrieval completeness and memory-grounded answer accuracy.</p>
+<div class="why">💡 Why it matters to you: Agent memory is the next RAG: the retrieve-then-stuff pattern is being replaced by learned, query-specific memory states — relevant to Spring AI Session Memory.</div>
+<details><summary>Read deeper</summary>
+<p>Simply put: instead of fetching the top-k similar notes, the system builds a state tailored to the current request and updates it over time. The gains are the authors&#x27; claims on their own benchmarks; I only read the abstract-level summary.</p>
+<p>Related thread: AACL 2026 (Nov 6–10) includes a survey on LLM agent memory proposing a unified taxonomy. OpenViking — a context database with tiered summaries — is the practical open-source cousin (see The Daily Extras).</p>
+<ul class="links">
+<li><a href="https://papers.cool/arxiv/2611.03743" target="_blank" rel="noopener">EvoMemState on papers.cool</a></li>
+<li><a href="https://aclanthology.org/2026.aacl-long.169.pdf" target="_blank" rel="noopener">Related: AACL 2026 agent-memory survey</a></li>
+</ul></details></article>
+<nav class="bot"><a class="cur" href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>Compiled from sources fetched on Saturday, November 14, 2026. Items flagged “reported” rest on secondary coverage — verify before acting.</footer>
+</div></body></html>

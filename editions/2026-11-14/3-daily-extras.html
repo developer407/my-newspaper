@@ -1,17 +1,193 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Daily Extras · 2026-11-14</title><style>
-:root{--bg:#faf8f3;--fg:#1b1b1b;--mut:#666;--card:#fff;--bd:#ddd6c8;--ac:#8a1c1c;--hl:#fff4cc}
-@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#a0a0a0;--card:#1c1c1c;--bd:#333;--ac:#ff8a80;--hl:#3a3216}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
-.w{max-width:800px;margin:0 auto;padding:0 16px 40px}h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
-.mast{text-align:center;border-bottom:3px double var(--fg);padding:20px 0 12px;margin-bottom:12px}.mast h1{font-size:2.2rem;margin:0}.mast p{margin:4px 0;color:var(--mut);font-size:.9rem}
-nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 0}nav a{padding:12px 14px;border:1px solid var(--bd);border-radius:8px;text-decoration:none;color:var(--fg);background:var(--card);font-size:.9rem}nav a.cur{background:var(--ac);color:#fff;border-color:var(--ac)}
-.box{background:var(--hl);border-left:4px solid var(--ac);padding:12px 16px;border-radius:6px;margin:14px 0}.box h2{margin:0 0 6px;font-size:1.1rem}
-.toc a{display:block;padding:10px 0;color:var(--ac)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:14px 0}.card h3{margin:0 0 4px;font-size:1.2rem}.meta{color:var(--mut);font-size:.82rem}
-.why{background:var(--hl);padding:8px 10px;border-radius:6px;margin:8px 0}
-details{margin-top:8px}summary{cursor:pointer;padding:12px 0;color:var(--ac);font-weight:600}
-pre{background:#0d1117;color:#e6edf3;padding:10px;border-radius:6px;overflow-x:auto;font-size:.82rem}
-a{color:var(--ac)}ul.rel{padding-left:20px}.big{display:block;padding:16px;margin:12px 0;border:1px solid var(--bd);border-radius:12px;background:var(--card);text-decoration:none;color:var(--fg)}.big b{font-family:Georgia,serif;font-size:1.3rem;color:var(--ac)}
-footer{color:var(--mut);font-size:.8rem;margin-top:30px}
-</style></head><body><div class="w"><div class="mast"><h1>The Daily Extras</h1><p>2026-11-14 · Edition No. 1 · ~10 min read · 10 stories</p></div><nav><a href="1-ai-engineer.html">1. The AI Engineer</a><a href="2-dev-digest.html">2. The Dev Digest</a><a href="3-daily-extras.html" class=cur>3. The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav><div class="box"><h2>Top 3 in 30 seconds</h2><ol><li>Tool: Chrome DevTools MCP</li><li>Tool: Codex for Chrome extension</li><li>Tool: Ollama as a local model runner with coding agent</li></ol></div><div class="toc"><a href="#s0">AI tools of the day (3)</a><a href="#s1">GitHub repos of the day (3)</a><a href="#s2">Project ideas of the day (my suggestions, not news) (3)</a><a href="#s3">Learn this today (1)</a></div><h2 id="s0">AI tools of the day</h2><article class="card"><h3>Tool: Chrome DevTools MCP</h3><div class="meta">GitHub / Addy Osmani deck · 2026</div><p>An MCP server that lets coding agents inspect and control a live Chrome browser. Apache-2.0, needs Node 22+. A CVE affects 0.20.0-1.1.0 (predictable PID file path), so update.</p><div class="why">💡 <b>Why it matters to you:</b> Great for letting an agent debug your React app.</div><details><summary>Read deeper</summary><p>Add it to Codex CLI with the command below.</p><pre>codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest</pre><ul class="rel"><li><a target="_blank" rel="noopener" href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Original source</a></li><li><a target="_blank" rel="noopener" href="https://talks.addy.ie/openai-devtoolsmcp-2026/deck">Talk deck</a></li></ul></details></article><article class="card"><h3>Tool: Codex for Chrome extension</h3><div class="meta">Dev write-up · May 2026</div><p>Browser integration for authenticated workflows with domain access control and parallel tab groups.</p><div class="why">💡 <b>Why it matters to you:</b> Try it for testing logged-in flows in your apps.</div><details><summary>Read deeper</summary><p>Third-party write-up; check OpenAI docs.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://codex.danielvaughan.com/2026/05/07/codex-for-chrome-extension-browser-integration-authenticated-workflows/">Original source</a></li></ul></details></article><article class="card"><h3>Tool: Ollama as a local model runner with coding agent</h3><div class="meta">InsiderLLM · 2026</div><p>Ollama&#x27;s recent releases added an `ollama launch` flow, MLX engine on Apple Silicon and agent CLI support; version details conflict across sources.</p><div class="why">💡 <b>Why it matters to you:</b> Free local backend for demos.</div><details><summary>Read deeper</summary><p>Verify versions on ollama.com.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://insiderllm.com/guides/ollama-0-17-new-features/">Original source</a></li></ul></details></article><h2 id="s1">GitHub repos of the day</h2><article class="card"><h3>openai/codex-security</h3><div class="meta">GitHub Trending · Nov 14, 2026</div><p>CLI and TypeScript SDK for finding, validating and fixing security vulnerabilities; +751 stars today.</p><div class="why">💡 <b>Why it matters to you:</b> Run it on your Spring repos.</div><details><summary>Read deeper</summary><p>Open-sourced recently.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://github.com/openai/codex-security">Original source</a></li></ul></details></article><article class="card"><h3>backnotprop/plannotator</h3><div class="meta">GitHub Trending · Nov 14, 2026</div><p>Workspace for planning, annotating and reviewing agent work, sending feedback back to agents.</p><div class="why">💡 <b>Why it matters to you:</b> Fits a human-in-the-loop agent tutorial.</div><details><summary>Read deeper</summary><p>TypeScript.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://github.com/backnotprop/plannotator">Original source</a></li></ul></details></article><article class="card"><h3>alibaba/open-code-review</h3><div class="meta">GitHub Trending · Nov 14, 2026</div><p>Go code-review tool combining fixed pipelines with an LLM agent for line-level comments.</p><div class="why">💡 <b>Why it matters to you:</b> Pattern to copy for a PR-review agent.</div><details><summary>Read deeper</summary><p>Pipeline-plus-agent hybrid.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://github.com/alibaba/open-code-review">Original source</a></li></ul></details></article><h2 id="s2">Project ideas of the day (my suggestions, not news)</h2><article class="card"><h3>Idea: Spring AI PR-review bot with MCP</h3><div class="meta">Idea</div><p>Spring Boot service that receives GitHub webhooks and reviews diffs with a ChatClient plus MCP tools.</p><div class="why">💡 <b>Why it matters to you:</b> Combines your Java skills with agents.</div><details><summary>Read deeper</summary><p>Add evals on past PRs.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://github.com/alibaba/open-code-review">Original source</a></li></ul></details></article><article class="card"><h3>Idea: Voice receptionist for Indian clinics</h3><div class="meta">Idea</div><p>Voice agent for appointment booking with Razorpay UPI deposits and a React dashboard. Gnani.ai&#x27;s raise shows funded demand for voice agents.</p><div class="why">💡 <b>Why it matters to you:</b> Full-stack plus AI and payments.</div><details><summary>Read deeper</summary><p>Check telephony rules.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://inc42.com/buzz/gnani-ai-raises-10-mn-to-build-sovereign-ai-voice-agents/">Original source</a></li></ul></details></article><article class="card"><h3>Idea: RAG over your own tutorial videos</h3><div class="meta">Idea</div><p>Transcribe, embed in pgvector and build a Q&amp;A with citations, a ready-made course project.</p><div class="why">💡 <b>Why it matters to you:</b> Doubles as a content funnel.</div><details><summary>Read deeper</summary><p>Measure recall@10.</p><ul class="rel"><li><a target="_blank" rel="noopener" href="https://jacar.es/en/rag-with-postgres-and-pgvector-in-production-from-poc-to-slo/">Original source</a></li></ul></details></article><h2 id="s3">Learn this today</h2><article class="card"><h3>Learn: recall@10 for your RAG</h3><div class="meta">Practitioner guides</div><p>Label 30 real questions with the right chunks, compute how often they appear in the top 10, and track it as you change chunking or models.</p><div class="why">💡 <b>Why it matters to you:</b> Evals are what separate demos from AI engineering.</div><details><summary>Read deeper</summary><p>Takes about an hour.</p><pre>hits = sum(gold[q] in top10(q) for q in qs)
-print(hits/len(qs))</pre><ul class="rel"><li><a target="_blank" rel="noopener" href="https://jacar.es/en/rag-with-postgres-and-pgvector-in-production-from-poc-to-slo/">Original source</a></li></ul></details></article><nav><a href="1-ai-engineer.html">1. The AI Engineer</a><a href="2-dev-digest.html">2. The Dev Digest</a><a href="3-daily-extras.html" class=cur>3. The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav><footer>Compiled from sources reachable on 2026-11-14. Items marked unconfirmed come from secondary reports.</footer></div></body></html>
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>The Daily Extras · Saturday, November 14, 2026</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class='wrap'>
+<nav class="top"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class='mast'><h1>The Daily Extras</h1><div class='tag'>Tools, repos, project ideas and one thing to learn today</div><div class='meta'>Saturday, November 14, 2026 · Edition No. 1 · 10 items · ~5 min read</div></header>
+<section class='top3'><h3>⚡ Top 3 in 30 seconds</h3><ol>
+<li>Tool: OpenAI&#x27;s Codex Security CLI scans, validates and patches vulnerabilities in your repos.</li>
+<li>Repo: volcengine/OpenViking (42k★) — a filesystem-style context database for agent memory.</li>
+<li>Project idea: ticket triage with Spring AI 2.1 DecisionModel — a tutorial on the newest API.</li>
+</ol></section>
+<section class='toc'><h3>In this edition</h3>
+<a href='#ai-tools-of-the-day'>🛠️ AI tools of the day (3)</a>
+<a href='#github-repos-of-the-day'>⭐ GitHub repos of the day (3)</a>
+<a href='#project-ideas-of-the-day'>💡 Project ideas of the day (3)</a>
+<a href='#learn-this-today'>📚 Learn this today (1)</a>
+</section>
+<h2 id='ai-tools-of-the-day'>🛠️ AI tools of the day</h2>
+<article class="story">
+<h3>Codex Security (OpenAI): scan, validate and patch vulnerabilities from a CLI or TypeScript SDK</h3>
+<div class="src">github.com/openai/codex-security · Trending Nov 14, 2026</div>
+<p>A CLI (`cs`) and TypeScript SDK that scans a repo, paths or git diffs for vulnerabilities, validates candidate findings, generates patches and exports SARIF/JSON/CSV or a threat model. It also drafts SECURITY.md and runs in CI and GitHub Actions.</p>
+<div class="why">💡 Why it matters to you: Point it at one of your Spring Boot + React repos and make a “AI security review of my own project” video.</div>
+<details><summary>Read deeper</summary>
+<p>Requirements: Node.js 22.13+ (22.x), 24.x or 26.x, Python 3.10+, and an OpenAI sign-in or API key for CI. Scan modes include Standard and Deep (which repeats Standard scans and dedupes); providers include OpenAI, Amazon Bedrock, OpenRouter and Fireworks AI. Treat any AI-reported finding as a lead to verify.</p>
+<pre><code>npm install --global @openai/codex-security
+cs login
+cs scan . --diff origin/main        # review a PR-sized change
+cs scan . --mode deep</code></pre>
+<ul class="links">
+<li><a href="https://github.com/openai/codex-security" target="_blank" rel="noopener">Repo</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Headroom: compress tool outputs, logs and RAG chunks before they hit the LLM</h3>
+<div class="src">github.com/headroomlabs-ai/headroom · Trending Nov 14, 2026</div>
+<p>A local compression layer (Python/TypeScript library, proxy and MCP server) that routes content by type — JSON, source code via AST, prose — and compresses it before the model sees it, with reversible retrieval of originals. The project claims ~20% fewer tokens for coding agents and 60–95% for JSON.</p>
+<div class="why">💡 Why it matters to you: Token cost is the real bill in agentic RAG; this is a drop-in way to test whether your tool outputs are bloated.</div>
+<details><summary>Read deeper</summary>
+<p>Project-reported measurements: code search 21%, SRE incident debugging 57%, codebase exploration 42%, GitHub issue triage 30%; 0.21 ms p50 overhead on a 10K-token JSON result; GSM8K unchanged at 0.870. These are the authors&#x27; benchmarks. An anonymous telemetry beacon is on by default (HEADROOM_OFFLINE=1 disables it).</p>
+<pre><code>pip install headroom-ai
+headroom proxy --port 8787      # drop-in proxy
+headroom wrap claude            # wrap a coding agent</code></pre>
+<ul class="links">
+<li><a href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener">Repo</a></li>
+</ul></details></article>
+<article class="story">
+<h3>NVIDIA SkillSpector: scan agent skills before you install them</h3>
+<div class="src">github.com/NVIDIA/SkillSpector · Trending Nov 14, 2026</div>
+<p>An open-source static scanner for AI agent skills (Claude Code, Codex, MCP) with 71 vulnerability patterns across 17 categories — prompt injection, data exfiltration, privilege escalation, supply-chain tricks, MCP tool poisoning. It scores 0–100: 0–20 SAFE, 21–50 CAUTION, 51+ DO NOT INSTALL.</p>
+<div class="why">💡 Why it matters to you: You install community Claude Code skills and plugins — run this first; and it&#x27;s a perfect MCP-security tutorial topic.</div>
+<details><summary>Read deeper</summary>
+<p>It never executes the skill; with --no-llm nothing leaves your machine, otherwise scanned content goes to the configured LLM provider. It&#x27;s static analysis, so it can&#x27;t see runtime behaviour or compiled code. Exit codes make it CI-friendly (1 for scores above 50).</p>
+<pre><code>uv tool install git+https://github.com/NVIDIA/skillspector.git
+skillspector scan ./my-skill/ --no-llm</code></pre>
+<ul class="links">
+<li><a href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener">Repo</a></li>
+</ul></details></article>
+<h2 id='github-repos-of-the-day'>⭐ GitHub repos of the day</h2>
+<article class="story">
+<h3>volcengine/OpenViking — a filesystem-style context database for agents (42k★)</h3>
+<div class="src">github.com/volcengine/OpenViking · Trending Nov 14, 2026</div>
+<p>Stores an agent&#x27;s knowledge, memories and skills in one virtual filesystem under viking://, browsed with ls/tree/read/grep and searched with scoped find. Directories carry generated L0/L1 summaries so full content loads only when needed.</p>
+<div class="why">💡 Why it matters to you: A fresh take on agent memory for the Spring AI / LangGraph agents you&#x27;re building — and it ships a LangChain/LangGraph adapter.</div>
+<details><summary>Read deeper</summary>
+<p>Plugins cover Claude Code, Codex, Cursor and OpenCode; SDKs for Python, Go and TypeScript. Reported LoCoMo memory accuracy is 80–83% vs 24–57% on each agent&#x27;s native memory — project-reported. Licence: AGPL-3.0 for the main project (some components Apache-2.0/MIT) — check this before using it in client products.</p>
+<pre><code>uv tool install openviking --upgrade &amp;&amp; openviking-server init
+ov add-resource https://github.com/volcengine/OpenViking
+ov find &quot;what is openviking&quot;</code></pre>
+<ul class="links">
+<li><a href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">Repo</a></li>
+</ul></details></article>
+<article class="story">
+<h3>alibaba/open-code-review — hybrid deterministic + LLM-agent code reviewer (Apache-2.0)</h3>
+<div class="src">github.com/alibaba/open-code-review · Trending Nov 14, 2026</div>
+<p>A Go CLI that reads git diffs, bundles files, matches rules (NPEs, thread safety, XSS, SQL injection) and lets an LLM agent search the codebase to produce line-level review comments. It has plugins for Claude Code, Codex and Cursor and CI support for GitHub Actions and GitLab CI.</p>
+<div class="why">💡 Why it matters to you: Java-flavoured rules like NPE and thread-safety suit Spring projects — and it&#x27;s a reference design for an “AI PR reviewer” SaaS.</div>
+<details><summary>Read deeper</summary>
+<p>The README&#x27;s benchmark (AACR-Bench: 50 repos, 200 PRs) reports higher precision and F1 than Claude Code on the same model at about one-ninth of the tokens, with lower recall — the project&#x27;s own result. Requires Git 2.41+.</p>
+<pre><code>npm install -g @alibaba-group/open-code-review
+ocr config provider &amp;&amp; ocr config model
+ocr review --from main --to feature-branch</code></pre>
+<ul class="links">
+<li><a href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">Repo</a></li>
+</ul></details></article>
+<article class="story">
+<h3>ChromeDevTools/chrome-devtools-mcp — DevTools for coding agents</h3>
+<div class="src">github.com/ChromeDevTools/chrome-devtools-mcp · Trending Nov 14, 2026</div>
+<p>An MCP server (also a CLI) that lets Claude, Cursor or Copilot drive a live Chrome: record performance traces, inspect network requests, take screenshots, read source-mapped console errors and automate actions through Puppeteer.</p>
+<div class="why">💡 Why it matters to you: Lets your agent debug the React front end of your full-stack app, not just edit it.</div>
+<details><summary>Read deeper</summary>
+<p>The browser starts only when a tool needs it. Requires Node LTS and current stable Chrome; flags include --headless, --isolated and --slim. Usage statistics and update checks can be disabled by flag or env var.</p>
+<pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;chrome-devtools&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;chrome-devtools-mcp@latest&quot;]
+    }
+  }
+}</code></pre>
+<ul class="links">
+<li><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">Repo</a></li>
+</ul></details></article>
+<h2 id='project-ideas-of-the-day'>💡 Project ideas of the day</h2>
+<article class="story">
+<h3>AI support-ticket triage with Spring AI DecisionModel (Spring Boot + React)</h3>
+<div class="src">Inspired by Spring AI 2.1.0-RC2 · Idea — original suggestion</div>
+<p>Build a helpdesk app where each incoming ticket is classified with typed yes/no/score questions (“is this a defect?”, “is the customer angry?”) and routed only when confidence passes a threshold; low-confidence tickets go to a human queue. React dashboard shows confidence and overrides.</p>
+<div class="why">💡 Why it matters to you: A tutorial that teaches the newest Spring AI API, gives a SaaS-shaped demo and ends in a portfolio piece.</div>
+<details><summary>Read deeper</summary>
+<p>Stack: Spring Boot 4.x, Spring AI 2.1 (DecisionModel with Ollama&#x27;s small default model so students need no API key), Postgres, React + Vite. Teach threshold tuning with a small labelled CSV and a confusion matrix. Note: DecisionModel is in a release candidate, so pin versions in the course repo.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Spring AI 2.1.0-RC2 notes</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Image-and-text product search using your own embeddings (pgvector)</h3>
+<div class="src">Inspired by Spring AI 2.1 own-embeddings post · Idea — original suggestion</div>
+<p>Index a small catalog of product photos with a multimodal embedding model, store vectors via VectorStore.upsert(), and let shoppers search with text or by uploading a photo. Filter on stock and price with metadata expressions.</p>
+<div class="why">💡 Why it matters to you: Uses a real new feature, looks impressive on video, and maps to Indian D2C stores (fashion, home décor).</div>
+<details><summary>Read deeper</summary>
+<p>Stack: Spring Boot, Spring AI PGVector store, a multimodal embedding model, React with a drag-and-drop upload. Use SKU-derived UUIDs so re-indexing is idempotent. Make the point that query and catalog must use the same multimodal model.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings" target="_blank" rel="noopener">Spring AI own-embeddings post</a></li>
+</ul></details></article>
+<article class="story">
+<h3>“Is this skill safe?” — an MCP/skill security scanner web app</h3>
+<div class="src">Inspired by NVIDIA SkillSpector and MCP security research · Idea — original suggestion</div>
+<p>A web app where developers paste a GitHub URL of an MCP server or Claude Code skill and get a risk report: static checks (like SkillSpector&#x27;s) plus an LLM explanation in plain English and a suggested least-privilege config.</p>
+<div class="why">💡 Why it matters to you: Security + AI is a hiring-friendly niche, and it makes a clean three-part series: scanner core, API, React UI.</div>
+<details><summary>Read deeper</summary>
+<p>Start by wrapping an existing open-source scanner via CLI from a Spring Boot service, queue scans in Redis or Kafka, and show SARIF results in React. Add rate limits and sandboxed cloning — you&#x27;d be fetching untrusted code, so never execute it.</p>
+<ul class="links">
+<li><a href="https://github.com/NVIDIA/SkillSpector" target="_blank" rel="noopener">NVIDIA SkillSpector</a></li>
+</ul></details></article>
+<h2 id='learn-this-today'>📚 Learn this today</h2>
+<article class="story">
+<h3>Learn today: validate and self-correct structured LLM output in Spring AI</h3>
+<div class="src">Spring AI 2.0 GA notes · 20–30 minute exercise</div>
+<p>Spring AI 2.0 added a StructuredOutputValidationAdvisor that can make the model self-correct when its output fails validation. Today: build a ChatClient endpoint that returns a Java record and handle invalid output.</p>
+<div class="why">💡 Why it matters to you: Structured output that fails validation is the most common production bug in LLM apps — fix it once and your RAG and agent code gets sturdier.</div>
+<details><summary>Read deeper</summary>
+<p>Plan: (1) define a record with Bean Validation constraints; (2) call ChatClient with entity(MyRecord.class); (3) deliberately prompt for a bad value and watch it fail; (4) add the validation advisor from the Spring AI 2.0 docs and compare retries and cost; (5) log token use per request. I haven&#x27;t verified the advisor&#x27;s exact configuration API — check the 2.0 reference docs.</p>
+<p>Stretch goal: use Spring AI 2.1&#x27;s DecisionModel to decide whether to retry at all.</p>
+<pre><code>record Ticket(@NotBlank String category, @Min(1) @Max(5) int priority) {}
+
+Ticket t = chatClient.prompt()
+    .user(&quot;Classify: my invoice is wrong and I&#x27;m furious&quot;)
+    .call()
+    .entity(Ticket.class);</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/06/12/spring-ai-2-0-0-GA-available-now/" target="_blank" rel="noopener">Spring AI 2.0 GA announcement</a></li>
+<li><a href="https://visualstudiomagazine.com/articles/2026/06/29/spring-ai-2-0-goes-ga-giving-java-developers-a-more-mature-ai-app-stack.aspx" target="_blank" rel="noopener">Visual Studio Magazine overview</a></li>
+</ul></details></article>
+<nav class="bot"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>Compiled from sources fetched on Saturday, November 14, 2026. Items flagged “reported” rest on secondary coverage — verify before acting.</footer>
+</div></body></html>

@@ -1,16 +1,60 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Newspaper</title><style>
-:root{--bg:#faf8f3;--fg:#1b1b1b;--mut:#666;--card:#fff;--bd:#ddd6c8;--ac:#8a1c1c;--hl:#fff4cc}
-@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#a0a0a0;--card:#1c1c1c;--bd:#333;--ac:#ff8a80;--hl:#3a3216}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}
-.w{max-width:800px;margin:0 auto;padding:0 16px 40px}h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
-.mast{text-align:center;border-bottom:3px double var(--fg);padding:20px 0 12px;margin-bottom:12px}.mast h1{font-size:2.2rem;margin:0}.mast p{margin:4px 0;color:var(--mut);font-size:.9rem}
-nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 0}nav a{padding:12px 14px;border:1px solid var(--bd);border-radius:8px;text-decoration:none;color:var(--fg);background:var(--card);font-size:.9rem}nav a.cur{background:var(--ac);color:#fff;border-color:var(--ac)}
-.box{background:var(--hl);border-left:4px solid var(--ac);padding:12px 16px;border-radius:6px;margin:14px 0}.box h2{margin:0 0 6px;font-size:1.1rem}
-.toc a{display:block;padding:10px 0;color:var(--ac)}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:14px 0}.card h3{margin:0 0 4px;font-size:1.2rem}.meta{color:var(--mut);font-size:.82rem}
-.why{background:var(--hl);padding:8px 10px;border-radius:6px;margin:8px 0}
-details{margin-top:8px}summary{cursor:pointer;padding:12px 0;color:var(--ac);font-weight:600}
-pre{background:#0d1117;color:#e6edf3;padding:10px;border-radius:6px;overflow-x:auto;font-size:.82rem}
-a{color:var(--ac)}ul.rel{padding-left:20px}.big{display:block;padding:16px;margin:12px 0;border:1px solid var(--bd);border-radius:12px;background:var(--card);text-decoration:none;color:var(--fg)}.big b{font-family:Georgia,serif;font-size:1.3rem;color:var(--ac)}
-footer{color:var(--mut);font-size:.8rem;margin-top:30px}
-</style></head><body><div class="w"><div class="mast"><h1>My Newspaper</h1><p>Today: 2026-11-14</p></div><a class="big" href="editions/2026-11-14/1-ai-engineer.html"><b>1. The AI Engineer</b><br><span class="meta">9 stories</span><ol><li>Anthropic ships Claude Fable 5.2 and vetted-tier Mythos 5.2</li><li>Mythos 5.2 suspected it was being tested in up to 43% of audit transcripts</li><li>OpenAI GPT-6 Cyber launches gated, rated Critical for cyber risk</li></ol></a><a class="big" href="editions/2026-11-14/2-dev-digest.html"><b>2. The Dev Digest</b><br><span class="meta">11 stories</span><ol><li>Spring Boot 4.2, Framework 7.1 and Cloud 2026.0.0 due November 19</li><li>Support clock: Boot 3.5 is EOL, 4.0 ends Dec 31, 2026</li><li>JDK 27 reported out with G1 as default GC; Valhalla aimed at JDK 28</li></ol></a><a class="big" href="editions/2026-11-14/3-daily-extras.html"><b>3. The Daily Extras</b><br><span class="meta">10 stories</span><ol><li>Tool: Chrome DevTools MCP</li><li>Tool: Codex for Chrome extension</li><li>Tool: Ollama as a local model runner with coding agent</li></ol></a><h2>Archive</h2><ul style="list-style:none;padding:0"><li style="padding:8px 0"><b>2026-11-14</b> — <a href="editions/2026-11-14/1-ai-engineer.html">1. The AI Engineer</a> · <a href="editions/2026-11-14/2-dev-digest.html">2. The Dev Digest</a> · <a href="editions/2026-11-14/3-daily-extras.html">3. The Daily Extras</a></li></ul></div></body></html>
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>My Newspaper — Daily Developer Papers</title>
+<link rel='preconnect' href='https://fonts.googleapis.com'>
+<link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap' rel='stylesheet'>
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+
+.hero{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0;margin:10px 0 22px}
+.hero h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0}
+.hero p{margin:6px 0 0;color:var(--muted);font-style:italic}
+.card{display:block;background:var(--card);border:2px solid var(--fg);border-radius:12px;padding:16px;margin:0 0 16px;color:var(--fg);text-decoration:none}
+.card h2{border:0;margin:0;padding:0;font-size:26px}
+.card .ic{font-size:30px}.card .cnt{font:700 12px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:2px 0}
+.card .tg{color:var(--muted);font-size:15px;margin:4px 0 8px}
+.card ol{padding-left:20px;margin:6px 0 10px;font-size:15px}.card li{margin:5px 0}
+.card .go{font:700 15px system-ui,sans-serif;color:var(--accent2)}
+ul.arch{list-style:none;padding:0}ul.arch li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.al{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.al a{padding:10px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font:600 14px system-ui,sans-serif;min-height:44px}
+</style></head><body><div class='wrap'>
+<header class='hero'><h1>My Newspaper</h1><p>Three papers a day for a Java/Spring → AI engineer · Latest: 2026-11-14</p></header>
+<a class='card' href='editions/2026-11-14/1-ai-engineer.html'><div class='ic'>🤖</div><h2>The AI Engineer</h2><div class='cnt'>25 stories</div><p class='tg'>AI engineering, in depth — models, agents, Spring AI, MCP, RAG</p><ol><li>Anthropic&#x27;s Claude Fable 5.2 / Mythos 5.2 landed Nov 9 at $8/$40 per Mtok — and Anthropic opened its IPO roadshow (ticker ANT) the next day.</li><li>Spring AI 2.1.0-RC2 ships DecisionModel, streaming tool-call args and a stateless “modern” MCP server for the new 2026-07-28 spec.</li><li>“Decision models” appeared in Spring AI, LangChain, LangChain4j, vLLM and Ollama within three weeks — cheap calibrated gates in front of expensive LLM calls.</li></ol><span class='go'>Read →</span></a><a class='card' href='editions/2026-11-14/2-dev-digest.html'><div class='ic'>☕</div><h2>The Dev Digest</h2><div class='cnt'>24 stories</div><p class='tg'>Java &amp; Spring, Node &amp; Python, career, security and the rest of the stack</p><ol><li>Node.js shipped 16 security fixes (7 High) on Nov 11 — patch and rebuild your Docker images for 22.x/24.x/26.x.</li><li>Spring Boot 4.2.0-RC2 and Spring Cloud 2026.0.0-RC2 are out; Spring Pulsar is leaving Spring for the Apache project (2.0.8 is the last Spring release).</li><li>Indian startups raised ~$255M in a week (GIVA $100M) while AI hiring keeps climbing — Spring + AI skills sit in the shortage zone.</li></ol><span class='go'>Read →</span></a><a class='card' href='editions/2026-11-14/3-daily-extras.html'><div class='ic'>🎁</div><h2>The Daily Extras</h2><div class='cnt'>10 stories</div><p class='tg'>Tools, repos, project ideas and one thing to learn today</p><ol><li>Tool: OpenAI&#x27;s Codex Security CLI scans, validates and patches vulnerabilities in your repos.</li><li>Repo: volcengine/OpenViking (42k★) — a filesystem-style context database for agent memory.</li><li>Project idea: ticket triage with Spring AI 2.1 DecisionModel — a tutorial on the newest API.</li></ol><span class='go'>Read →</span></a>
+<h2 id='archive'>Archive</h2>
+<ul class='arch'><li><strong>2026-11-14</strong><div class='al'><a href='editions/2026-11-14/1-ai-engineer.html'>The AI Engineer</a> <a href='editions/2026-11-14/2-dev-digest.html'>The Dev Digest</a> <a href='editions/2026-11-14/3-daily-extras.html'>The Daily Extras</a></div></li></ul>
+<footer>Generated daily. Newest edition first.</footer>
+</div></body></html>
