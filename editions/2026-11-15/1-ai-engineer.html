@@ -1,0 +1,358 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The AI Engineer · Sunday, November 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class="wrap">
+<nav class="top"><a class="cur" href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class="mast"><h1>The AI Engineer</h1><div class="tag">AI engineering, in depth — models, agents, Spring AI, MCP, RAG</div><div class="meta">Sunday, November 15, 2026 · Edition No. 2 · 21 items · ~18 min read</div></header>
+<section class="top3"><h3>⚡ Top 3 in 30 seconds</h3><ol><li>Anthropic says new anti-distillation defenses cut harvested reasoning data by 90–99% — and &#x27;preserved thinking&#x27; means some API integrations must change.</li><li>Agent Skills (the SKILL.md standard) moves to the Linux Foundation&#x27;s Agentic AI Foundation next to MCP; Anthropic cites 70+ platforms and ~1M published skills.</li><li>Spring AI keeps maturing: Session Memory replaces ChatMemory in 2.1 RC1, and the new Modular RAG + Jev recipe filters prompt-injected chunks before they reach the prompt.</li></ol></section>
+<section class="toc"><h3>In this edition</h3>
+<a href="#models">Model releases &amp; the open-weight race (5)</a>
+<a href="#spring-ai">Spring AI (3)</a>
+<a href="#agents">Agents, SDKs &amp; frameworks (9)</a>
+<a href="#local">Local models, inference &amp; SDKs (3)</a>
+<a href="#research">Research, explained simply (1)</a>
+</section>
+<h2 id="models">Model releases &amp; the open-weight race</h2>
+<article class="story">
+<h3>Anthropic: new defenses cut distillation of Claude&#x27;s reasoning by 90–99%</h3>
+<div class="src">Anthropic · Oct 12, 2026 (catch-up: slower-moving, still new to this paper)</div>
+<p>Anthropic reports that a new set of safeguards has sharply reduced how much reasoning data illicit distillers can harvest from Claude — early evidence says 90–99%, with distiller-extracted reasoning tokens down 10–100x on Anthropic&#x27;s own platform. The defenses are tighter control over where reasoning can travel, a two-stage extraction classifier, and harsher consequences for repeat offenders.</p>
+<div class="why">💡 Why it matters to you: If your Spring AI or LangGraph app replays Claude reasoning, &#x27;preserved thinking&#x27; and the org-only reasoning visibility rules can change how you store and resend context — and blocked requests are now billed.</div>
+<details><summary>Read deeper</summary>
+<p>Details from the post: &#x27;preserved thinking&#x27; (introduced with Claude Fable 5.1 and Opus 5.5) stops API accounts created on or after Aug 31, 2026 from editing Claude&#x27;s prior context, and with Claude Sonnet 5.5 reasoning transcripts are visible only to the organization whose request produced them. A two-stage classifier built on Anthropic&#x27;s constitutional-classifier research detects extraction attempts, reportedly with a false-positive rate under 0.1% — and since Sept 24 requests blocked by safeguards before Claude responds are charged.</p>
+<p>Anthropic also describes the scale of the abuse it is fighting: proxy networks with hundreds of thousands of fraudulent accounts (one ran 20,000+ at once) and tens of thousands of bans, often within two hours of a campaign starting. The post is explicit that developers may need to update integrations to adopt preserved thinking, and that this is expected to be a cat-and-mouse game.</p>
+<p>Practical takeaway for builders: don&#x27;t mutate or re-order reasoning blocks you receive from the API, don&#x27;t forward them across accounts or to other models, and treat an unexpected &#x27;blocked&#x27; response as a signal to review what you are sending rather than just retrying.</p>
+<ul class="links">
+<li><a href="https://www.anthropic.com/news/distillation-defenses" target="_blank" rel="noopener">Original: Strengthening our defenses against distillation attacks</a></li>
+<li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Related: Anthropic news index</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Gemini 4 Carbon: Google&#x27;s cyber- and long-horizon-focused model arrives (sources disagree on access date)</h3>
+<div class="src">Google · announced Oct 28, 2026; one report says broad availability Nov 10</div>
+<p>Google announced Gemini 4 Carbon on Oct 28 as a model for cybersecurity and long-horizon engineering work. Google&#x27;s own post says it is being made available to developers, enterprises, scientists and consumers; other reports describe a defender-first preview that widened to the Gemini API and AI Studio around Nov 10. Reported intro pricing is $2/$10 per million tokens, rising to $4/$20 afterwards.</p>
+<div class="why">💡 Why it matters to you: Gemini 4 Carbon is a second frontier option next to Claude Fable 5.2 for long agent runs — the LangChain.js profiles already reference Gemini 4 models, so wiring it into a provider-agnostic stack is cheap.</div>
+<details><summary>Read deeper</summary>
+<p>Coverage is consistent on the headline but not on access: Khaleej Times and the Google post frame it as launched for broad use, while another outlet says it moved from a cyber-defender preview to general availability on Nov 10. Pricing figures come from secondary sources and Google has not published a parameter count or technical report according to those same write-ups — so benchmark claims (e.g. &#x27;more than twice Gemini 4 Argon&#x27;s secure-code success rate&#x27;) are Google-internal and unverified.</p>
+<p>A model called Gemini 4 Argon reportedly launched about two weeks earlier at the same intro price. If you are comparing, check which model ID your SDK actually resolves to and pin it, because preview names change quickly.</p>
+<p>For a Java stack, the quickest evaluation path is a provider-swappable ChatClient (Spring AI) or a LangChain4j model builder, run against your own eval set rather than vendor charts.</p>
+<ul class="links">
+<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">Original: Gemini 4 Carbon is now available (Google)</a></li>
+<li><a href="https://www.khaleejtimes.com/business/google-launches-gemini-4-carbon-ai-model-with-cybersecurity-focus-2" target="_blank" rel="noopener">Related: Khaleej Times coverage</a></li>
+<li><a href="https://letsdatascience.com/news/google-rolls-out-gemini-4-carbon-to-general-public-9b41bcb4" target="_blank" rel="noopener">Related: Let&#x27;s Data Science on general availability</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Mistral opens the weights of Large 4 — a ~1T-parameter MoE, three weeks after the API preview</h3>
+<div class="src">Mistral AI · Oct 29, 2026 (catch-up)</div>
+<p>Mistral released open weights for Mistral Large 4 on Oct 29, after an API-only preview on Oct 6. Reports describe a natively multimodal mixture-of-experts model of roughly 1 trillion parameters with about 50B active per token, published as mistralai/Mistral-Large-4-1T-A52B under a modified-MIT &#x27;Mistral Ecosystem Open-Weight License&#x27;. Mistral says it is now the best open-weight model for coding (company-reported).</p>
+<div class="why">💡 Why it matters to you: You will not run this on a laptop, but it shows the open-weight frontier now competes on coding — and licence terms (resellers need a licence) matter if you ship it inside a client product.</div>
+<details><summary>Read deeper</summary>
+<p>One outlet reports the open-weight version got three more weeks of reinforcement learning than the preview, so preview benchmarks are not directly comparable. Another notes data-centre hardware is required and that downloaded weights cannot receive later safety updates from Mistral.</p>
+<p>Licensing is the part to read twice: coverage says the licence is a modified MIT and that resellers need a separate licence. If you are building a hosted service for clients in India, check whether you count as a &#x27;reseller&#x27; before committing.</p>
+<p>Pragmatic path for most developers: use it through a hosted API or an OpenAI-compatible server such as vLLM rather than self-hosting, and compare cost per solved task against your current model.</p>
+<ul class="links">
+<li><a href="https://mistral.ai/news/mistral-large-4-oss/" target="_blank" rel="noopener">Original: Mistral Large 4 open weights</a></li>
+<li><a href="https://letsdatascience.com/news/mistral-releases-open-weights-for-1-trillion-parameter-mistr-d712eb0e" target="_blank" rel="noopener">Related: Let&#x27;s Data Science summary</a></li>
+</ul></details></article>
+<article class="story">
+<h3>DeepSeek V4.1-Flash: 552B MoE, 1M context, MIT licence — and V4-Pro is retired</h3>
+<div class="src">DeepSeek · Sep 10, 2026 (catch-up on a slower topic; a later &#x27;V4.1 Flash 1017&#x27; update is unverified)</div>
+<p>DeepSeek&#x27;s V4.1-Flash is reported as a 552B-parameter mixture-of-experts model with a 1M-token window, native image understanding, an MIT licence and API pricing around $0.15 per million input tokens (off-peak) and $0.60 output. Requests to V4-Pro were redirected to V4.1-Flash from Sept 14, billed at Flash rates, until a V4.1-Pro ships.</p>
+<div class="why">💡 Why it matters to you: Cheap long-context inference is the lever for RAG-heavy back-ends: a KV cache about a quarter of the previous Flash makes self-hosting 1M-token workloads more realistic.</div>
+<details><summary>Read deeper</summary>
+<p>DeepSeek says the KV cache needs 890 bytes per token (about a quarter of V4-Flash) and reports 90.6 on Terminal-Bench 2.1 and 74.2 on DeepSWE v1.1; independent testing was not reported. Another report notes weaker results on Humanity&#x27;s Last Exam (36.8 vs 56.3 for Claude Opus 5), a reminder that coding-agent benchmarks and broad-knowledge benchmarks tell different stories.</p>
+<p>One source says DeepSeek replaced the model on Oct 17 with a version called &#x27;V4.1 Flash 1017&#x27; and that the deepseek-flash API name now points at it; I could not confirm that with a second source, so check the API changelog before relying on a specific snapshot.</p>
+<p>vLLM 0.31 (Oct 5) shipped many DeepSeek-V4.1-Flash performance optimisations, so the serving side is already catching up.</p>
+<ul class="links">
+<li><a href="https://thenextweb.com/news/deepseek-v4-1-flash-launch-v4-pro-retired-price-cut" target="_blank" rel="noopener">Original: TNW on V4.1-Flash launch and V4-Pro retirement</a></li>
+<li><a href="https://datanorth.ai/news/deepseek-releases-deepseek-v4-1-flash" target="_blank" rel="noopener">Related: DataNorth summary</a></li>
+<li><a href="https://github.com/vllm-project/vllm/releases" target="_blank" rel="noopener">Related: vLLM releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Qwen3.8-Flash-Next: a 125B / ~6B-active open-weight model that previews Qwen4&#x27;s architecture</h3>
+<div class="src">Alibaba Qwen · Aug 26, 2026 (catch-up; relevant to local runners)</div>
+<p>Alibaba released open weights for Qwen3.8-Flash-Next, a multimodal MoE reported at 125B parameters with about 6B active per token, a 262K native context (extendable to 1M) and an N-gram embedding table plus multi-token-prediction module. It previews the architecture planned for Qwen4.</p>
+<div class="why">💡 Why it matters to you: Only ~6B parameters are active per token, so this class of model is the realistic route to a capable local coding/RAG model; Ollama 0.40.16 already lists memory savings for it on Apple silicon.</div>
+<details><summary>Read deeper</summary>
+<p>Sources differ on the headline size (125B backbone vs ~180B counting every component) and on the context length (256K vs 262K), so quote the model card rather than blog numbers. The licence is reported as the Qwen Community License 1.0, which may not qualify for the EU AI Act open-source exemption.</p>
+<p>Alibaba says it performs competitively with recent releases such as Anthropic&#x27;s Opus 4.6 and DeepSeek&#x27;s V4-Flash — vendor-reported only. A later article says Qwen4 is in training, with no date.</p>
+<p>To try it locally, watch Ollama&#x27;s release notes — 0.40.16 (Nov 9) notes that Qwen3.8 Flash Next uses about 27 GiB less memory on Apple silicon.</p>
+<ul class="links">
+<li><a href="https://thenextweb.com/news/qwen38-flash-next-qwen4-architecture-open-licence-ai-act" target="_blank" rel="noopener">Original: TNW on Qwen3.8-Flash-Next</a></li>
+<li><a href="https://alternativeto.net/news/2026/8/alibaba-cloud-launches-qwen3-8-flash-next-with-new-architecture-and-better-cost-efficiency/" target="_blank" rel="noopener">Related: AlternativeTo launch note</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Related: Ollama releases</a></li>
+</ul></details></article>
+<h2 id="spring-ai">Spring AI</h2>
+<article class="story">
+<h3>Spring AI Modular RAG + Jev: rewrite the query, filter the chunks, then answer</h3>
+<div class="src">Spring Blog (Christian Tzolov) · Oct 2, 2026</div>
+<p>A step-by-step recipe turns Spring AI&#x27;s RetrievalAugmentationAdvisor into a modular pipeline: rewrite and expand the question, retrieve per query, then run a &#x27;Jev&#x27; filter and reranker over each chunk before the generation step. In the demo, six retrieved chunks were cut to the two that actually answered the question, and every passage was screened for prompt injection.</p>
+<div class="why">💡 Why it matters to you: This is the cleanest published pattern for production RAG in Spring AI: it directly attacks the two failure modes you hit in client projects — chatty questions and &#x27;similar but useless&#x27; chunks.</div>
+<details><summary>Read deeper</summary>
+<p>The pipeline uses swappable interfaces: RewriteQueryTransformer and MultiQueryExpander (pre-retrieval), VectorStoreDocumentRetriever with a 0.5 similarity threshold and topK 4, then JevDocumentFilter and JevDocumentReranker as post-processors, and ContextualQueryAugmenter for generation. The filter asks four questions per passage (prompt injection &gt;0.70 excluded, premise contradiction &gt;0.70 kept but tagged CONFLICTING, relevance &lt;0.45 excluded, answer evidence &gt;0.55 kept), then the reranker keeps the top K.</p>
+<p>Gotchas listed in the post: the default retrieval executor uses non-daemon threads so a CLI app may not exit (pass Boot&#x27;s TaskExecutor; virtual threads work with spring.threads.virtual.enabled=true); newer Claude models reject temperature 0 (HTTP 400) so the demo clones the ChatClient builder for the rewrite calls; if the Jev API is unreachable the pipeline fails open and logs a warning; and it adds two LLM calls before retrieval plus one Jev call per chunk, so measure latency.</p>
+<pre><code class="lang-java">var modularRag = RetrievalAugmentationAdvisor.builder()
+    .queryTransformers(RewriteQueryTransformer.builder()
+        .chatClientBuilder(ragClientBuilder).build())
+    .queryExpander(MultiQueryExpander.builder()
+        .chatClientBuilder(ragClientBuilder).numberOfQueries(3).build())
+    .documentRetriever(VectorStoreDocumentRetriever.builder()
+        .vectorStore(vectorStore).similarityThreshold(0.5).topK(4).build())
+    .documentPostProcessors(
+        JevDocumentFilter.builder(typeSafeClient).build(),
+        JevDocumentReranker.builder(typeSafeClient).topK(3).build())
+    .queryAugmenter(ContextualQueryAugmenter.builder()
+        .allowEmptyContext(true).build())
+    .taskExecutor(taskExecutor)
+    .build();</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/10/02/spring-ai-modular-rag-typesafe-jev" target="_blank" rel="noopener">Original: Spring AI Modular RAG and TypeSafe Jev</a></li>
+<li><a href="https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment" target="_blank" rel="noopener">Related: Spring AI and TypeSafe Jev — fast, cheap, structured decisions</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring AI 2.1.0-RC1: Session Memory replaces ChatMemory, plus tool-call confirmation</h3>
+<div class="src">Spring AI release notes · Oct 23, 2026 (and Spring blog, Nov 10 roundup)</div>
+<p>Spring AI 2.1.0-RC1 introduces Session Memory — an event log with turn-aware compaction — and deprecates ChatMemory. The same release adds tool-call confirmation, migrates the OpenAI and DeepSeek chat models to message parts, and adds overlap support to TokenTextSplitter. Craig Walls published a migration recipe that the Nov 10 &#x27;This Week in Spring&#x27; highlights.</p>
+<div class="why">💡 Why it matters to you: If your chatbot uses ChatMemory today, this is the migration to plan before 2.1 GA — and tool-call confirmation is exactly the human-in-the-loop hook agent demos need.</div>
+<details><summary>Read deeper</summary>
+<p>RC1 also gives OpenSearch upsert and query-embedding search and makes unsupported upsert/vector-search calls fail fast, and bumps Kotlin to 2.4.21 and Tika to 4.0.0. RC2 (Nov 5, covered in our previous edition) then layered DecisionModel and the stateless MCP server on top.</p>
+<p>An event-log memory with compaction means conversations are stored as a sequence of turn events that can be summarised or trimmed per turn instead of a flat message list — useful for long-running agents where you want to keep tool results but drop chatter. Check the Walls recipe for the concrete API before migrating, since this is still a release candidate.</p>
+<p>Pin the milestone you test against and read the deprecation notes: ChatMemory is deprecated rather than removed, so there is time, but new code should start on Session Memory.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/10/23/spring-ai-2-1-0-RC1-available-now" target="_blank" rel="noopener">Original: Spring AI 2.1.0-RC1 available now</a></li>
+<li><a href="https://www.linkedin.com/pulse/spring-ai-recipe-migrating-sessionmemory-craig-walls-rjqmc/" target="_blank" rel="noopener">Related: Craig Walls — Migrating to SessionMemory</a></li>
+<li><a href="https://spring.io/blog/2026/11/10/this-week-in-spring-november-10th-2026" target="_blank" rel="noopener">Related: This Week in Spring — Nov 10</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Spring AI 2.0.2: observability for speech and transcription models, stateless MCP customizers</h3>
+<div class="src">Spring AI release notes · Oct 23, 2026</div>
+<p>The current stable line, 2.0.2, adds observability for TextToSpeechModel, TranscriptionModel and StabilityAiImageModel, lets you configure Redis vector-store metadata fields, and adds customizers for stateless MCP servers. About 14 fixes include Cassandra numeric filters, Bedrock tool-call JSON, Anthropic streaming thinking text and Jsoup relative links.</p>
+<div class="why">💡 Why it matters to you: If you ship on the stable 2.0 line (not an RC), this patch is the safe upgrade — and the Anthropic streaming-thinking fix matters if you display reasoning in a UI.</div>
+<details><summary>Read deeper</summary>
+<p>Dependency bumps in this release: Anthropic SDK 2.72.0, OpenAI SDK 4.80.0 and AWS SDK 2.55.14. The 2.0.1 release (Aug 21) before it added configurable tool-call limits, Google GenAI image generation and audio streaming for OpenAiAudioSpeechModel.</p>
+<p>Because Spring releases now ship on a single monthly &#x27;Patch Thursday&#x27; (see the Dev Digest), expect the next 2.0.x patch on the next train date rather than ad hoc.</p>
+<ul class="links">
+<li><a href="https://github.com/spring-projects/spring-ai/releases" target="_blank" rel="noopener">Original: Spring AI GitHub releases</a></li>
+<li><a href="https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now" target="_blank" rel="noopener">Related: Spring AI 2.0.1 announcement</a></li>
+</ul></details></article>
+<h2 id="agents">Agents, SDKs &amp; frameworks</h2>
+<article class="story">
+<h3>Agent Skills moves to the Agentic AI Foundation — 70+ platforms, ~1M skills</h3>
+<div class="src">Anthropic · Oct 22, 2026</div>
+<p>Anthropic is donating the Agent Skills open standard to the Agentic AI Foundation (AAIF, under the Linux Foundation), which already hosts MCP. The name, logo, GitHub org and agentskills.io domain move to the project; Anthropic cites 70+ agent platforms (including ChatGPT, Cursor, GitHub Copilot and VS Code), about 1 million published skills and nearly 280 million installs.</p>
+<div class="why">💡 Why it matters to you: A SKILL.md folder you write once now works across most coding agents — an ideal, low-effort packaging format for your tutorials, internal playbooks and Spring/React conventions.</div>
+<details><summary>Read deeper</summary>
+<p>A skill is a folder built around a SKILL.md with required name and description frontmatter, optionally with scripts and reference files. The proposed roadmap includes versioned releases, a formal proposal process and security guidance for people who write and install skills — important because skills can ship scripts. David Soria Parra and Mahesh Murag are Lead Maintainers.</p>
+<p>The anthropics/skills repository (about 195k stars) holds example skills — including the docx, pdf, pptx and xlsx skills — and can be added in Claude Code with /plugin marketplace add anthropics/skills.</p>
+<p>Security note: treat third-party skills like third-party code and read the scripts before installing.</p>
+<pre><code class="lang-markdown">---
+name: spring-boot-conventions
+description: Our Spring Boot 4 project conventions: package layout, validation, error handling and test style
+---
+
+# Spring Boot conventions
+1. Controllers return DTO records, never entities.
+2. Use Testcontainers for integration tests.</code></pre>
+<ul class="links">
+<li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">Original: Donating Agent Skills to the AAIF</a></li>
+<li><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Related: anthropics/skills on GitHub</a></li>
+</ul></details></article>
+<article class="story">
+<h3>MCP Java SDK 2.2.0-M2: the &#x27;modern&#x27; stateless server keeps growing</h3>
+<div class="src">modelcontextprotocol/java-sdk · Nov 13, 2026</div>
+<p>The Java MCP SDK&#x27;s second 2.2.0 milestone enforces required client capabilities in the modern server, validates SEP-2243 Mcp-Param headers, adds putAll(Map) to McpTransportContext and fixes a tools-list filter race. A breaking change: find returns a handler in modern server repositories.</p>
+<div class="why">💡 Why it matters to you: Spring AI&#x27;s MCP support sits on this SDK — the stateless server for spec 2026-07-28 is what your Java MCP servers will run on, so these are the details that will surface in Spring AI 2.1.</div>
+<details><summary>Read deeper</summary>
+<p>2.2.0-M1 (Oct 16) introduced the modern stateless server in io.modelcontextprotocol.modern, independent of the legacy McpSchema: &#x27;each request is handled on its own&#x27; with no sessions. Not yet supported there: a modern client, tasks and SEP-2243 custom headers. The M2 release adds header validation and requires a numeric port for wildcard Host/Origin matching — a security-minded tightening.</p>
+<p>The stable line is 2.1.0 (Oct 16): tool-list filtering, Publisher-based HTTP client transports, Streamable HTTP session sweeping/keep-alive, and removal of the 2024-11-05 protocol from Streamable HTTP. Backports 1.1.5 and 0.18.5 keep older lines patched.</p>
+<p>If you run MCP servers behind a gateway, the stateless design is the big win: no sticky sessions, so any replica can serve any request.</p>
+<ul class="links">
+<li><a href="https://github.com/modelcontextprotocol/java-sdk/releases" target="_blank" rel="noopener">Original: java-sdk releases</a></li>
+<li><a href="https://github.com/modelcontextprotocol/modelcontextprotocol/releases" target="_blank" rel="noopener">Related: MCP spec releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>MCP TypeScript SDK 2.4.0: Skills over MCP (SEP-2640) and stricter schemas</h3>
+<div class="src">modelcontextprotocol/typescript-sdk · Oct 23, 2026</div>
+<p>Version 2.4.0 adds Skills over MCP via loadSkills(folder) and skills.attach(server), and an opt-in scopeForRefresh(tokens) for authorization servers (such as Microsoft Entra ID) that reject refresh requests without scope. It is breaking for some schemas: x-mcp-header on a number parameter is now rejected.</p>
+<div class="why">💡 Why it matters to you: It connects two things you follow — MCP and Agent Skills — so one MCP server can hand agents reusable skills, and Node-based MCP servers (including shadcn&#x27;s) pick this up.</div>
+<details><summary>Read deeper</summary>
+<p>Other changes: tool output schemas built with z.object(...).meta({ id }) are no longer wrapped in { result } on 2025-11-25 connections; the bundled Ajv validator uses fast-uri 3.1.8, which rejects $id/$ref values with invalid URI schemes; title updates now appear in resource list responses; and every 405 now carries Allow: POST. A v1.x backport (1.32.2) loosens Transport optional types.</p>
+<p>Migration tip from the release notes: replace a number parameter carrying x-mcp-header with z.int(), or drop the annotation.</p>
+<pre><code class="lang-ts">// 2.4.0 migration note: x-mcp-header on a `number` param is rejected
+const schema = z.object({
+  id: z.int(),   // use z.int() instead of z.number() for header-mapped params
+});</code></pre>
+<ul class="links">
+<li><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases" target="_blank" rel="noopener">Original: typescript-sdk releases</a></li>
+<li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">Related: Anthropic on donating Agent Skills</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Google ADK 2.14.0: A2A, execution environments and evals graduate to stable</h3>
+<div class="src">google/adk-python · Nov 7, 2026</div>
+<p>Agent Development Kit 2.14.0 promotes execution environments, A2A and evaluation modules from experimental to stable, adds multi-run evals (adk eval --num_runs / --parallelism) with semantic tool-argument matching, plus a TeamsRunner for Microsoft Teams and vector search with TTL for MongoDbMemoryService.</p>
+<div class="why">💡 Why it matters to you: Multi-run evals attack the flakiness that makes agent regression testing painful — a useful idea to copy into any LangGraph or Spring AI test suite.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking changes: enum tool arguments now arrive as enum members rather than raw strings, VertexAiSessionService.create_session accepts only session config options, and RunSkillScriptTool no longer accepts a free-form command in environment mode. A OpenAIDecisionsClassifier integration also landed.</p>
+<p>Earlier in the cycle, 2.13.0 (Oct 23) promoted 12 experimental features, added TypesafeClassifier and ClassifierNode for workflow routing, and made telemetry default to OpenTelemetry GenAI v2 (the call_llm span is removed; an env var restores v1). 2.12.0 (Oct 13) cut time-to-first-request in long sessions by 40% and added require_confirmation for human approval.</p>
+<pre><code class="lang-bash"># run an eval several times to measure flakiness (flags from the 2.14.0 notes)
+adk eval &lt;agent_dir&gt; &lt;evalset&gt; --num_runs 3 --parallelism 4</code></pre>
+<ul class="links">
+<li><a href="https://github.com/google/adk-python/releases" target="_blank" rel="noopener">Original: adk-python releases</a></li>
+<li><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">Related: AG-UI protocol (agents in frontends)</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenAI Agents SDK (Python) v0.24 alpha: sessions, budgets, tool policies and OpenTelemetry export</h3>
+<div class="src">openai/openai-agents-python · Nov 3 &amp; Nov 8, 2026</div>
+<p>The v0.24 alphas add durable root Sessions through CustomStorage, RunBudget usage limits, tool policies, NetworkPolicy, native OpenTelemetry export, hosted tools (FileSearch, CodeInterpreter, ImageGeneration) for compatible Responses providers, and scripted test responses. They also rename MCP approval modes and remove the Runner aliases.</p>
+<div class="why">💡 Why it matters to you: RunBudget and tool/network policies are the guard-rails you want before letting an agent loose on a client&#x27;s systems — and the same ideas map onto LangGraph and Spring AI tool-call limits.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking renames called out in the notes: MCP approval modes &#x27;auto&#x27; and &#x27;approve&#x27; become &#x27;native&#x27; and &#x27;preapproved&#x27;; child step callbacks take a ChildStepContext; Turn.wait() is replaced by Turn.get_result(); Session.interrupt() is replaced by cancellation methods. New Environments use a strict write policy and some models default to medium reasoning effort instead of low.</p>
+<p>The alphas are distributed as wheels on GitHub Releases rather than PyPI; the latest stable remains v0.24.0 (Oct 15), which exposes MCP annotations on converted tools.</p>
+<ul class="links">
+<li><a href="https://github.com/openai/openai-agents-python/releases" target="_blank" rel="noopener">Original: openai-agents-python releases</a></li>
+<li><a href="https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now" target="_blank" rel="noopener">Related: Spring AI 2.0.1 configurable tool-call limits</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Mastra 1.80–1.83: resumable agent streams, MCP server built in, durable agents split out</h3>
+<div class="src">mastra-ai/mastra · Oct 28 – Nov 12, 2026</div>
+<p>Mastra&#x27;s rolling releases make every Agent support resumable run streams, add a built-in MCP server at /api/mcp with OAuth discovery, schedule agents to run once or on bounded recurrences, and add per-end-user OAuth connections. 1.83.0 is breaking: durable execution moves to createDurableAgent({ agent }).</p>
+<div class="why">💡 Why it matters to you: If a client wants a TypeScript agent back-end next to your Spring services, Mastra is the framework to compare — resumable streams solve the &#x27;mobile user lost signal mid-answer&#x27; problem.</div>
+<details><summary>Read deeper</summary>
+<p>Other highlights: MCP Tasks gain storage-backed long-running execution that survives restarts (1.81); knowledge v2 uses a page-tree model; evented durable agents keep running when the API process shuts down (needs fencing-capable shared storage such as PostgresStore); observability adds time-to-first-token metrics.</p>
+<p>Mind the breaking changes in each minor — 1.82 removes knowledge.reindex() and experimental_subconscious, and 1.80 changes the connect-session response from connectUrl to launchUrl.</p>
+<pre><code class="lang-ts">// 1.83.0: Agent `durable` now only controls resumable streams.
+// Durable execution is opt-in via a wrapper:
+const durable = createDurableAgent({ agent });</code></pre>
+<ul class="links">
+<li><a href="https://github.com/mastra-ai/mastra/releases" target="_blank" rel="noopener">Original: Mastra releases</a></li>
+<li><a href="https://github.com/modelcontextprotocol/typescript-sdk/releases" target="_blank" rel="noopener">Related: MCP TypeScript SDK releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Vercel AI SDK 7.0.173: tool approval replay, WorkflowAgent and fine-grained timeouts</h3>
+<div class="src">vercel/ai · Nov 13, 2026</div>
+<p>The latest AI SDK 7 build stops approved tool arguments from changing during approval replay, adds toolApproval support and a timeout object (totalMs, stepMs, firstChunkMs, chunkMs) and aligns WorkflowAgent&#x27;s prepareStep with ToolLoopAgent. The @ai-sdk/workflow package adds toolOrder and an experimental tool-input refiner.</p>
+<div class="why">💡 Why it matters to you: Per-step and first-chunk timeouts are what you need to keep a React chat UI responsive when a model stalls — a practical feature for your full-stack AI tutorials.</div>
+<details><summary>Read deeper</summary>
+<p>Provider packages (xai, zai) now derive model-ID autocomplete from each provider&#x27;s model catalog, so new models appear in suggestions automatically while custom IDs still work. The approval fix matters for security: an approved tool call must run with exactly the arguments the user saw.</p>
+<pre><code class="lang-ts">// shape of the new timeout option, per the 7.0.173 notes
+timeout: { totalMs: 60_000, stepMs: 20_000, firstChunkMs: 5_000, chunkMs: 10_000 }</code></pre>
+<ul class="links">
+<li><a href="https://github.com/vercel/ai/releases" target="_blank" rel="noopener">Original: vercel/ai releases</a></li>
+<li><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">Related: AG-UI protocol</a></li>
+</ul></details></article>
+<article class="story">
+<h3>LangChain.js 1.6.6: Gemini 4 model profiles and &#x27;xhigh&#x27; thinking level</h3>
+<div class="src">langchain-ai/langchainjs · Nov 13, 2026</div>
+<p>A batch of LangChain.js releases adds @langchain/google model profiles for gemini-4-hydrogen plus a Gemini 4 Carbon capability profile and support for the xhigh thinking level (models without it clamp to HIGH). langchain 1.6.6 stops a failed tool call or subagent from crashing the process when nobody consumes its output promise.</p>
+<div class="why">💡 Why it matters to you: Shows that &#x27;thinking effort&#x27; is becoming a standard dial across providers — design your agent config so effort level is a parameter, not hard-coded.</div>
+<details><summary>Read deeper</summary>
+<p>Other fixes: @langchain/core 1.4.1 merges streamed input_json_delta blocks into the preceding tool_use block, and @langchain/anthropic 1.6.5 makes AnthropicToolsOutputParser fall back to tool_calls so withStructuredOutput works when streamed content is normalised to tool_call blocks.</p>
+<p>On the Python side, langgraph 1.2.22 and langchain 1.5.0 were covered in the previous edition.</p>
+<ul class="links">
+<li><a href="https://github.com/langchain-ai/langchainjs/releases" target="_blank" rel="noopener">Original: langchainjs releases</a></li>
+<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">Related: Gemini 4 Carbon announcement</a></li>
+</ul></details></article>
+<article class="story">
+<h3>CrewAI 1.15.38–41: gpt-6-luna default, spreadsheet inputs, eval CLI and RAG data-type discovery</h3>
+<div class="src">crewAIInc/crewAI · Nov 8–12, 2026</div>
+<p>Four quick CrewAI releases make gpt-6-luna the default model, let agents read spreadsheet URLs, add a --no-open flag to crewai eval, remove chromadb from the embedding-function layer, add exact historical state lookup by row id, keep earlier step outputs across a human-feedback resume, and allow approved private URL hosts.</p>
+<div class="why">💡 Why it matters to you: A good snapshot of where multi-agent frameworks are headed: evals in the CLI, human-feedback resume, and tighter network controls.</div>
+<details><summary>Read deeper</summary>
+<p>Details: 1.15.38 corrects how failed crewai eval runs are counted and makes crewai run exit non-zero when the project script fails — handy for CI. 1.15.40 scaffolds standalone agents as JSON by default and runs after_llm_call hooks on async calls. 1.15.41 moves to PyMuPDF 2.x and strips the cache_breakpoint marker on the LiteLLM path.</p>
+<ul class="links">
+<li><a href="https://github.com/crewAIInc/crewAI/releases" target="_blank" rel="noopener">Original: CrewAI releases</a></li>
+<li><a href="https://github.com/google/adk-python/releases" target="_blank" rel="noopener">Related: Google ADK releases</a></li>
+</ul></details></article>
+<h2 id="local">Local models, inference &amp; SDKs</h2>
+<article class="story">
+<h3>Ollama 0.40.12–0.40.15: LFM3 family, decision models and a smarter `ollama launch`</h3>
+<div class="src">ollama/ollama · Oct 27 – Nov 3, 2026</div>
+<p>Between Oct 27 and Nov 3 Ollama added Liquid AI&#x27;s LFM3 family (lfm3, lfm3-vl, lfm3-audio, lfm3-omni), d1 2B and AutoTrust decision models, MiMo V2.6, YaRN long-context scaling for Qwen3/Qwen3.5, concurrent requests for recurrent and vision GGUF models, and launch support for OpenCode v2 and Kimi Code CLI.</p>
+<div class="why">💡 Why it matters to you: `ollama launch claude|codex` now routes coding CLIs at local or cloud models with the right output limits — a fast way to try open-weight models in the tools you already use.</div>
+<details><summary>Read deeper</summary>
+<p>Other changes: speculative decoding with DFlash2 draft models on MLX (0.40.12); `ollama launch claude` applies the model&#x27;s output-token limit and `ollama launch codex` verifies routing first (0.40.14); running `ollama` with no arguments opens a welcome launcher (0.40.15). Today&#x27;s newest build, 0.40.17 (Nov 10, pre-release), adds concurrent generation on MLX and mmap for Vulkan integrated GPUs.</p>
+<p>Spring AI has an Ollama implementation of its new DecisionModel API, so these small decision models are directly usable from Java.</p>
+<pre><code class="lang-bash">ollama launch claude     # route Claude Code at the model you pick
+ollama launch codex</code></pre>
+<ul class="links">
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Original: Ollama releases</a></li>
+<li><a href="https://github.com/spring-projects/spring-ai/releases" target="_blank" rel="noopener">Related: Spring AI releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>llama.cpp b12380–b12387: video decoding hooks in mtmd, NVFP4 scale fix for Qwen2-VL</h3>
+<div class="src">ggml-org/llama.cpp · Nov 14, 2026</div>
+<p>A day of llama.cpp builds fixed garbage output with per-tensor NVFP4 scales in the qwen2vl graph, corrected video pixel aspect ratio/rotation handling in mtmd, let mtmd use a custom video decoder (with wllama compatibility), and fixed Hexagon flash-attention and 32-bit ctz64 issues.</p>
+<div class="why">💡 Why it matters to you: llama.cpp is the engine under most local runners; multimodal video and NVFP4 fixes land in Ollama and LM Studio soon after.</div>
+<details><summary>Read deeper</summary>
+<p>Builds b12385 (NVFP4/qwen2vl), b12381 (video aspect/rotation), b12380 (custom video decoder) and b12383 (ggml-backend split logic) are the notable ones. If a quantised vision model gave you gibberish recently, update before filing a bug.</p>
+<ul class="links">
+<li><a href="https://github.com/ggml-org/llama.cpp/releases" target="_blank" rel="noopener">Original: llama.cpp releases</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Related: Ollama releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Anthropic Java SDK 3.5–3.8: Fable 5.2 models, richer exceptions and stricter path validation</h3>
+<div class="src">anthropics/anthropic-sdk-java · Nov 4–10, 2026</div>
+<p>The Java SDK added claude-fable-5-2 and claude-mythos-5-2 (3.7.0), richer AnthropicServiceException accessors (requestId, workspaceId, errorCode, errorDetails, type, apiMessage) and distinct exception classes for HTTP 408/409/412/413/431/499 (3.5.0), and Claude Tag metrics in analytics (3.8.0). Path parameters are validated far more strictly.</p>
+<div class="why">💡 Why it matters to you: Spring AI&#x27;s Anthropic integration builds on this SDK (Spring AI 2.1.0-RC2 upgrades to Anthropic Java SDK 3.4.0) — the new exceptions make retry/alert logic in Java much easier.</div>
+<details><summary>Read deeper</summary>
+<p>Security-minded fix in 3.5.0: path parameters are encoded more strictly and values like `..;x`, `.;x` and `;x` are rejected; empty, `.` or `..` values for Bedrock model IDs and Vertex/Google Cloud projects now throw instead of hitting a different URL. ANTHROPIC_AWS_BASE_URL works without a region in fromEnv().</p>
+<p>On the Python side, claude-agent-sdk 0.2.182 shipped on Nov 13 (earlier builds bundle the Claude CLI 2.1.318).</p>
+<pre><code class="lang-bash">pip install claude-agent-sdk==0.2.182   # Python agent SDK, released Nov 13</code></pre>
+<ul class="links">
+<li><a href="https://github.com/anthropics/anthropic-sdk-java/releases" target="_blank" rel="noopener">Original: anthropic-sdk-java releases</a></li>
+<li><a href="https://github.com/anthropics/claude-agent-sdk-python/releases" target="_blank" rel="noopener">Related: claude-agent-sdk-python releases</a></li>
+</ul></details></article>
+<h2 id="research">Research, explained simply</h2>
+<article class="story">
+<h3>&#x27;Plain RAG beats agent memory&#x27;: two October papers question complex memory systems</h3>
+<div class="src">arXiv 2610.34073 &amp; 2610.30755 · Oct 22–25, 2026 (via secondary write-ups; not read in full)</div>
+<p>Two recent papers compare dedicated agent-memory systems with simple retrieval over raw history. &#x27;Memory Tax&#x27; reportedly tests 11 memory systems and finds many underperform naive RAG, and &#x27;Is Complex Agentic Memory Always Needed?&#x27; reports Raw-RAG ranking first in six of seven benchmark-model settings across LoCoMo, LongMemEval, MEME and MemoryAgentBench.</p>
+<div class="why">💡 Why it matters to you: Before you add a fancy memory layer to a LangGraph or Spring AI agent, benchmark a plain pgvector/Qdrant retrieval over the raw conversation first — it may win.</div>
+<details><summary>Read deeper</summary>
+<p>Plain-language reading: agent &#x27;memory&#x27; systems summarise or restructure past interactions, and every transformation can lose details. Simple dense retrieval keeps the original text and often finds what is needed. Other work (AMA-Bench) reports memory systems underperforming long-context baselines on long-horizon agent tasks, while MemoryAgentBench found no single approach masters all four memory capabilities.</p>
+<p>Caveat: I could only read secondary summaries and search snippets for these papers, so treat numbers as indicative and check the arXiv abstracts before quoting them. The finding also fits the practical advice in the Spring Modular RAG recipe — spend effort on retrieval quality and filtering first.</p>
+<ul class="links">
+<li><a href="https://papers.cool/arxiv/2610.30755" target="_blank" rel="noopener">Original: &#x27;Is Complex Agentic Memory Always Needed?&#x27; (papers.cool)</a></li>
+<li><a href="https://fourweekmba.com/ai-plain-rag-topped-all-11-agent-memory-systems-in-one-test/" target="_blank" rel="noopener">Related: write-up of the 11-system comparison</a></li>
+</ul></details></article>
+<p class="note">Sources were limited to hosts reachable from the routine's sandbox (GitHub, spring.io, anthropic.com, nodejs.org and web-search results). Items marked as secondary or unverified rely on search snippets or third-party write-ups; check the linked originals before acting.</p>
+<nav class="bot"><a class="cur" href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>My Newspaper · generated 2026-11-15 IST</footer>
+</div></body></html>

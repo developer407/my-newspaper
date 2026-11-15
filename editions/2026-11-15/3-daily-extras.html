@@ -1,0 +1,183 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Daily Extras · Sunday, November 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class="wrap">
+<nav class="top"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class="mast"><h1>The Daily Extras</h1><div class="tag">Tools, repos, project ideas and one thing to learn today</div><div class="meta">Sunday, November 15, 2026 · Edition No. 2 · 10 items · ~6 min read</div></header>
+<section class="top3"><h3>⚡ Top 3 in 30 seconds</h3><ol><li>Tool: Open WebUI 0.13 lets coding agents like Claude Code and Codex show up in the model picker — plus an &#x27;Auto&#x27; mode where a review model decides which tool calls need approval.</li><li>Repo: ag-ui-protocol/ag-ui (17.4k★) — an open event protocol that connects agents to React front ends, with Java and Kotlin SDKs.</li><li>Project idea: a Spring AI &#x27;support desk&#x27; agent with Session Memory, modular RAG and prompt-injection filtering — a tutorial built on this month&#x27;s newest APIs.</li></ol></section>
+<section class="toc"><h3>In this edition</h3>
+<a href="#tools">🛠️ AI tools of the day (3)</a>
+<a href="#repos">⭐ GitHub repos of the day (3)</a>
+<a href="#ideas">💡 Project ideas of the day (3)</a>
+<a href="#learn">📚 Learn this today (1)</a>
+</section>
+<h2 id="tools">🛠️ AI tools of the day</h2>
+<article class="story">
+<h3>Open WebUI 0.13: coding agents as models, Tether companion app and Auto tool-permission mode</h3>
+<div class="src">open-webui/open-webui · Nov 8, 2026</div>
+<p>Open WebUI 0.13.1 lets agents such as Claude Code, Codex and Pi appear in the model picker on Open Terminals that offer them, adds a desktop companion app called Tether, keeps a stable prompt start for tool chats (better provider prompt caching) and adds an Auto mode, off by default, where a review model decides whether a tool call needs approval.</p>
+<div class="why">💡 Why it matters to you: A self-hosted chat UI in front of Ollama or any OpenAI-compatible API is the fastest way to demo local models to clients — and Auto mode is a neat pattern to copy.</div>
+<details><summary>Read deeper</summary>
+<p>Other 0.13.x changes: files under 50,000 characters are included in full instead of retrieved, large chats open about twice as fast, split tab panes and per-chat tab memory arrive, and 0.13.2/0.13.3 fix chats hanging over plain HTTP at LAN or Docker addresses and let automations choose a terminal and folder.</p>
+<p>Start it with Docker and point it at Ollama; the docker command below is the project&#x27;s standard quick start — check the README for the current image tag.</p>
+<pre><code class="lang-bash">docker run -d -p 3000:8080 -v open-webui:/app/backend/data --name open-webui ghcr.io/open-webui/open-webui:main</code></pre>
+<ul class="links">
+<li><a href="https://github.com/open-webui/open-webui/releases" target="_blank" rel="noopener">Original: Open WebUI releases</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Related: Ollama releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Qwen Code: an open-source terminal coding agent from the Qwen team (30k★)</h3>
+<div class="src">QwenLM/qwen-code · trending Nov 15; v0.27.3 released Nov 13, 2026</div>
+<p>Qwen Code is an open-source AI coding agent for the terminal. The latest release adds chips for unfinished background tasks, a DingTalk webhook channel, caps on managed MCP selections and marks Full Access (yolo) as high-risk; nightly builds add per-turn hook recording and fixed-interval /loop schedules.</p>
+<div class="why">💡 Why it matters to you: A free alternative to compare against Claude Code and Codex on your own repos — and a model to try with local Qwen weights through Ollama.</div>
+<details><summary>Read deeper</summary>
+<p>The release notes list no known breaking changes for 0.27.3 and include many dependency security fixes (MCP, DOMPurify, qs, URI, Hono, glob/minimatch) in the nightly. Auto-edit mode now respects permissions.ask rules.</p>
+<p>Install steps and model configuration are in the README — I did not verify a command, so follow the repo rather than a pasted snippet.</p>
+<ul class="links">
+<li><a href="https://github.com/QwenLM/qwen-code/releases" target="_blank" rel="noopener">Original: qwen-code releases</a></li>
+<li><a href="https://github.com/trending?since=daily" target="_blank" rel="noopener">Related: GitHub trending</a></li>
+</ul></details></article>
+<article class="story">
+<h3>n8n: low-code workflow automation for &#x27;AI COO&#x27; style automations</h3>
+<div class="src">n8n-io/n8n · releases 2.47.7 / 2.48.4 / 3.2.2 on Nov 13, 2026</div>
+<p>n8n shipped three builds on Nov 13 (2.47.7 stable, 2.48.4 beta, 3.2.2 pre-release) with a fix that stops redacting executions that use global credentials. n8n is a self-hostable visual workflow tool that can chain webhooks, databases, email and LLM calls.</p>
+<div class="why">💡 Why it matters to you: For your &#x27;AI receptionist / AI COO&#x27; product ideas, n8n is a quick way to prototype the automation glue before you write it in Spring Boot.</div>
+<details><summary>Read deeper</summary>
+<p>The release page only lists that one bug fix, so there is little else to report today — the value here is the tool, not the changelog. A typical prototype: webhook trigger → LLM node → Google Sheets or Postgres → WhatsApp/email notification.</p>
+<p>Self-hosting with Docker keeps customer data in your control, which matters for client work.</p>
+<pre><code class="lang-bash">docker run -it --rm -p 5678:5678 -v n8n_data:/home/node/.n8n n8nio/n8n</code></pre>
+<ul class="links">
+<li><a href="https://github.com/n8n-io/n8n/releases" target="_blank" rel="noopener">Original: n8n releases</a></li>
+<li><a href="https://github.com/open-webui/open-webui/releases" target="_blank" rel="noopener">Related: Open WebUI</a></li>
+</ul></details></article>
+<h2 id="repos">⭐ GitHub repos of the day</h2>
+<article class="story">
+<h3>ag-ui-protocol/ag-ui — the Agent-User Interaction Protocol (17.4k★, MIT)</h3>
+<div class="src">GitHub · maintained with CopilotKit</div>
+<p>AG-UI is an open, lightweight, event-based protocol that standardises how agent back-ends talk to user-facing apps. Back-ends emit about 16 standard event types over SSE, WebSockets or webhooks; integrations cover LangChain, CrewAI, Mastra, Google ADK, Pydantic AI and more, with SDKs including Java and Kotlin.</p>
+<div class="why">💡 Why it matters to you: MCP gives agents tools; AG-UI gives them a UI — a clean way to stream your Spring AI or LangGraph agent&#x27;s steps into a React front end.</div>
+<details><summary>Read deeper</summary>
+<p>The repo shows 5,467 commits and a large set of open issues/PRs, so it is active. The quick start scaffolds a sample app. It positions itself next to MCP (agent↔tools) and A2A (agent↔agent).</p>
+<p>Tutorial angle: stream tool-call progress and partial answers from a Spring Boot endpoint to a React chat component.</p>
+<pre><code class="lang-bash">npx create-ag-ui-app my-agent-app</code></pre>
+<ul class="links">
+<li><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">Original: ag-ui-protocol/ag-ui</a></li>
+<li><a href="https://github.com/google/adk-python/releases" target="_blank" rel="noopener">Related: Google ADK releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>backnotprop/plannotator — plan, annotate and review agent work (11.2k★, +408 today)</h3>
+<div class="src">GitHub trending · TypeScript</div>
+<p>Plannotator is a workspace for planning, annotating and reviewing the work of coding agents, then sending your feedback back to the agent. It was the top repo on GitHub&#x27;s daily trending list on Nov 15.</p>
+<div class="why">💡 Why it matters to you: Reviewing agent plans before they touch code is a habit worth teaching — a good companion for spec-driven development with Claude Code or Codex.</div>
+<details><summary>Read deeper</summary>
+<p>GitHub&#x27;s list shows the repo at 11,190 stars with 408 gained today. I only saw the trending description, so open the README for setup and supported agents.</p>
+<ul class="links">
+<li><a href="https://github.com/backnotprop/plannotator" target="_blank" rel="noopener">Original: backnotprop/plannotator</a></li>
+<li><a href="https://github.com/trending?since=daily" target="_blank" rel="noopener">Related: GitHub trending</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Tencent/LoopForge — self-hosted workflows that orchestrate coding agents with human approval gates</h3>
+<div class="src">GitHub trending · Go · ~939★</div>
+<p>LoopForge runs self-hosted workflows that orchestrate coding agents and pauses at human approval gates. It&#x27;s small (939 stars on the trending list) but squarely in the &#x27;multi-agent with a human in the loop&#x27; area you are exploring.</p>
+<div class="why">💡 Why it matters to you: A study project for approval-gate design — the same idea as Spring AI&#x27;s new tool-call confirmation and ADK&#x27;s require_confirmation.</div>
+<details><summary>Read deeper</summary>
+<p>Written in Go, so you can read the orchestration logic quickly. I only saw the one-line trending description; check the README before depending on it.</p>
+<ul class="links">
+<li><a href="https://github.com/Tencent/LoopForge" target="_blank" rel="noopener">Original: Tencent/LoopForge</a></li>
+<li><a href="https://github.com/google/adk-python/releases" target="_blank" rel="noopener">Related: Google ADK 2.14 release</a></li>
+</ul></details></article>
+<h2 id="ideas">💡 Project ideas of the day</h2>
+<article class="story">
+<h3>Idea: a Spring AI &#x27;support desk&#x27; agent with Session Memory, modular RAG and an injection filter</h3>
+<div class="src">Inspired by Spring AI 2.1 RC1 and the Modular RAG recipe</div>
+<p>Build a customer-support agent in Spring Boot 4 + Spring AI 2.1: Session Memory for multi-turn context, RetrievalAugmentationAdvisor with query rewrite/expansion and chunk filtering over pgvector, and tool-call confirmation before it issues a refund or changes an order.</p>
+<div class="why">💡 Why it matters to you: It uses exactly the new APIs you&#x27;re following, produces a deployable portfolio project and a strong 3-part tutorial (memory → RAG → safe tools).</div>
+<details><summary>Read deeper</summary>
+<p>Scope: Postgres + pgvector via Docker Compose; ingest a FAQ PDF with TokenTextSplitter; add a prompt-injection test set (hostile text inside documents); log every tool call. Compare &#x27;plain RAG&#x27; against the modular pipeline on 20 questions — recent papers suggest simple retrieval is a strong baseline, so measure rather than assume.</p>
+<p>Stretch: a React chat UI streaming events over AG-UI.</p>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/10/02/spring-ai-modular-rag-typesafe-jev" target="_blank" rel="noopener">Spring AI Modular RAG recipe</a></li>
+<li><a href="https://spring.io/blog/2026/10/23/spring-ai-2-1-0-RC1-available-now" target="_blank" rel="noopener">Spring AI 2.1.0-RC1</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Idea: an agent-native front end — React chat that streams tool steps from a Spring Boot agent over AG-UI</h3>
+<div class="src">Inspired by ag-ui-protocol/ag-ui and Vercel AI SDK 7</div>
+<p>Create a reusable React component that shows an agent&#x27;s live steps (thinking, tool call, result, final answer) streamed from a Spring Boot endpoint, using the AG-UI event model or SSE, with a Stop button and an approval dialog for risky tools.</p>
+<div class="why">💡 Why it matters to you: Full-stack AI UI is the bit most tutorials skip — and it combines your React and Spring skills with the hottest agent-protocol trend.</div>
+<details><summary>Read deeper</summary>
+<p>Milestones: (1) SSE endpoint in Spring MVC/WebFlux emitting typed events; (2) React hook that reduces events into UI state; (3) resumable streams after a dropped connection; (4) approval flow. Reference Mastra&#x27;s resumable streams for the UX problem and the AI SDK 7 timeout options for stalled models.</p>
+<ul class="links">
+<li><a href="https://github.com/ag-ui-protocol/ag-ui" target="_blank" rel="noopener">AG-UI protocol</a></li>
+<li><a href="https://github.com/vercel/ai/releases" target="_blank" rel="noopener">Vercel AI SDK releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Idea: a WhatsApp AI receptionist for Indian clinics and salons — booking, reminders and UPI deposits</h3>
+<div class="src">Inspired by the AI-receptionist funding wave (Newo $25M, Phonely, Beside $32M) and Razorpay&#x27;s Ray on WhatsApp</div>
+<p>Prototype an assistant that answers FAQs, books appointments and sends reminders over WhatsApp for small clinics, with a ₹ booking deposit via a Razorpay payment link. Use n8n or Spring Boot for the glue, RAG for clinic FAQs, and human hand-off for anything medical.</p>
+<div class="why">💡 Why it matters to you: Voice/receptionist agents are a funded category elsewhere (Newo raised $25M Series A in Feb 2026; Beside raised $32M in Nov 2025) — an India-first, UPI-native version is an open niche for a SaaS or a course project.</div>
+<details><summary>Read deeper</summary>
+<p>Funding facts come from search results (Newo, Phonely, Beside); I did not find an AI-receptionist round dated Nov 2026. Key design points: opt-in/consent for messages, no medical advice, an audit log of conversations, and a clear fallback to a human.</p>
+<p>Teaching angle: show how to evaluate the bot with a set of 30 realistic booking conversations.</p>
+<ul class="links">
+<li><a href="https://siliconangle.com/2026/02/10/newo-lands-25m-bring-production-ready-ai-receptionists-small-businesses/" target="_blank" rel="noopener">Newo raises $25M Series A (SiliconANGLE)</a></li>
+<li><a href="https://fortune.com/2025/11/11/beside-ai-voice-startup-raises-32-million-ai-receptionist-for-small-business/" target="_blank" rel="noopener">Beside raises $32M (Fortune)</a></li>
+<li><a href="https://razorpay.com/newsroom/razorpay-launches-a-conversational-ai-account-manager-ray-on-whatsapp-for-businesses-in-partnership-with-indusind-bank/" target="_blank" rel="noopener">Razorpay Ray on WhatsApp</a></li>
+</ul></details></article>
+<h2 id="learn">📚 Learn this today</h2>
+<article class="story">
+<h3>Learn today: OAuth 2.1-style security for Spring — PKCE everywhere, short-lived JWTs, RFC 9700 and RFC 8725</h3>
+<div class="src">30–40 minutes · reading + one config change</div>
+<p>Skim RFC 9700 (OAuth 2.0 Security Best Current Practice) and RFC 8725 (JWT best practices), then audit one Spring Boot resource server: allowed algorithms, token lifetime, where tokens are stored in your React app, and whether PKCE is used for public clients.</p>
+<div class="why">💡 Why it matters to you: Auth is the area where small mistakes become incidents — and it ties to your Spring Security + JWT work, plus this week&#x27;s fix for JWT rejection with empty issuer-uri in Boot 4.1.2.</div>
+<details><summary>Read deeper</summary>
+<p>Search-result summaries of the standards agree on the practical rules: use PKCE for all OAuth clients and drop the implicit flow; prefer asymmetric algorithms such as ES256/RS256 and reject the &#x27;none&#x27; algorithm; keep access tokens short (roughly 5–15 minutes); prefer HttpOnly cookies over localStorage for browser tokens; consider passkeys (WebAuthn) as the primary login. OAuth 2.1 itself is described as a consolidation of this guidance — check the IETF datatracker for its current status before citing it as final.</p>
+<p>Checklist for your project: (1) which signing algorithm does your issuer use? (2) what is your access-token TTL and how are refresh tokens rotated? (3) does your React app avoid storing tokens in localStorage? (4) are redirect URIs exact-match? (5) is `iss` validated?</p>
+<pre><code class="lang-properties">spring.security.oauth2.resourceserver.jwt.issuer-uri=https://idp.example.com/realms/demo
+# Spring validates the signature (via JWKS), the issuer and the expiry by default</code></pre>
+<ul class="links">
+<li><a href="https://www.rfc-editor.org/rfc/rfc9700" target="_blank" rel="noopener">RFC 9700 — OAuth 2.0 Security BCP</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc8725" target="_blank" rel="noopener">RFC 8725 — JWT Best Current Practices</a></li>
+<li><a href="https://github.com/spring-projects/spring-security/releases" target="_blank" rel="noopener">Spring Security 7.2.0-RC1 (nonce CSP, WebAuthn)</a></li>
+</ul></details></article>
+<p class="note">Sources were limited to hosts reachable from the routine's sandbox (GitHub, spring.io, anthropic.com, nodejs.org and web-search results). Items marked as secondary or unverified rely on search snippets or third-party write-ups; check the linked originals before acting.</p>
+<nav class="bot"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>My Newspaper · generated 2026-11-15 IST</footer>
+</div></body></html>
