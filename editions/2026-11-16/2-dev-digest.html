@@ -1,0 +1,422 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Dev Digest · Monday, November 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class="wrap">
+<nav class="top"><a href="1-ai-engineer.html">The AI Engineer</a><a class="cur" href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class="mast"><h1>The Dev Digest</h1><div class="tag">Java &amp; Spring, Node &amp; Python, career, security and the rest of the stack</div><div class="meta">Monday, November 16, 2026 · Edition No. 3 · 27 items · ~15 min read</div></header>
+<section class="top3"><h3>⚡ Top 3 in 30 seconds</h3><ol><li>Keycloak 26.8.2 fixes 33 security issues — a stored XSS on the login page and a SAML signature bypass among them — so upgrade if it fronts your Spring Security apps.</li><li>NestJS 12.5.0 adds payload limits across WebSocket, TCP, gRPC and RabbitMQ transports and lowers defaults (WsAdapter 100 MB → 1 MB, TCP localhost-only) — large-message MERN apps will notice.</li><li>Quarkus 4.0.0.CR1, JUnit 6.2.0-M1 and Spring Modulith 2.2.0-RC1 point to where Java is heading — and Go-built tools (Compose, Terraform) needed rebuilds for a CA-trust CVE.</li></ol></section>
+<section class="toc"><h3>In this edition</h3>
+<a href="#java">Java &amp; Spring ecosystem (4)</a>
+<a href="#node">Node / MERN &amp; Python backends (5)</a>
+<a href="#career">Creator &amp; career (India) (4)</a>
+<a href="#security">Security (3)</a>
+<a href="#micro">Microservices &amp; observability (2)</a>
+<a href="#devops">Databases &amp; DevOps (3)</a>
+<a href="#payments">Payments &amp; integrations (2)</a>
+<a href="#react">Frontend: React ecosystem (4)</a>
+</section>
+<h2 id="java">Java &amp; Spring ecosystem</h2>
+<article class="story">
+<h3>Quarkus 4.0.0.CR1: a new Graceful Shutdown API, independent Hibernate validation controls and OIDC back-channel logout</h3>
+<div class="src">quarkusio/quarkus · 4.0.0.CR1, Nov 11, 2026 (pre-release)</div>
+<p>The first Quarkus 4 candidate release adds a new Graceful Shutdown API, gives Hibernate ORM independent controls for validation callbacks and DDL constraints, and adds OIDC back-channel logout for users logged in from several browsers. Bytecode recorders were removed from several extensions (cache, scheduler, reactive datasource clients), and the REST Client now encodes String bodies correctly when the Content-Type declares another charset.</p>
+<div class="why">💡 Why it matters to you: Quarkus is the main Spring Boot alternative in Java shops; knowing its 4.0 direction helps in interviews and in &#x27;Spring Boot vs Quarkus&#x27; content.</div>
+<details><summary>Read deeper</summary>
+<p>The 3.x line keeps shipping alongside (3.40.1.2 and 3.33.4.2 on Nov 9), so 4.0 is clearly the next-major track. The changelog on the release page is truncated, so check the migration guide before judging the breaking surface.</p>
+<p>Compare with Spring Boot 4.2.0-RC2, which ships a Caffeine async cache mode and faster uber-jar lookups: both ecosystems are racing on startup and shutdown behaviour.</p>
+<ul class="links">
+<li><a href="https://github.com/quarkusio/quarkus/releases" target="_blank" rel="noopener">Original: Quarkus releases</a></li>
+<li><a href="https://github.com/spring-projects/spring-boot/releases" target="_blank" rel="noopener">Related: Spring Boot releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>JUnit 6.2.0-M1 is out, with 12 first-time contributors</h3>
+<div class="src">junit-team/junit-framework · 6.2.0-M1, Nov 15, 2026 (milestone)</div>
+<p>JUnit published 6.2.0-M1 (Platform, Jupiter and Vintage all at 6.2.0-M1) on Nov 15. The GitHub page lists 12 first-time contributors but no feature list; the details are in the release notes at docs.junit.org. The current stable line is 6.1.3 (Aug 7).</p>
+<div class="why">💡 Why it matters to you: Your Spring Boot tests run on JUnit 6 now — a milestone is a heads-up to skim the notes, not to upgrade production builds.</div>
+<details><summary>Read deeper</summary>
+<p>Stable cadence so far: 6.1.2 on Jul 12 and 6.1.3 on Aug 7. Milestones normally precede a minor feature release by several weeks.</p>
+<p>If you teach testing, track the 6.2 release notes for new extension and discovery features and re-record outdated JUnit 5 content.</p>
+<ul class="links">
+<li><a href="https://github.com/junit-team/junit-framework/releases" target="_blank" rel="noopener">Original: JUnit 6.2.0-M1 release</a></li>
+<li><a href="https://docs.junit.org" target="_blank" rel="noopener">Related: JUnit docs</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Apache Tomcat patch releases on Nov 9–10: 11.0.29, 10.1.62 and 9.0.124</h3>
+<div class="src">apache/tomcat · tags dated Nov 9–10, 2026 (tags only; release notes not read)</div>
+<p>Tomcat tagged 11.0.28/11.0.29 and 9.0.124 on Nov 9 and 10.1.62 on Nov 10. The tag list does not say what changed, and tomcat.apache.org was not reachable from the sandbox, so the content of these releases is unverified here.</p>
+<div class="why">💡 Why it matters to you: Spring Boot embeds Tomcat, so Boot&#x27;s next patch release will inherit these — check the Tomcat security page before you assume nothing relevant changed.</div>
+<details><summary>Read deeper</summary>
+<p>Earlier tags: 11.0.27 / 10.1.61 / 9.0.123 on Oct 6. A two-tag release on the same day usually means a quick respin of a bad build.</p>
+<p>To override Tomcat in a Boot app today, set the <code>tomcat.version</code> property in Maven or the managed version in Gradle, then re-run your tests.</p>
+<pre><code>&lt;!-- pom.xml --&gt;
+&lt;properties&gt;
+  &lt;tomcat.version&gt;11.0.29&lt;/tomcat.version&gt;
+&lt;/properties&gt;</code></pre>
+<ul class="links">
+<li><a href="https://github.com/apache/tomcat/tags" target="_blank" rel="noopener">Original: Tomcat tags</a></li>
+<li><a href="https://tomcat.apache.org/security.html" target="_blank" rel="noopener">Related: Tomcat security pages</a></li>
+</ul></details></article>
+<article class="story">
+<h3>This Week in Spring (Nov 10): a Java formatter shoot-out recommends spring-javaformat</h3>
+<div class="src">spring.io · This Week in Spring, Nov 10, 2026</div>
+<p>Josh Long&#x27;s weekly roundup links an analysis of four Java formatters shared by Guillaume Laforge, which highlights the Spring Java formatter plugin. The same issue lists Craig Walls&#x27; recipes on migrating to Session Memory and speeding up RAG with faster embeddings, an article on open-source security in the &#x27;AI exploit era&#x27;, and a new Spring AI book by John Blum.</p>
+<div class="why">💡 Why it matters to you: A formatter that fails the build keeps pull requests clean — worth adding to your tutorial projects before you record.</div>
+<details><summary>Read deeper</summary>
+<p>spring-javaformat is the same convention the Spring team uses on its own projects, with Maven and Gradle plugins and a <code>format</code>/<code>validate</code> pair of goals.</p>
+<p>The roundup was written from St. Louis, where a SpringOne Tour stop was taking place.</p>
+<pre><code>&lt;plugin&gt;
+  &lt;groupId&gt;io.spring.javaformat&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-javaformat-maven-plugin&lt;/artifactId&gt;
+  &lt;!-- check the project README for the current version --&gt;
+&lt;/plugin&gt;</code></pre>
+<ul class="links">
+<li><a href="https://spring.io/blog/2026/11/10/this-week-in-spring-november-10th-2026" target="_blank" rel="noopener">Original: This Week in Spring - November 10th, 2026</a></li>
+<li><a href="https://github.com/spring-io/spring-javaformat" target="_blank" rel="noopener">Related: spring-javaformat</a></li>
+</ul></details></article>
+<h2 id="node">Node / MERN &amp; Python backends</h2>
+<article class="story">
+<h3>NestJS 12.5.0 adds payload limits everywhere — and lowers WebSocket and TCP defaults</h3>
+<div class="src">nestjs/nest · v12.5.0 and v11.2.10, Nov 12, 2026</div>
+<p>NestJS 12.5.0 adds limits to transports and adapters: <code>maxPayload</code> for <code>WsAdapter</code>, <code>maxWaitingMessages</code> for <code>IoAdapter</code>, <code>maxConcurrentMessages</code> for TCP, <code>maxPendingResponses</code> for gRPC, <code>maxMessageSize</code> for RabbitMQ and <code>jsonFieldsSize</code> for Fastify multipart. The defaults got tighter: the <code>WsAdapter</code> payload limit drops from 100 MB to 1 MB, the TCP <code>maxBufferSize</code> default falls from 128 Mi to 16 Mi characters, and an unset TCP <code>host</code> now listens on localhost only.</p>
+<div class="why">💡 Why it matters to you: If you run Socket.IO or WebSocket features in a MERN project, large messages will start failing after the upgrade — set the limits deliberately.</div>
+<details><summary>Read deeper</summary>
+<p>Also: multipart requests default to 1,000 parts, a limit set to <code>NaN</code> now uses the default instead of disabling the limit, and guards/interceptors/pipes that can&#x27;t run now fail at startup. The 11.2.10 backport tightens validation: buffers sent in place of validated classes are rejected and validation error messages are capped.</p>
+<p>Update <code>@nestjs/core</code> and the platform packages together, as the release notes advise.</p>
+<pre><code>// microservice over TCP: bind explicitly, it is localhost-only by default now
+const app = await NestFactory.createMicroservice(AppModule, {
+  transport: Transport.TCP,
+  options: { host: &#x27;0.0.0.0&#x27;, port: 3001 },
+});</code></pre>
+<ul class="links">
+<li><a href="https://github.com/nestjs/nest/releases" target="_blank" rel="noopener">Original: NestJS releases</a></li>
+<li><a href="https://github.com/socketio/socket.io/releases" target="_blank" rel="noopener">Related: Socket.IO releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>uv 0.13.8: CPython 3.16 alpha, wheel variants from local paths, and a hardening fix for credential files</h3>
+<div class="src">astral-sh/uv · 0.13.8, Nov 12, 2026</div>
+<p>uv 0.13.8 adds CPython 3.16.0a2 and refreshes the managed 3.11–3.15 builds, lets wheel variants be installed from local paths, direct URLs and Git repositories, makes Unix plaintext credential files owner-only, honours per-index <code>exclude-newer-package</code> cutoffs and stops concurrent <code>uvx</code> / <code>uv run --with</code> calls from building the same environment twice.</p>
+<div class="why">💡 Why it matters to you: For FastAPI/AI-backend work, uv is the fast way to get a reproducible environment — and <code>uv audit</code> (preview) now reports aliased OSV records as one vulnerability.</div>
+<details><summary>Read deeper</summary>
+<p>0.13.7 (Nov 3) added <code>uv workspace metadata --output-version</code> and deduplicated aliased OSV records in <code>uv audit</code>; 0.13.6 (Oct 27) lowered peak memory for large workspace resolution and fixed <code>uv run --active --script</code> deleting non-venv directories.</p>
+<p>Because FastAPI 0.162.6 dropped Python 3.10 this week, <code>uv python install 3.13</code> is the easy way to move a project forward.</p>
+<pre><code>uv python install 3.13
+uv init api &amp;&amp; cd api
+uv add fastapi
+uv audit   # preview: check locked deps against OSV</code></pre>
+<ul class="links">
+<li><a href="https://github.com/astral-sh/uv/releases" target="_blank" rel="noopener">Original: uv releases</a></li>
+<li><a href="https://github.com/fastapi/fastapi/releases" target="_blank" rel="noopener">Related: FastAPI releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Prisma 8.0.0 release candidates: convenience types, named MongoDB indexes and Supabase-friendly extensions</h3>
+<div class="src">prisma/prisma · v8.0.0-rc.21–23, Oct 30 – Nov 6, 2026</div>
+<p>Prisma 8 is in release-candidate stage. rc.23 (Nov 6) gives MongoDB indexes names (changing the storage hash of every MongoDB contract with an index), adds convenience <code>Int</code>/<code>BigInt</code>/<code>Float</code>/<code>Decimal</code>/<code>String</code>/<code>Boolean</code>/<code>Bytes</code> types for PostgreSQL, and lets the pgvector, PostGIS, ParadeDB and citext extension packs find their extension through the search path so <code>db sign</code> can adopt a Supabase database. MySQL gains ORM writes.</p>
+<div class="why">💡 Why it matters to you: A MERN developer eyeing Postgres + pgvector for AI features gets a typed ORM path; just don&#x27;t adopt an RC for a client project.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking notes from rc.21/22: client methods now reject a promise or return a rejected result instead of throwing, so calls need <code>await</code> inside <code>try</code>/<code>catch</code>; enum values can be renamed or deleted on Postgres and SQLite with row rewrites; PostgreSQL date types (<code>DateTime</code>, <code>Date</code>, <code>Time</code>, <code>Duration</code>) are convenience types that read JS <code>Date</code> values or strings.</p>
+<p>Prisma ORM also no longer refuses to start when loaded from more than one copy (rc.23).</p>
+<ul class="links">
+<li><a href="https://github.com/prisma/prisma/releases" target="_blank" rel="noopener">Original: Prisma releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Django 6.1.3, 6.0.10 and 5.2.19 were tagged on Nov 3</h3>
+<div class="src">django/django · tags dated Nov 3, 2026 (tags only; release notes not read)</div>
+<p>Django tagged three releases on the same day — 6.1.3, 6.0.10 and 5.2.19 — the pattern the project uses for security and bug-fix releases across supported branches. The earlier set was 6.1.2 / 6.0.9 / 5.2.18 on Oct 6, and 6.1.1 on Sep 2.</p>
+<div class="why">💡 Why it matters to you: If your AI backend uses Django instead of FastAPI, a three-branch same-day release means look at the security notes before the next deploy.</div>
+<details><summary>Read deeper</summary>
+<p>I couldn&#x27;t read djangoproject.com from the sandbox, so I cannot say whether these were security releases; the three-branch same-day pattern is only a hint.</p>
+<p>Pin to the newest patch of your branch (<code>Django&gt;=6.1.3,&lt;6.2</code>) and run your suite.</p>
+<ul class="links">
+<li><a href="https://github.com/django/django/tags" target="_blank" rel="noopener">Original: Django tags</a></li>
+<li><a href="https://docs.djangoproject.com/en/dev/releases/security/" target="_blank" rel="noopener">Related: Django security archive</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Playwright 1.65 can run its test runner under Bun — and tightens cookies and proxy credentials</h3>
+<div class="src">microsoft/playwright · v1.65.0 (Nov 5), v1.65.1 (Nov 13)</div>
+<p>Playwright 1.65 lets the test runner run under Bun with the <code>--bun</code> flag (no watch mode yet), adds a <code>failures</code> reporter and an <code>onlyFailures</code> option for the HTML/JSON/JUnit reporters and a built-in exclusive test lock. Breaking changes include class fields following <code>useDefineForClassFields</code>, a sharded run with no matching tests failing unless <code>--pass-with-no-tests</code> is passed, RFC 6265 cookie matching, and proxy credentials being sent only to proxy challenges, not to websites.</p>
+<div class="why">💡 Why it matters to you: Your React/Node e2e tests might break on upgrade (sharded CI jobs especially) — read the breaking list before bumping.</div>
+<details><summary>Read deeper</summary>
+<p>1.65.1 fixed a regression where a decorated class with a static field failed to load under <code>useDefineForClassFields: false</code> and off-by-one test locations under Bun 1.4.4+. Browsers: Chromium 159.0.8154.6, Firefox 159.0, WebKit 27.2. Node.js 20 is no longer tested and the Docker images now include Node.js 26.</p>
+<p>Bun&#x27;s own latest release is 1.4.4 (Oct 22).</p>
+<pre><code>npx playwright test --bun</code></pre>
+<ul class="links">
+<li><a href="https://github.com/microsoft/playwright/releases" target="_blank" rel="noopener">Original: Playwright releases</a></li>
+</ul></details></article>
+<h2 id="career">Creator &amp; career (India)</h2>
+<article class="story">
+<h3>PhysicsWallah and Microsoft: AI certification programmes for tier-2 and tier-3 cities, with free intro modules on YouTube</h3>
+<div class="src">Outlook Business, Analytics India Magazine, StartupTalky · reported 2026 (exact date not shown in search results)</div>
+<p>PhysicsWallah has partnered with Microsoft on certification programmes in generative AI, data analytics and digital marketing aimed at learners in tier-2 and tier-3 cities, with joint certificates. Introductory modules are reported to be free on YouTube while the advanced tracks sit on the PW platform. A separate report says the courses cover tools such as Microsoft Copilot, Power BI, Fabric and GitHub.</p>
+<div class="why">💡 Why it matters to you: A big edtech is using free YouTube modules as the funnel for paid AI tracks — the same free-tutorial-to-course model you can run with project-based Spring AI content.</div>
+<details><summary>Read deeper</summary>
+<p>I couldn&#x27;t find independent evidence of employer uptake of these certificates, so treat the career value as unproven. The company listed on NSE and BSE on Nov 18, 2025 (raising about ₹3,480 crore); valuation figures vary between sources.</p>
+<p>Search results did not surface any tech-YouTuber bootcamp launch in November 2026.</p>
+<ul class="links">
+<li><a href="https://www.outlookbusiness.com/corporate/physicswallah-and-microsoft-launch-ai-certification-programs-for-job-readiness" target="_blank" rel="noopener">Original: Outlook Business report</a></li>
+<li><a href="https://analyticsindiamag.com/ai-news/physicswallah-microsoft-to-offer-ai-courses-across-tier-2-3-cities" target="_blank" rel="noopener">Related: Analytics India Magazine</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Indian IT services cut a net 6,981 jobs in FY26 while AI-related hiring rose — the skills mix is what changed</h3>
+<div class="src">Search-index summaries of NewsBytes, Analytics India Magazine and Indeed data · mid-2026 (undated; verify)</div>
+<p>Reports say TCS, Infosys, Wipro, HCLTech and Tech Mahindra together reduced headcount by 6,981 in FY26 while still hiring for AI, cloud and data. One source puts AI-related IT hiring up 16% year on year in June 2026 while overall IT postings fell 3%; Indeed reportedly shows software postings down 12.3%. A prep-industry article quotes TCS&#x27;s CHRO saying 60% of TCS fresher hires in FY26 were AI-skilled.</p>
+<div class="why">💡 Why it matters to you: Generic Java CRUD roles are shrinking while AI + backend roles grow — exactly the pivot you&#x27;re making; put a deployed Spring AI project on your portfolio.</div>
+<details><summary>Read deeper</summary>
+<p>Quality warning: several sources are blogs, the dates are not shown, and a Naukri figure was in yesterday&#x27;s paper with a different growth rate — numbers vary widely by data source, so quote the direction rather than a number.</p>
+<p>Other reports mention Infosys, Wipro and TCS postponing onboarding for more than 10,000 graduates; this is undated in the results.</p>
+<ul class="links">
+<li><a href="https://analyticsindiamag.com/it-services/ai-is-dismantling-both-big-tech-and-indian-it-jobsbut-differently" target="_blank" rel="noopener">Original: Analytics India Magazine</a></li>
+<li><a href="https://www.peoplematters.in/news/recruiting-and-onboarding/software-job-postings-fall-123percent-as-ai-reshapes-tech-hiring-in-india-indeed-50486" target="_blank" rel="noopener">Related: People Matters / Indeed</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Course vs ads: what coding creators say actually pays</h3>
+<div class="src">Creator-economy guides (VidIQ, FluxNote, LearningRevolution) · 2026 (vendor-style blogs; rough estimates)</div>
+<p>Guides agree that for programming channels, courses and sponsorships out-earn ads. Coding tutorials are quoted at roughly $6–15 RPM, partners receive 55% of net ad revenue, and education sponsors are quoted at $1,000–10,000 per integration. A common pricing ladder is $97 standard, $197 premium and $497 cohort, with 0.1–0.5% of viewers buying.</p>
+<div class="why">💡 Why it matters to you: For a project-based Spring AI / React channel, a cohort offer built around one deployable app is the model the guides recommend.</div>
+<details><summary>Read deeper</summary>
+<p>These numbers come from marketing sites and should be treated as rough: one guide claims some educators earn $50K–$200K a month from courses and I could not verify that. A 100,000-view programming video is estimated at $600–$1,500 in ad revenue.</p>
+<p>India-specific rates will differ; use these only as a sanity check.</p>
+<ul class="links">
+<li><a href="https://vidiq.com/blog/post/create-and-sell-online-courses-on-youtube/" target="_blank" rel="noopener">Original: VidIQ: create and sell courses on YouTube</a></li>
+<li><a href="https://fluxnote.io/guides/coding-tutorial-youtube-usa-2026" target="_blank" rel="noopener">Related: FluxNote: coding tutorial YouTube 2026</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Editor&#x27;s pick: a three-video series from this week&#x27;s releases</h3>
+<div class="src">Editorial suggestion built from releases linked below · Nov 2026</div>
+<p>Three tutorials with fresh hooks: (1) &#x27;Claude Code-style agent tools in a Spring Boot app&#x27; using the new spring-ai-agent-utils library; (2) &#x27;Move your FastAPI service to Python 3.13 with uv&#x27; after FastAPI dropped 3.10; (3) &#x27;Your NestJS WebSocket limits just changed&#x27; for MERN viewers.</p>
+<div class="why">💡 Why it matters to you: Each uses a real, dated release as the hook, so the video is timely and searchable, and each fits a short project-based format.</div>
+<details><summary>Read deeper</summary>
+<p>This is an editorial suggestion, not a news item. Hooks: spring-ai-agent-utils 0.13.0 (File, Shell, Skills and Task tools for Spring AI), FastAPI 0.162.6 and uv 0.13.8, NestJS 12.5.0&#x27;s new limits.</p>
+<p>Tip: record against the pinned versions in the notes and put the versions in the title to hold up when the next release lands.</p>
+<ul class="links">
+<li><a href="https://github.com/spring-ai-community/spring-ai-agent-utils" target="_blank" rel="noopener">Original: spring-ai-agent-utils</a></li>
+<li><a href="https://github.com/nestjs/nest/releases" target="_blank" rel="noopener">Related: NestJS 12.5.0</a></li>
+<li><a href="https://github.com/astral-sh/uv/releases" target="_blank" rel="noopener">Related: uv releases</a></li>
+</ul></details></article>
+<h2 id="security">Security</h2>
+<article class="story">
+<h3>Keycloak 26.8.2 fixes 33 issues, including a stored XSS on the login page and a SAML signature bypass</h3>
+<div class="src">keycloak/keycloak · 26.8.2, Nov 5, 2026</div>
+<p>Keycloak 26.8.2 upgrades Quarkus to 3.40.1.1 and lists 33 security fixes. Notable items: a stored XSS on the login page, an out-of-bounds write in the bundled Brotli decoder, account takeover via a stale SSO note in Organization identity-first login, and several SAML issues including a signature bypass via a percent-encoded parameter name.</p>
+<div class="why">💡 Why it matters to you: If Keycloak is your OAuth2/OIDC provider behind Spring Security resource servers, upgrading is non-optional — SAML and login-page issues sit on the unauthenticated surface.</div>
+<details><summary>Read deeper</summary>
+<p>26.8.1 (Oct 13) already fixed about 22 items: unsigned forged logout tokens accepted by OIDC broker back-channel logout when signature validation is disabled, a delegated admin with manage-users able to become realm-admin via group role mappings, and token exchange issuing an active bearer token without required mTLS binding.</p>
+<p>26.8.0 (Oct 1) promoted OID4VCI to preview and moved parameterized scopes and token-exchange delegation &#x27;for AI agents and automation&#x27; to preview — useful context for MCP authorization.</p>
+<pre><code>docker pull quay.io/keycloak/keycloak:26.8.2</code></pre>
+<ul class="links">
+<li><a href="https://github.com/keycloak/keycloak/releases" target="_blank" rel="noopener">Original: Keycloak releases</a></li>
+<li><a href="https://github.com/spring-projects/spring-security/releases" target="_blank" rel="noopener">Related: Spring Security releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Go crypto/x509 CVE-2026-111943: Docker Compose 5.6.1 and Terraform 1.16.7 rebuilt to stop trusting certain compromised CA intermediates</h3>
+<div class="src">docker/compose v5.6.1 (Oct 21) and hashicorp/terraform v1.16.7 (Oct 22)</div>
+<p>Docker Compose 5.6.1 updated to Go 1.26.10 to address a <code>crypto/x509</code> issue (CVE-2026-111943) involving certain CA intermediates and told users to upgrade immediately; Terraform 1.16.7 was built with the same Go release, which stops trusting certificates issued through certain compromised eMudhra intermediate CAs. The MCP servers&#x27; 2.2.0 release (Oct 28) also responded to an October CA-certificate compromise.</p>
+<div class="why">💡 Why it matters to you: Go-built tools in your pipeline (Compose, Terraform, kubectl, Argo CD) carry their own trust logic — update the binaries, not just the OS cert store.</div>
+<details><summary>Read deeper</summary>
+<p>This is a catch-up item (about four weeks old) because it affects tools you probably run daily. Compose 5.7.1 (Nov 11) is current and is built with Go 1.27.4.</p>
+<p>Check with <code>docker compose version</code> and <code>terraform version</code>; if you pin tools in CI, bump them.</p>
+<pre><code>docker compose version
+terraform version</code></pre>
+<ul class="links">
+<li><a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener">Original: Compose v5.6.1</a></li>
+<li><a href="https://github.com/hashicorp/terraform/releases" target="_blank" rel="noopener">Related: Terraform releases</a></li>
+<li><a href="https://github.com/modelcontextprotocol/servers/releases" target="_blank" rel="noopener">Related: MCP servers 2.2.0</a></li>
+</ul></details></article>
+<article class="story">
+<h3>CISA adds four actively exploited flaws (OpenSSH, FreeSWITCH, GPUStack, IBM Aspera Faspex) on Nov 9</h3>
+<div class="src">eSecurityPlanet and tech-insider summaries of CISA&#x27;s KEV additions · Nov 9, 2026 (CVE ids differ between sources)</div>
+<p>CISA added four exploited vulnerabilities — in GPUStack, FreeSWITCH, OpenSSH and IBM Aspera Faspex — to its Known Exploited Vulnerabilities catalogue on Nov 9 with a Nov 12 remediation deadline for federal agencies. One source says Portable OpenSSH 10.6p2 shipped on Nov 5 to close the OpenSSH flaw. A SonicWall SSL VPN auth bypass was added on Nov 6.</p>
+<div class="why">💡 Why it matters to you: GPUStack manages GPU clusters for local LLM serving — a sign that AI infrastructure is now in attackers&#x27; sights; patch your OpenSSH on dev servers and EC2 boxes.</div>
+<details><summary>Read deeper</summary>
+<p>The sources disagree on CVE identifiers (the OpenSSH flaw appears under two different ids), so verify against CISA&#x27;s KEV page before filing tickets. Only the Nov 9 alert itself is first-party; the rest is secondary.</p>
+<p>Also reported: Apple CVE-2024-27834 added Nov 4 with an Nov 18 due date (blog report).</p>
+<ul class="links">
+<li><a href="https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/" target="_blank" rel="noopener">Original: eSecurityPlanet summary</a></li>
+<li><a href="https://tech-insider.org/cisa-kev-gpustack-freeswitch-openssh-aspera-faspex-nov-12-deadline-2026/" target="_blank" rel="noopener">Related: Tech Insider write-up</a></li>
+</ul></details></article>
+<h2 id="micro">Microservices &amp; observability</h2>
+<article class="story">
+<h3>Spring Modulith 2.2.0-RC1 and 2.1.2: events complete inside the listener&#x27;s transaction by default</h3>
+<div class="src">spring-projects/spring-modulith · 2.2.0-RC1 and 2.1.2, Oct 23, 2026 (older than 14 days — slower topic)</div>
+<p>Spring Modulith 2.2.0-RC1 makes event completion run within the listener&#x27;s transaction by default, lets modules declare a dependency on everything they expose (including the base package) and adds a way to verify that certain events do not arrive. 2.1.2 fixes the JDBC/JPA minimum age for resubmitting failed publications and MongoDB archive completion mode, and lets <code>@ApplicationModuleTest</code> resolve on <code>@Nested</code> classes under Spring Boot 4.2.</p>
+<div class="why">💡 Why it matters to you: Modulith&#x27;s event publication registry is the lightweight outbox pattern — the answer to &#x27;monolith first, then microservices&#x27; in system-design interviews.</div>
+<details><summary>Read deeper</summary>
+<p>2.2.0-RC1 builds on Spring Boot 4.2.0-RC1 and Namastack Outbox 1.10.1. A fix ensures completed event publications can no longer be claimed for resubmission and marked as failed again.</p>
+<p>Pair this with the Pulsar-to-ASF news for a tour of messaging options: transaction-bound events in-process, brokers when you split services.</p>
+<ul class="links">
+<li><a href="https://github.com/spring-projects/spring-modulith/releases" target="_blank" rel="noopener">Original: Spring Modulith releases</a></li>
+<li><a href="https://spring.io/blog/2026/11/10/spring-pulsar-new-home-asf" target="_blank" rel="noopener">Related: Spring for Apache Pulsar moves to ASF</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenTelemetry Java 1.68.0: a dedicated metric export worker, resource providers and a breaking sampler change</h3>
+<div class="src">open-telemetry/opentelemetry-java · 1.68.0, Nov 6, 2026</div>
+<p>OpenTelemetry Java 1.68.0 adds null guards and API-usage logging across tracing, metrics, propagation and context APIs, makes <code>PeriodicMetricReader</code> use a dedicated export worker with <code>setExporterTimeout()</code> (defaulting to the export interval), adds experimental <code>SdkResourceProvider</code> support and makes <code>Base16EncodingUtils</code> and <code>TemporaryBuffers</code> stable. Breaking: <code>SamplingIntent.create()</code> and <code>getTraceStateUpdater()</code> now take a <code>BiFunction</code>.</p>
+<div class="why">💡 Why it matters to you: Micrometer and OTel underpin Spring Boot&#x27;s observability — and the GenAI semantic conventions (which Microsoft&#x27;s framework just adopted) are what your LLM traces will use.</div>
+<details><summary>Read deeper</summary>
+<p>1.67.0 (Oct 9) bounded allocations and avoided regex backtracking when parsing W3C <code>tracestate</code>, defaulted OTLP request size limits to 64 MiB and generated <code>service.instance.id</code> by default; 1.66.0 (Sep 11) renamed declarative config POJO setters from <code>with&lt;Prop&gt;</code> to <code>set&lt;Prop&gt;</code>.</p>
+<p>Spring Boot 4.2&#x27;s common OTLP configuration (from 4.2.0-M2) is the config surface most Boot users touch.</p>
+<ul class="links">
+<li><a href="https://github.com/open-telemetry/opentelemetry-java/releases" target="_blank" rel="noopener">Original: opentelemetry-java releases</a></li>
+<li><a href="https://github.com/spring-projects/spring-boot/releases" target="_blank" rel="noopener">Related: Spring Boot 4.2 releases</a></li>
+</ul></details></article>
+<h2 id="devops">Databases &amp; DevOps</h2>
+<article class="story">
+<h3>Argo CD 3.6.0: new health checks, signed hydrated commits (alpha) and a virtual-scrolling Applications list</h3>
+<div class="src">argoproj/argo-cd · v3.6.0 (Nov 3), v3.6.1 (Nov 4)</div>
+<p>Argo CD 3.6.0 adds built-in health checks for Kyverno, cert-manager, Tekton, Velero and CloudNativePG, lets the hydrator sign hydrated commits (alpha), adds metrics and clearer status conditions for ApplicationSet progressive sync, and brings virtual scrolling and lazy loading to the Applications list. 3.6.1 fixes sidebar sync and an <code>index.html</code> minification bug that broke <code>--rootpath</code> and <code>--basehref</code>.</p>
+<div class="why">💡 Why it matters to you: A CloudNativePG health check makes Argo CD a nicer deploy path for a Postgres + pgvector backend on Kubernetes.</div>
+<details><summary>Read deeper</summary>
+<p>Also in 3.6: a resources explorer view, partial JSON unmarshalling and fewer application copies in the refresh path, and an alpha option for Dex to redirect to a selected connector with configurable TLS. 3.5.7 (Nov 2) backports bug fixes including a PodLogs goroutine leak and the CLI honouring proxy variables for gRPC-web.</p>
+<p>Kubernetes itself: v1.38.0-beta.0 landed Nov 6 and 1.37.2 is the latest stable.</p>
+<ul class="links">
+<li><a href="https://github.com/argoproj/argo-cd/releases" target="_blank" rel="noopener">Original: Argo CD releases</a></li>
+<li><a href="https://github.com/kubernetes/kubernetes/releases" target="_blank" rel="noopener">Related: Kubernetes releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Terraform 1.17.2 (Nov 11) and 1.17.1 (Oct 28): safer <code>fmt</code>, policy evaluation on destroy plans</h3>
+<div class="src">hashicorp/terraform · v1.17.2 (Nov 11), v1.17.1 (Oct 28)</div>
+<p>Terraform 1.17.2 speeds up configuration generation from large HCP Terraform queries, fixes a cycle when providers referenced a managed resource with <code>destroy=false</code> and removes repeated unavailable-provider schema warnings in <code>init</code>. 1.17.1 made <code>terraform fmt</code> preserve a file&#x27;s original content if a write errors, always evaluates module policies during destroy plans and reports every policy result for a replaced stacks resource.</p>
+<div class="why">💡 Why it matters to you: If your side projects deploy to AWS (S3, RDS, ECS), these are quiet quality-of-life fixes — and the same Go toolchain fix as in the security section.</div>
+<details><summary>Read deeper</summary>
+<p>The 1.16 line had a patch on Oct 22 (1.16.7) fixing a panic in <code>command/test</code> for schemas with deprecated values.</p>
+<p>Pin Terraform in CI with <code>required_version</code> so a teammate&#x27;s local binary can&#x27;t drift.</p>
+<pre><code>terraform {
+  required_version = &quot;~&gt; 1.17.2&quot;
+}</code></pre>
+<ul class="links">
+<li><a href="https://github.com/hashicorp/terraform/releases" target="_blank" rel="noopener">Original: Terraform releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>MongoDB patch builds on Nov 10–11: 9.0.8, 9.0.7, 8.3.17 and 8.0.38 (tags only)</h3>
+<div class="src">mongodb/mongo · tags r9.0.7–9.0.8, r8.3.16–17 (Nov 11) and r8.0.37–38 (Nov 10)</div>
+<p>MongoDB tagged several server builds on Nov 10–11: r9.0.7 and r9.0.8, r8.3.16 and r8.3.17, and r8.0.37 and r8.0.38. The tag list contains no release notes, so what changed is not confirmed here.</p>
+<div class="why">💡 Why it matters to you: Mongoose 9.12 landed this week (see yesterday&#x27;s paper); server patch levels matter for MERN deployments on Atlas or self-hosted.</div>
+<details><summary>Read deeper</summary>
+<p>Two builds per branch on the same day looks like a respin; check the release notes for fixed-in tickets before choosing a version.</p>
+<p>MongoDB also appears in this week&#x27;s Prisma 8 RC (named indexes) and Spring AI 2.1 (precomputed embeddings in MongoDB Atlas).</p>
+<ul class="links">
+<li><a href="https://github.com/mongodb/mongo/tags" target="_blank" rel="noopener">Original: mongo tags</a></li>
+<li><a href="https://www.mongodb.com/docs/manual/release-notes/" target="_blank" rel="noopener">Related: MongoDB release notes</a></li>
+</ul></details></article>
+<h2 id="payments">Payments &amp; integrations</h2>
+<article class="story">
+<h3>Twilio Java 13.2.0: ConversationRelay attributes, ElevenLabs voices in <code>&lt;Say&gt;</code> and MCP agent-consent fields</h3>
+<div class="src">twilio/twilio-java · 13.2.0, Nov 6, 2026</div>
+<p>Twilio Java 13.2.0 adds ElevenLabs voices to the TwiML <code>&lt;Say&gt;</code> verb, many new <code>&lt;ConversationRelay&gt;</code> and <code>&lt;Language&gt;</code> attributes, and IAM changes including MCP agent-consent fields and AgentsRegistration routes. A library fix makes <code>NetworkHttpClient</code> respect client-configured request settings.</p>
+<div class="why">💡 Why it matters to you: ConversationRelay is Twilio&#x27;s route to voice AI agents — the building block for an AI receptionist you could drive from Spring Boot.</div>
+<details><summary>Read deeper</summary>
+<p>13.1.0 (Oct 14) removed the never-GA Replays API (<code>/v1/Replays</code>), added WhatsApp display names in the Sender API and Conversations Imports endpoints. 13.0.2 (Sep 28) added the <code>twiml_process</code> resource, which replaces <code>twiml_session</code>.</p>
+<p>The MCP consent fields hint at the same trend as Keycloak&#x27;s agent-delegation scopes: platforms are adding identity primitives for agents.</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;com.twilio.sdk&lt;/groupId&gt;
+  &lt;artifactId&gt;twilio&lt;/artifactId&gt;
+  &lt;version&gt;13.2.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<ul class="links">
+<li><a href="https://github.com/twilio/twilio-java/releases" target="_blank" rel="noopener">Original: twilio-java releases</a></li>
+<li><a href="https://github.com/spring-projects/spring-boot/releases" target="_blank" rel="noopener">Related: Spring Boot messaging notes</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Razorpay&#x27;s AI push beyond payments: Agent Studio, RAY on WhatsApp, Sarvam voice commerce and ChatGPT advertising</h3>
+<div class="src">Razorpay newsroom and press coverage · 2026 (several items undated in search results)</div>
+<p>Razorpay has announced Agent Studio (a platform for autonomous operational tasks, reported March 12), RAY — an AI account manager on WhatsApp built with IndusInd Bank — a partnership with Sarvam for voice-first conversational commerce, UPI and payment methods inside OpenAI&#x27;s Codex (reported April 15) and a partnership to help Indian brands advertise on ChatGPT.</p>
+<div class="why">💡 Why it matters to you: Razorpay is wiring itself into agent surfaces (Codex, WhatsApp, voice) — worth knowing if your capstone project takes payments via an agent.</div>
+<details><summary>Read deeper</summary>
+<p>I could not confirm anything new from this week: the newest dated item in the results is the Vulcan press release from August 2026, which was covered yesterday. razorpay-java 1.4.10 (Jul 29) exposes structured API error data (<code>getCode()</code>, <code>getDescription()</code>, <code>getField()</code>, <code>getErrorResponse()</code>) on <code>RazorpayException</code>, which is the practical Java change.</p>
+<p>Check the UPI MDR rules (a 0.4% rate on some larger P2M payments reported from Oct 15) before building pricing around them — it was covered in the last two papers.</p>
+<ul class="links">
+<li><a href="https://razorpay.com/newsroom/" target="_blank" rel="noopener">Original: Razorpay newsroom</a></li>
+<li><a href="https://inc42.com/buzz/razorpay-partners-with-openai-to-help-indian-brands-advertise-on-chatgpt/" target="_blank" rel="noopener">Related: Inc42: Razorpay + OpenAI (ChatGPT ads)</a></li>
+<li><a href="https://github.com/razorpay/razorpay-java/releases" target="_blank" rel="noopener">Related: razorpay-java releases</a></li>
+</ul></details></article>
+<h2 id="react">Frontend: React ecosystem</h2>
+<article class="story">
+<h3>TypeScript 7.0.2 is stable and 7.1 is in beta — the native compiler era</h3>
+<div class="src">microsoft/TypeScript · 7.0.2 (Aug 20), 7.1 Beta (Oct 20), vscode-typescript v1.0.2 (Nov 6)</div>
+<p>TypeScript 7.0.2 is the current stable release (tag originally cut from the typescript-go repository), 7.1 Beta shipped on Oct 20 on npm as <code>7.1.0-beta</code>, and the VS Code extension bundle v1.0.2 (Nov 6) packages the 7.0.2 compiler. The release pages link to the announcement posts for the feature list, which I did not read.</p>
+<div class="why">💡 Why it matters to you: Type-check speed matters on a big Vite + React + Zod codebase — try 7.x in a branch and measure <code>tsc</code> time.</div>
+<details><summary>Read deeper</summary>
+<p>Because the release notes weren&#x27;t itemised on GitHub, check the TypeScript 7.0 announcement post and the 7.1 beta post before upgrading build tooling or editors.</p>
+<p>Vite 8.3.8 (Nov 11, Rolldown 1.2.18) and Next.js 16.4.6 pin their own toolchains, so test the combination rather than assuming.</p>
+<pre><code>npm i -D typescript@7.1.0-beta   # try on a branch
+npx tsc --version</code></pre>
+<ul class="links">
+<li><a href="https://github.com/microsoft/TypeScript/releases" target="_blank" rel="noopener">Original: TypeScript releases</a></li>
+<li><a href="https://github.com/vitejs/vite/releases" target="_blank" rel="noopener">Related: Vite releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>TanStack Query: Vue <code>useQuery</code> returns reactive state; Devtools can filter by key or data</h3>
+<div class="src">TanStack/query · releases of Nov 6, 2026 (vue-query 5.107.0–5.107.1, svelte-query 6.4.0–6.4.1)</div>
+<p>The Nov 6 releases make Vue Query&#x27;s <code>useQuery</code> return a reactive <code>state</code> so a <code>status</code> check narrows <code>data</code>, keep query-core&#x27;s <code>enabled(query)</code> callback, add a Query Devtools filter scope toggle (by key, data or both) and a <code>./production</code> entry for Solid and Svelte Devtools to lazy-load in production builds. Query-core keeps selector error timestamps stable.</p>
+<div class="why">💡 Why it matters to you: Even if you use React Query, the Devtools filtering and stable selector error timestamps come from the shared core — and the &#x27;narrow data by status&#x27; pattern is a good TypeScript lesson.</div>
+<details><summary>Read deeper</summary>
+<p>Other fixes: Vue Query resets <code>isRestoring</code> when a persister fails and <code>useInfiniteQuery</code> no longer types <code>data</code> as possibly undefined when <code>initialData</code> is defined.</p>
+<p>No React-specific packages were listed in these notes, so React users should read the core changes only.</p>
+<ul class="links">
+<li><a href="https://github.com/TanStack/query/releases" target="_blank" rel="noopener">Original: TanStack Query releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>MUI v9.5 and v10.0.0-alpha.0: <code>getOptionValue</code> for Autocomplete and a new focus-ring theme token</h3>
+<div class="src">mui/material-ui · v9.5.0 (Oct 9), v10.0.0-alpha.0 (Oct 12), v9.4.0 (Aug 28)</div>
+<p>MUI 9.5 lets Autocomplete use values other than raw options through <code>getOptionValue</code>, and adds accessibility tests and WCAG conformance reports for several components. The v10 alpha changes the default Autocomplete popup Paper elevation from 1 to 8 and extends <code>theme.focusVisible</code> (added in 9.4) to <code>InputBase</code> and text fields with <code>disableUnderline</code>.</p>
+<div class="why">💡 Why it matters to you: <code>getOptionValue</code> removes the common &#x27;store id, show label&#x27; glue code in forms built with React Hook Form + MUI.</div>
+<details><summary>Read deeper</summary>
+<p>This is a catch-up item (about five weeks old) because the v10 alpha is the first look at MUI&#x27;s next major. The elevation change is the first listed breaking item.</p>
+<p>Tailwind v4.3.5 (Nov 6) fixes <code>color-mix()</code> without an interpolation method and WASM loading, if you&#x27;re mixing MUI with Tailwind.</p>
+<ul class="links">
+<li><a href="https://github.com/mui/material-ui/releases" target="_blank" rel="noopener">Original: material-ui releases</a></li>
+<li><a href="https://github.com/tailwindlabs/tailwindcss/releases" target="_blank" rel="noopener">Related: Tailwind CSS releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>React Router 8.5.1 and 7.18.5 (Oct 27): the v8 line keeps moving next to a maintained v7</h3>
+<div class="src">remix-run/react-router · v8.5.1, v7.18.5 (Oct 27), v8.5.0 (Oct 19)</div>
+<p>React Router shipped 8.5.1 and 7.18.5 on Oct 27, following 8.5.0 on Oct 19. The release page links to the changelog for specifics and doesn&#x27;t itemise changes, so details weren&#x27;t read.</p>
+<div class="why">💡 Why it matters to you: Two supported majors in parallel means you can stay on v7 for existing apps while trying v8 on a new tutorial project.</div>
+<details><summary>Read deeper</summary>
+<p>This is a catch-up item with no specifics from the page — treat it as a pointer, not a review. Check <code>CHANGELOG.md</code> on <code>main</code> (v8) and the <code>v7</code> branch.</p>
+<p>React itself is at 19.3.1 (Oct 14) with the Server Components transport hardening covered earlier this week.</p>
+<ul class="links">
+<li><a href="https://github.com/remix-run/react-router/releases" target="_blank" rel="noopener">Original: react-router releases</a></li>
+<li><a href="https://github.com/facebook/react/releases" target="_blank" rel="noopener">Related: React releases</a></li>
+</ul></details></article>
+<p class="note">Sources were limited to hosts reachable from the routine&#x27;s sandbox (GitHub, spring.io and web-search results); some official sites (tomcat.apache.org, djangoproject.com, InfoQ, YourStory, Inc42) were not reachable, so items marked &#x27;tags only&#x27; or &#x27;undated&#x27; are less certain. Most of the headline Java/Spring news of the last 3 days was already in the Nov 14–15 papers, so this edition covers other projects; items marked &#x27;catch-up&#x27; are older than 14 days but new to this paper.</p>
+<nav class="bot"><a href="1-ai-engineer.html">The AI Engineer</a><a class="cur" href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>My Newspaper · generated 2026-11-16 IST</footer>
+</div></body></html>

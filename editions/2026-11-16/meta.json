@@ -1,0 +1,32 @@
+{
+ "1-ai-engineer.html": {
+  "name": "The AI Engineer",
+  "n": 21,
+  "top3": [
+   "The MCP reference servers shipped 2.4.0 with fixes for six vulnerabilities across filesystem, git and fetch — pin and upgrade any MCP server you've copied from a tutorial.",
+   "Agent frameworks are converging on the same safety defaults: Pydantic AI's security release (SSRF, crafted JSON, deserialized history), Microsoft's approval policies for MCP discovery, and a 30-second default execution limit.",
+   "DSPy 3.5 drops LiteLLM as a hard dependency but 'changes prompts, defaults and APIs' — and the Spring AI community org is assembling a full agent platform (A2A, AgentCore, decision extensions, MCP security)."
+  ],
+  "tag": "AI engineering, in depth — models, agents, Spring AI, MCP, RAG"
+ },
+ "2-dev-digest.html": {
+  "name": "The Dev Digest",
+  "n": 27,
+  "top3": [
+   "Keycloak 26.8.2 fixes 33 security issues — a stored XSS on the login page and a SAML signature bypass among them — so upgrade if it fronts your Spring Security apps.",
+   "NestJS 12.5.0 adds payload limits across WebSocket, TCP, gRPC and RabbitMQ transports and lowers defaults (WsAdapter 100 MB → 1 MB, TCP localhost-only) — large-message MERN apps will notice.",
+   "Quarkus 4.0.0.CR1, JUnit 6.2.0-M1 and Spring Modulith 2.2.0-RC1 point to where Java is heading — and Go-built tools (Compose, Terraform) needed rebuilds for a CA-trust CVE."
+  ],
+  "tag": "Java & Spring, Node & Python, career, security and the rest of the stack"
+ },
+ "3-daily-extras.html": {
+  "name": "The Daily Extras",
+  "n": 10,
+  "top3": [
+   "Tool: Goose 1.59 — an open-source agent that speaks ACP and defers MCP tools; a good test subject for Spring AI's ACP harness client.",
+   "Repo: spring-ai-community/spring-ai-agent-utils (686★) — Claude Code-style file, shell, skills and subagent tools for Spring AI apps, ready for a tutorial series.",
+   "Project idea: an AI recruiting screener for Indian staffing firms on WhatsApp and voice, with Spring Boot, Twilio and Langfuse evals."
+  ],
+  "tag": "Tools, repos, project ideas and one thing to learn today"
+ }
+}

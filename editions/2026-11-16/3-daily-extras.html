@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Daily Extras · Monday, November 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class="wrap">
+<nav class="top"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class="mast"><h1>The Daily Extras</h1><div class="tag">Tools, repos, project ideas and one thing to learn today</div><div class="meta">Monday, November 16, 2026 · Edition No. 3 · 10 items · ~6 min read</div></header>
+<section class="top3"><h3>⚡ Top 3 in 30 seconds</h3><ol><li>Tool: Goose 1.59 — an open-source agent that speaks ACP and defers MCP tools; a good test subject for Spring AI&#x27;s ACP harness client.</li><li>Repo: spring-ai-community/spring-ai-agent-utils (686★) — Claude Code-style file, shell, skills and subagent tools for Spring AI apps, ready for a tutorial series.</li><li>Project idea: an AI recruiting screener for Indian staffing firms on WhatsApp and voice, with Spring Boot, Twilio and Langfuse evals.</li></ol></section>
+<section class="toc"><h3>In this edition</h3>
+<a href="#tools">AI tools of the day (3)</a>
+<a href="#repos">GitHub repos of the day (3)</a>
+<a href="#ideas">Project ideas of the day (3)</a>
+<a href="#learn">Learn this today (1)</a>
+</section>
+<h2 id="tools">AI tools of the day</h2>
+<article class="story">
+<h3>Tool: Goose 1.59 — an open-source agent with ACP session tags, deferred MCP tools and hooks</h3>
+<div class="src">block/goose · v1.59.0, Nov 10, 2026 (v1.59.1 Nov 14)</div>
+<p>Goose, the open-source on-machine coding agent, shipped 1.59 with minimal deferred MCP tools in tool execution, configurable live-voice instructions and endpoint, ACP <code>session/list</code> filtering by client tags, stop/approval/tool hook operations in its agent SDK, and the ability to resume completed delegates with a follow-up. A fix rewords a compaction prompt after Opus 5.5 refused it.</p>
+<div class="why">💡 Why it matters to you: Goose is one of the agents that Spring AI&#x27;s ACP harness client can drive — try it as the &#x27;agent under test&#x27; in a Java demo.</div>
+<details><summary>Read deeper</summary>
+<p>Other fixes: Databricks OAuth tokens refresh before expiry and Gemini thinking level is sent correctly. 1.59.1 (Nov 14) ships builds with desktop packages and full notes &#x27;coming soon&#x27;.</p>
+<p>Try: install the CLI, point it at a local Ollama model, and ask it to add a <code>/health</code> endpoint to a Spring Boot app — then compare to the same task in Claude Code.</p>
+<ul class="links">
+<li><a href="https://github.com/block/goose/releases" target="_blank" rel="noopener">Original: goose releases</a></li>
+<li><a href="https://github.com/spring-ai-community/spring-ai-acp-harness-client" target="_blank" rel="noopener">Related: Spring AI ACP harness client</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Tool: Dify 1.19 — nested workflow tracing, <code>.ifpkg</code> app export and agent file batches</h3>
+<div class="src">langgenius/dify · v1.19.0, Nov 4, 2026</div>
+<p>Dify 1.19 adds nested workflow tracing (external observability tools now show steps inside called Workflow Tools, including their LLM calls), exports and imports Workflow Tools with apps in <code>.ifpkg</code> packages (all app exports use package format v2), batch upload and in-place preview of agent files, and skill management commands in <code>difyctl</code>.</p>
+<div class="why">💡 Why it matters to you: A visual builder is the fastest way to prototype an AI SaaS idea before coding it in Spring AI — and tracing into Langfuse shows you where the prompts go wrong.</div>
+<details><summary>Read deeper</summary>
+<p>Upgrade notes: Docker Compose 2.35.0 or later is required, the plugin daemon moves to 0.6.14-local and a new tracing queue (<code>ops_trace_v2</code>) is used for rolling upgrades. 1.18.0 (Oct 23) added Output Routes for agents and an opt-in Agent Knowledge Base beta.</p>
+<p>Warning from 1.17.1: self-hosters with the bundled Weaviate must complete a staged upgrade first — &#x27;pulling and restarting can silently and permanently break vector search&#x27;.</p>
+<ul class="links">
+<li><a href="https://github.com/langgenius/dify/releases" target="_blank" rel="noopener">Original: dify releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Tool: Docling 2.150 — turn PDFs, Office files and XBRL into clean structured text for RAG</h3>
+<div class="src">docling-project/docling · v2.150.1 (Nov 14), v2.150.0 (Nov 10), v2.149.0 (Nov 8)</div>
+<p>Docling 2.150.0 added iXBRL input and remote taxonomy resolution for XBRL documents and removes original PII from examples by default; 2.150.1 fixed the <code>convert-remote</code> CLI, DOCX heading detection, hyperlinks and tables and speeds up text-heavy PPTX decks roughly 2x–4x. 2.149.0 added opt-in embedded PDF image extraction, a refactored CLI, mlx-audio ASR support and a MiniCPM-OCR VLM preset.</p>
+<div class="why">💡 Why it matters to you: Garbage in, garbage out: parsing invoices, résumés and PDFs properly is step zero for any RAG or AI-recruiting project.</div>
+<details><summary>Read deeper</summary>
+<p>The converter covers Markdown, LaTeX, CSV, JATS and AsciiDoc along with the main office formats, so one pipeline can ingest a mixed folder.</p>
+<p>Pair it with Spring AI&#x27;s new <code>VectorStore.upsert()</code> for precomputed embeddings: parse and embed in Python, serve and query from Spring Boot.</p>
+<pre><code>pip install docling
+docling https://arxiv.org/pdf/2408.09869   # example: convert a PDF to Markdown</code></pre>
+<ul class="links">
+<li><a href="https://github.com/docling-project/docling/releases" target="_blank" rel="noopener">Original: docling releases</a></li>
+<li><a href="https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings" target="_blank" rel="noopener">Related: Spring AI: upsert your own embeddings</a></li>
+</ul></details></article>
+<h2 id="repos">GitHub repos of the day</h2>
+<article class="story">
+<h3>Repo: spring-ai-community/spring-ai-agent-utils — Claude Code-style tools and skills for Spring AI (686★, Apache-2.0)</h3>
+<div class="src">github.com/spring-ai-community/spring-ai-agent-utils · updated Nov 15, 2026 · BOM 0.13.0</div>
+<p>A Java library that reimplements core Claude Code capabilities as Spring AI tools: file read/write/edit, shell with background processes, grep/glob, smart web fetch and Brave search, an ask-the-user tool, Markdown-defined skills, subagents via a task tool (with an A2A module for remote agents), TodoWrite, file-based auto-memory and an interrupt advisor. Requires Java 17+, Spring Boot 3.x or 4.x and Spring AI 2.0.0 or later.</p>
+<div class="why">💡 Why it matters to you: This is the &#x27;build your own Claude Code in Java&#x27; starter — a ready-made tutorial series for your channel.</div>
+<details><summary>Read deeper</summary>
+<p>It is in the Spring AI community org, not the core project, so versions will move. The README example wires <code>TaskTool</code>, <code>SkillsTool</code>, <code>ShellTools</code>, <code>FileSystemTools</code>, <code>GrepTool</code>, <code>GlobTool</code> and <code>TodoWriteTool</code> as default tools on a <code>ChatClient</code>.</p>
+<p>Security note: shell and file tools give the model real power — run examples in a sandbox directory or container and use the approval features in Spring AI 2.1.</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.springaicommunity&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-ai-agent-utils&lt;/artifactId&gt;
+  &lt;version&gt;0.13.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<ul class="links">
+<li><a href="https://github.com/spring-ai-community/spring-ai-agent-utils" target="_blank" rel="noopener">Original: spring-ai-agent-utils</a></li>
+<li><a href="https://github.com/spring-ai-community" target="_blank" rel="noopener">Related: Spring AI community org</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Repo: GoogleChrome/modern-web-guidance-src — keep your coding agent on current web best practices (~7.3k★, Apache-2.0)</h3>
+<div class="src">github.com/GoogleChrome/modern-web-guidance-src · +1,219★ on GitHub Trending today</div>
+<p>Skills and a CLI that feed coding agents current web-platform guidance: 250 modern web features and 203 real-world use cases (accessibility, forms, performance, security, passkeys, built-in AI). The aim is to steer agents away from legacy patterns and heavy polyfills toward native APIs. Stewarded by Chrome, Edge, Firefox and MDN teams.</p>
+<div class="why">💡 Why it matters to you: If your React front end is built with an AI coding agent, this stops it from importing a library for something the browser already does.</div>
+<details><summary>Read deeper</summary>
+<p>Try it without installing: <code>npx modern-web-guidance@latest search &quot;animate a dialog modal backdrop&quot;</code>, or scan an existing project with <code>legacy-scan</code>. Guides are written to be token-efficient — evals were used to prune what models already know.</p>
+<p>There&#x27;s an eval dashboard on GitHub Pages if you want to see how the guidance was measured.</p>
+<pre><code>npx modern-web-guidance@latest install
+npx modern-web-guidance@latest legacy-scan .</code></pre>
+<ul class="links">
+<li><a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" rel="noopener">Original: modern-web-guidance-src</a></li>
+<li><a href="https://developer.chrome.com/docs/modern-web-guidance" target="_blank" rel="noopener">Related: Documentation</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Repo: NVIDIA/SkillEvaluator — validate, de-duplicate and live-test agent skills (1.8k★, Apache-2.0)</h3>
+<div class="src">github.com/NVIDIA/SkillEvaluator · trending Nov 16, 2026 · experimental</div>
+<p>A three-tier framework for agent skills: Tier 1 validates safety and format, Tier 2 detects overlapping guidance using embeddings, Tier 3 runs agents with and without the skill in a sandbox (Docker via Harbor) to see whether it helps. A static quality check gives a score out of 100 with a letter grade (the example scored 86.2, B; default pass threshold 70).</p>
+<div class="why">💡 Why it matters to you: Skills are now a distribution format (Agent Skills was donated to the Agentic AI Foundation in October) — a CI quality gate for them is a new, teachable niche.</div>
+<details><summary>Read deeper</summary>
+<p>Tier 1 needs no API key; full static coverage wants external scanners such as SkillSpector and Gitleaks. The model-backed rubric check needs an NVIDIA Build API key.</p>
+<p><code>skillevaluator ci init</code> sets up PR checks on GitHub.</p>
+<pre><code>pip install skillevaluator
+skillevaluator validate ./my-skill --tiers 1</code></pre>
+<ul class="links">
+<li><a href="https://github.com/NVIDIA/SkillEvaluator" target="_blank" rel="noopener">Original: SkillEvaluator</a></li>
+<li><a href="https://github.com/trending" target="_blank" rel="noopener">Related: GitHub trending</a></li>
+</ul></details></article>
+<h2 id="ideas">Project ideas of the day</h2>
+<article class="story">
+<h3>Idea: an AI recruiting screener for Indian staffing firms — WhatsApp + voice, Spring Boot, Langfuse evals</h3>
+<div class="src">Inspired by HireBound, Hunar.AI and TraqCheck funding (2026) and Twilio Java 13.2.0</div>
+<p>Build an agent that contacts candidates by WhatsApp or a voice call, asks screening questions, scores answers against a job description and hands recruiters a ranked shortlist with transcripts. Use Spring AI with a decision-style classifier for pass/fail, Twilio for messaging and voice, and Langfuse to evaluate screening quality.</p>
+<div class="why">💡 Why it matters to you: It maps straight onto your stack (Spring Boot + React dashboard) and onto a market where AI-hiring startups are raising money — a ready portfolio piece and a 6-part video series.</div>
+<details><summary>Read deeper</summary>
+<p>Scope for a weekend: one job template, WhatsApp text only, a React table for results. Phase two: voice with Twilio ConversationRelay and a rubric-based evaluator in Langfuse.</p>
+<p>Guardrails to teach: explainable scoring (store the rubric and quote evidence), bias review of prompts, and consent messages for recorded calls.</p>
+<ul class="links">
+<li><a href="https://indianstartupnews.com/funding/indian-ai-recruiting-platform-hirebound-raises-2-million-from-kalaari-capital-others-11152224" target="_blank" rel="noopener">Original: HireBound raises $2M</a></li>
+<li><a href="https://inc42.com/buzz/hunar-raises-₹40-cr-to-scale-agentic-ai-for-frontline-hiring/" target="_blank" rel="noopener">Related: Hunar.AI ₹40 Cr round</a></li>
+<li><a href="https://github.com/twilio/twilio-java/releases" target="_blank" rel="noopener">Related: twilio-java releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Idea: an invoice and GST document parser — Docling → Spring AI → pgvector, with a React review screen</h3>
+<div class="src">Built from Docling 2.150, Spring AI 2.1 <code>upsert()</code> and Qdrant/pgvector hybrid-search trends</div>
+<p>Upload invoices and PDFs, convert them with Docling to clean Markdown, extract fields (GSTIN, line items, totals) with a Spring AI structured-output call, store chunks plus your own embeddings in pgvector, and show a React &#x27;review and correct&#x27; screen. Corrections feed an evaluation set.</p>
+<div class="why">💡 Why it matters to you: It&#x27;s the classic &#x27;LLM + CRUD&#x27; business app that small Indian businesses actually want, and it exercises RAG, structured output and evals in one project.</div>
+<details><summary>Read deeper</summary>
+<p>Teach it in three stages: parsing quality (compare with and without Docling), extraction accuracy (a golden set of 20 invoices) and search (hybrid dense + keyword, as Qdrant 1.20&#x27;s BM25 scoring and the general hybrid-by-default advice suggest).</p>
+<p>Use Spring AI&#x27;s <code>VectorStore.upsert()</code> with precomputed embeddings if you embed in Python.</p>
+<ul class="links">
+<li><a href="https://github.com/docling-project/docling" target="_blank" rel="noopener">Original: Docling</a></li>
+<li><a href="https://spring.io/blog/2026/10/28/spring-ai-upsert-own-embeddings" target="_blank" rel="noopener">Related: Spring AI: upsert your own embeddings</a></li>
+<li><a href="https://github.com/qdrant/qdrant/releases" target="_blank" rel="noopener">Related: Qdrant 1.20 release</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Idea: a voice receptionist for clinics and salons — Twilio ConversationRelay, an offline fallback and UPI deposits</h3>
+<div class="src">Built from Twilio Java 13.2.0 (ConversationRelay, ElevenLabs voices) and the llama.cpp speech models added this week</div>
+<p>A phone number that answers, books appointments in a calendar and sends a UPI payment link for a deposit. Use ConversationRelay for streaming speech, a Spring AI tool-calling agent with calendar and payment tools, and a React admin for appointments. Optional: a local speech stack (llama.cpp TTS/ASR) for a privacy-first demo.</p>
+<div class="why">💡 Why it matters to you: &#x27;AI receptionist&#x27; is a top-line item in your interests list, and the plumbing (Twilio, Razorpay or UPI links, Spring AI tools) is all stuff you already know.</div>
+<details><summary>Read deeper</summary>
+<p>Safety checklist for the tutorial: confirm bookings by text, cap tool-call budgets, redact card or UPI details from logs, and add a human-handoff number.</p>
+<p>Start with text on WhatsApp, then add voice — the latency tuning is a good episode on its own.</p>
+<ul class="links">
+<li><a href="https://github.com/twilio/twilio-java/releases" target="_blank" rel="noopener">Original: twilio-java releases</a></li>
+<li><a href="https://github.com/ggml-org/llama.cpp/releases" target="_blank" rel="noopener">Related: llama.cpp releases</a></li>
+<li><a href="https://github.com/razorpay/razorpay-java" target="_blank" rel="noopener">Related: Razorpay Java SDK</a></li>
+</ul></details></article>
+<h2 id="learn">Learn this today</h2>
+<article class="story">
+<h3>Learn today: choosing and tuning a pgvector index — HNSW vs IVFFlat, <code>m</code>, <code>ef_construction</code> and <code>ef_search</code></h3>
+<div class="src">Evergreen · pgvector docs; relevant to Spring AI&#x27;s pgvector store and Qdrant 1.20 HNSW work this week</div>
+<p>Spend 30 minutes on the two index types pgvector offers. HNSW is the default choice: better recall/speed trade-off and no training step, at the cost of slower builds and more memory. IVFFlat builds faster but needs data in the table first and a sensible <code>lists</code> value. Then learn the three knobs that matter for HNSW: <code>m</code>, <code>ef_construction</code> and the query-time <code>hnsw.ef_search</code>.</p>
+<div class="why">💡 Why it matters to you: Every RAG app you build on Spring AI + pgvector lives or dies on recall and latency — this is the one tuning skill that transfers to Qdrant too.</div>
+<details><summary>Read deeper</summary>
+<p>Exercise: load 100k embeddings, build an HNSW index with defaults, measure recall@10 against an exact scan, then raise <code>ef_search</code> until recall hits 0.95 and record the latency. Repeat with IVFFlat.</p>
+<p>Interview angle: be ready to explain why filtered vector search (metadata filters) can hurt recall, and how partial or partitioned indexes help.</p>
+<pre><code>CREATE EXTENSION IF NOT EXISTS vector;
+CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(1536));
+CREATE INDEX ON items USING hnsw (embedding vector_cosine_ops)
+  WITH (m = 16, ef_construction = 64);
+SET hnsw.ef_search = 100;
+SELECT id FROM items ORDER BY embedding &lt;=&gt; &#x27;[...]&#x27; LIMIT 10;</code></pre>
+<ul class="links">
+<li><a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener">Original: pgvector README</a></li>
+<li><a href="https://github.com/qdrant/qdrant/releases" target="_blank" rel="noopener">Related: Qdrant 1.20 release</a></li>
+</ul></details></article>
+<p class="note">Sources were limited to hosts reachable from the routine&#x27;s sandbox (GitHub, spring.io and web-search results). Star counts are from the repo pages at the time of reading.</p>
+<nav class="bot"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>My Newspaper · generated 2026-11-16 IST</footer>
+</div></body></html>

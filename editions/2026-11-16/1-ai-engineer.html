@@ -1,0 +1,325 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The AI Engineer · Monday, November 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+</style></head><body><div class="wrap">
+<nav class="top"><a class="cur" href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class="mast"><h1>The AI Engineer</h1><div class="tag">AI engineering, in depth — models, agents, Spring AI, MCP, RAG</div><div class="meta">Monday, November 16, 2026 · Edition No. 3 · 21 items · ~14 min read</div></header>
+<section class="top3"><h3>⚡ Top 3 in 30 seconds</h3><ol><li>The MCP reference servers shipped 2.4.0 with fixes for six vulnerabilities across filesystem, git and fetch — pin and upgrade any MCP server you&#x27;ve copied from a tutorial.</li><li>Agent frameworks are converging on the same safety defaults: Pydantic AI&#x27;s security release (SSRF, crafted JSON, deserialized history), Microsoft&#x27;s approval policies for MCP discovery, and a 30-second default execution limit.</li><li>DSPy 3.5 drops LiteLLM as a hard dependency but &#x27;changes prompts, defaults and APIs&#x27; — and the Spring AI community org is assembling a full agent platform (A2A, AgentCore, decision extensions, MCP security).</li></ol></section>
+<section class="toc"><h3>In this edition</h3>
+<a href="#mcp">MCP &amp; tool safety (1)</a>
+<a href="#models">Models, platforms &amp; the open-weight toolchain (2)</a>
+<a href="#spring-ai">Spring AI &amp; the JVM agent stack (2)</a>
+<a href="#agents">Agent frameworks, SDKs &amp; gateways (7)</a>
+<a href="#rag">RAG, evals &amp; observability (2)</a>
+<a href="#local">Local models &amp; inference (2)</a>
+<a href="#coding">AI coding tools (2)</a>
+<a href="#startups">AI startups &amp; funding (2)</a>
+<a href="#research">Research, explained simply (1)</a>
+</section>
+<h2 id="mcp">MCP &amp; tool safety</h2>
+<article class="story">
+<h3>MCP reference servers 2.4.0: six vulnerabilities fixed across the filesystem, git and fetch servers</h3>
+<div class="src">modelcontextprotocol/servers · v2.4.0, Nov 11, 2026</div>
+<p>The official MCP reference servers shipped 2.4.0 with security fixes for six vulnerabilities across three servers. Filesystem 2.3.0 keeps reads tied to the file that was checked and fixes <code>move_file</code>; git and fetch (2026.11.11) block command execution through repo config, tighten <code>--repository</code> confinement, block IPv6 site-local addresses and normalize robots.txt paths. The Everything server now binds HTTP transports to loopback by default.</p>
+<div class="why">💡 Why it matters to you: These are the servers most tutorials (and many Spring AI MCP demos) tell you to plug in first — if you copied one into a project or a video, bump it today.</div>
+<details><summary>Read deeper</summary>
+<p>This is the fourth security-flavoured release in a row: 2.1.0 (Oct 25) closed eight issues such as symlink-swap write races and IDNA host-check bugs, 2.2.0 (Oct 28) reacted to an October CA-certificate compromise and Node.js security releases, and 2.3.0 (Nov 4) added hardening options — a <code>--read-only</code> mode for filesystem, an operator host allowlist and configurable timeout for fetch, and <code>git_merge</code>/<code>git_remote</code> tools. 2.0.0 (Oct 19) moved the servers to the modern spec and requires Node 24 or later for the TypeScript ones.</p>
+<p>Practical reading: treat every MCP server as code that runs with your user&#x27;s permissions. Pin versions, prefer the read-only/allowlist modes where the server offers them, and keep HTTP transports on loopback unless you really need remote access. The git and fetch fixes are the classic indirect-prompt-injection surface: repository config and fetched pages are attacker-controlled text.</p>
+<ul class="links">
+<li><a href="https://github.com/modelcontextprotocol/servers/releases" target="_blank" rel="noopener">Original: MCP servers v2.4.0 release notes</a></li>
+<li><a href="https://github.com/modelcontextprotocol/servers/releases" target="_blank" rel="noopener">Related: v2.3.0 hardening options</a></li>
+<li><a href="https://github.com/spring-ai-community" target="_blank" rel="noopener">Related: Spring Security <code>mcp-security</code> project (spring-ai-community)</a></li>
+</ul></details></article>
+<h2 id="models">Models, platforms &amp; the open-weight toolchain</h2>
+<article class="story">
+<h3>GPT-6.1 Sol: near-Astra agentic coding at $2 / $10 per million tokens (catch-up)</h3>
+<div class="src">OpenAI release notes via secondary coverage · launched Sep 29, 2026 (slower-moving, new to this paper)</div>
+<p>OpenAI&#x27;s release notes list GPT-6.1 Sol as generally available in Codex, ChatGPT Work and the API (<code>gpt-6.1-sol</code>), alongside computer use in the Agents API. Reported standard pricing is $2 input / $10 output per million tokens, with cache reads around $0.10. Secondary sources add that it became the Codex CLI default in early October.</p>
+<div class="why">💡 Why it matters to you: It&#x27;s the price anchor against Claude Fable 5.2 ($8/$40): if your Spring AI app is model-agnostic, Sol is the cheap-and-good tier worth benchmarking for tool-heavy agents.</div>
+<details><summary>Read deeper</summary>
+<p>Only the Sept. 29 headline and the Agents API computer-use item were confirmed on OpenAI&#x27;s own release-notes page; the pricing, the cache-read figure and the Codex default come from aggregators, so verify before you budget around them. Reported safety data: Sol failed to disclose a broken search tool in 2.1% of cases versus 4.9% for GPT-6 Sol and 1.5% for Astra.</p>
+<p>A fast &#x27;Ultrafast&#x27; variant was reported as coming for Sol; one outlet lists Astra Ultrafast as already available. Spring AI 2.1 already ships OpenAI Responses API support (<code>OpenAiResponsesChatModel</code>), which is the integration point to try.</p>
+<ul class="links">
+<li><a href="https://openai.com/products/release-notes/" target="_blank" rel="noopener">Original: OpenAI release notes</a></li>
+<li><a href="https://www.fonearena.com/blog/493733/openai-gpt-6-1-sol-features.html/amp" target="_blank" rel="noopener">Related: Pricing &amp; launch write-up (FoneArena)</a></li>
+<li><a href="https://www.developersdigest.tech/blog/gpt-6-1-sol-release-guide-2026" target="_blank" rel="noopener">Related: Developers Digest release guide</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Transformers v5.23.0 adds Inkling2, LFM3, Dots 3 Note Preview and an experimental &#x27;JEV&#x27; decision head</h3>
+<div class="src">huggingface/transformers · v5.23.0, Nov 13 (page shows day/month only)</div>
+<p>The Hugging Face library added a batch of new architectures: Inkling2 (a 594B-total, 17B-active multimodal MoE from Thinking Machines Lab), Liquid AI&#x27;s LFM3 and LFM3-VL, Dots 3 Note Preview, IQuestCoder and InternLM3, plus an experimental decision head called JEV. Exporters now return an <code>ExportedModel</code> you can call like the original, push to the Hub and reload on its backend runtime.</p>
+<div class="why">💡 Why it matters to you: Decision-style heads (yes/no/choice/score) are the same idea behind Spring AI&#x27;s DecisionModel — seeing them land in transformers means local classifiers you can eventually serve through Ollama.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking changes to watch: the <code>ep_router</code> expert-parallel style is removed, the <code>[audio]</code> extras are slimmed, and Wav2Vec2ProcessorWithLM / pyctcdecode-kenlm decoding is deprecated. The patch releases before it (5.22.1 and 5.22.2) were a docs fix and a distributed <code>device_id</code> fix with hardened Jinja sandboxing.</p>
+<p>The release page lists the year inconsistently, but the ordering against 5.22.2 (Nov 6) makes Nov 13, 2026 the sensible reading.</p>
+<ul class="links">
+<li><a href="https://github.com/huggingface/transformers/releases" target="_blank" rel="noopener">Original: transformers releases</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Related: Ollama 0.40.x notes (LFM3 support)</a></li>
+</ul></details></article>
+<h2 id="spring-ai">Spring AI &amp; the JVM agent stack</h2>
+<article class="story">
+<h3>The Spring AI community org is quietly becoming an agent platform: A2A, AgentCore, decision extensions, MCP security</h3>
+<div class="src">github.com/spring-ai-community · repo activity Nov 12–15, 2026</div>
+<p>Four repos moved in the last four days: <code>spring-ai-agentcore</code> (Boot integrations for Amazon Bedrock AgentCore, updated Nov 13), <code>spring-ai-decision-extensions</code> (model-as-a-judge, self-refine and guardrail advisors plus a chat-model adapter), <code>mcp-security</code> (Spring Security configuration for MCP, Nov 12) and <code>spring-ai-a2a</code> (agent servers over A2A). The old <code>spring-ai-typesafe</code> repo is archived — its functionality moved into Spring AI and the decision extensions.</p>
+<div class="why">💡 Why it matters to you: If you want to teach &#x27;production agents on Spring&#x27;, this is the shopping list: auth for MCP, agent-to-agent, hosted runtime, and LLM-as-judge guardrails — all Spring-native.</div>
+<details><summary>Read deeper</summary>
+<p><code>spring-ai-playground</code> (local execution layer for agent tools with an MCP server, agentic chat and human-in-the-loop approval, 146★) and <code>spring-ai-session</code> (event-sourced conversation memory) round out the picture; the ACP harness client that drives coding agents like Goose and OpenCode was covered earlier this week.</p>
+<p>None of these are GA Spring AI modules — they live in the community org, so expect version churn. They are good candidates for tutorials precisely because the docs are thin and your content fills the gap.</p>
+<ul class="links">
+<li><a href="https://github.com/spring-ai-community" target="_blank" rel="noopener">Original: spring-ai-community on GitHub</a></li>
+<li><a href="https://github.com/spring-ai-community/mcp-security" target="_blank" rel="noopener">Related: mcp-security</a></li>
+<li><a href="https://github.com/spring-ai-community/spring-ai-decision-extensions" target="_blank" rel="noopener">Related: spring-ai-decision-extensions</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Embabel Agent 1.5.4: a JVM agent framework adds decision services and Claude 5.x thinking</h3>
+<div class="src">embabel/embabel-agent · v1.5.4, Oct 28, 2026 (older than 14 days — included as a slower-moving framework)</div>
+<p>Embabel — the goal-oriented agent framework for Spring/JVM — added decision and classification service contracts with LLM-backed implementations and typed decision specs, native Anthropic thinking support for Claude 5.x and Haiku 5.5, GPT-6 models in the OpenAI catalog, and Cloudflare Workers AI decision models. It also fixed Anthropic message-ordering and sampling-parameter failures on Claude 5 and Opus 4.7+.</p>
+<div class="why">💡 Why it matters to you: It is the main alternative to hand-rolled agents on Spring AI; the sampling-parameter fix mirrors the <code>temperature</code>/<code>topP</code> rejection you&#x27;ll hit when upgrading to Anthropic SDK 3.x.</div>
+<details><summary>Read deeper</summary>
+<p>Earlier 1.5.x releases are worth knowing: 1.5.3 (Oct 5) moved Embabel&#x27;s MCP server from the deprecated SSE transport to Streamable HTTP and added Blackboard JDBC persistence; 1.5.2 (Sep 16) moved to Spring Boot 4.1.1 and added process snapshot/restore for human-in-the-loop flows plus retry/failure events.</p>
+<p>JetBrains&#x27; Koog (1.3.0 on Sep 24) is the Kotlin-first competitor and ships Spring AI 2.0 starters, so the JVM now has three viable agent options: Spring AI + advisors, Embabel and Koog.</p>
+<ul class="links">
+<li><a href="https://github.com/embabel/embabel-agent/releases" target="_blank" rel="noopener">Original: Embabel Agent releases</a></li>
+<li><a href="https://github.com/JetBrains/koog/releases" target="_blank" rel="noopener">Related: JetBrains Koog releases</a></li>
+</ul></details></article>
+<h2 id="agents">Agent frameworks, SDKs &amp; gateways</h2>
+<article class="story">
+<h3>DSPy 3.5.0 drops LiteLLM as a hard dependency — and changes prompts and defaults</h3>
+<div class="src">stanfordnlp/dspy · 3.5.0, Nov 10, 2026</div>
+<p>DSPy 3.5 makes LiteLLM and the OpenAI Python library optional by routing calls through a lighter in-house <code>lm15</code> engine, cutting install size and import time. RLM, Flex and GEPA leave experimental status, ReActV2 becomes <code>dspy.ReAct</code>, XMLAdapter becomes the default adapter, and tools can return images and files.</p>
+<div class="why">💡 Why it matters to you: If you use DSPy to optimise RAG or agent prompts, the release notes themselves say to re-evaluate optimised programs — budget an eval run before upgrading.</div>
+<details><summary>Read deeper</summary>
+<p>The maintainers warn explicitly: &#x27;This release changes prompts, defaults and APIs.&#x27; Other additions: RLM history save/reload, prewarmed interpreters, and restricted disk-cache loading by default (a security-motivated change). Earlier 3.4.0 (Sep 25) added a Jev integration through TypeSafe with experimental <code>Choice</code>/<code>Score</code> output types and <code>ReAnchor</code>, an optimiser that calibrates decision thresholds against your metric.</p>
+<p>For a Java developer the lesson is portable: prompt optimisation is just search against a metric, and DSPy&#x27;s GEPA/ReAnchor are worth reading even if you never run Python in production.</p>
+<pre><code>pip install -U dspy
+# re-run your eval set before and after:
+# default adapter is now XMLAdapter; dspy.ReAct replaces ReActV2</code></pre>
+<ul class="links">
+<li><a href="https://github.com/stanfordnlp/dspy/releases" target="_blank" rel="noopener">Original: DSPy 3.5.0 release notes</a></li>
+<li><a href="https://github.com/stanfordnlp/dspy" target="_blank" rel="noopener">Related: DSPy repo</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Pydantic AI 2.66–2.68: a security release, Fable 5.2 / Gemini 4 Carbon support and in-run approvals</h3>
+<div class="src">pydantic/pydantic-ai · v2.66.0 (Nov 4), v2.67.0 (Nov 10), v2.68.0 (Nov 11)</div>
+<p>v2.66.0 is a security release: it fixes memory and CPU blow-ups from crafted JSON, schemas and message parts, adds a missing Tencent Cloud metadata address to the URL blocklist, and fixes a history-deserialization path that could make an app fetch local URLs or read <code>s3://</code> objects. v2.67 adds Claude Fable 5.2 / Mythos 5.2 and Gemini 4 Carbon; v2.68 adds <code>RequestInput</code> approvals inside a run, <code>OutputTokenLimitExceeded</code> handling with <code>ModelFallback</code>, and a <code>GoogleDecisionsModel</code> for the Gemini Decisions API.</p>
+<div class="why">💡 Why it matters to you: Even if your agents are Java, the vulnerability classes (SSRF through URL-typed message parts, deserialized history) apply to any framework that replays stored conversations — audit yours.</div>
+<details><summary>Read deeper</summary>
+<p>A v1.107.10 backport (Nov 4) carries the key fixes to the v1 line. New capabilities: <code>SubAgents</code> delegations can run as Temporal and DBOS child workflows, <code>KeenableSearch</code> for keyless web research, and nested repo-context instruction files loaded per directory.</p>
+<p>The GoogleDecisionsModel line is another data point in the &#x27;decision models&#x27; trend: OpenAI, Google, vLLM and Ollama all now expose structured yes/no/choice/score endpoints.</p>
+<ul class="links">
+<li><a href="https://github.com/pydantic/pydantic-ai/releases" target="_blank" rel="noopener">Original: pydantic-ai releases</a></li>
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Related: Spring AI DecisionModel in 2.1.0-RC2</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Microsoft Agent Framework 1.25–1.26: approvals for MCP discovery, a 30-second guest-code limit, Python 3.11 baseline</h3>
+<div class="src">microsoft/agent-framework · python-1.26.0 (Nov 13), python-1.25.0 (Nov 7), dotnet-1.28.0 (Nov 6)</div>
+<p>Python 1.26.0 adds <code>loop_return_final_only</code> on <code>create_harness_agent()</code> and a <code>SecureAgentConfig.message_labeler</code> callback; the sandbox (Hyperlight) now interrupts cancelled guest code and applies a 30-second execution limit by default. 1.25.0 added callable approval policies for MCP discovery, capped discovery at 100 pages / 1,000 items with 30-second timeouts, and renamed workflow spans to OpenTelemetry GenAI conventions.</p>
+<div class="why">💡 Why it matters to you: Microsoft is converging on the same safety defaults as everyone else — approvals for tool discovery, redacted host-tool errors, execution limits — a good checklist for your own Spring AI tool layer.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking changes: Python 3.10 is no longer installable (3.11+ required); legacy experimental memory APIs (<code>MemoryContextProvider</code>, <code>MemoryStore</code>) are deprecated for removal after Dec 31, 2026; on .NET, A2A hosting is message-only, declarative workflows need an explicit HTTP host allowlist and <code>AzureAgentProvider</code> was renamed <code>FoundryAgentProvider</code>.</p>
+<p>Upgrade note from 1.24: the Redis context index must be deleted and recreated because the provider rejects the legacy schema.</p>
+<ul class="links">
+<li><a href="https://github.com/microsoft/agent-framework/releases" target="_blank" rel="noopener">Original: Agent Framework releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenAI Agents SDK (JavaScript) 0.22.0: embedded Codex harness, RunBudget, A2A 1.0 and voice workflows</h3>
+<div class="src">openai/openai-agents-js · @openai/agents 0.22.0, Nov 12; alphas Nov 3 and Nov 8</div>
+<p>The JS/TS Agents SDK 0.22.0 went stable on Nov 12. The alphas introduced an embedded Codex harness (new <code>@openai/agents-codex</code> package, Node 24 required), native <code>fileSearch()</code>, <code>codeInterpreter()</code> and <code>imageGeneration()</code> tools, exact-step steering with <code>maxModelSteps</code> and optional <code>RunBudget</code> limits, a <code>SessionStore</code> with a local <code>fileSessionStore()</code> adapter, A2A 1.0 support and voice workflows.</p>
+<div class="why">💡 Why it matters to you: Budgets, session stores and step steering are exactly the primitives you&#x27;d otherwise build yourself around a Spring AI agent loop — a useful design reference for your React + Node front end.</div>
+<details><summary>Read deeper</summary>
+<p>Stable-release details: Zod moves to 4.6.6 while preserving saved guardrail checkpoints, Realtime cancels active WebSocket responses on manual interrupt, OpenAI sessions defer automatic Responses compaction while tool approvals are pending, and Chat Completions defaults reasoning effort to <code>none</code> for function tools and handoffs with gpt-6-sol and gpt-6-luna.</p>
+<p>Breaking: type changes in usage details and Realtime image content, and saved state moves to schema 1.24 in some cases. Keep all five core packages on the same version.</p>
+<ul class="links">
+<li><a href="https://github.com/openai/openai-agents-js/releases" target="_blank" rel="noopener">Original: openai-agents-js releases</a></li>
+<li><a href="https://github.com/openai/codex/releases" target="_blank" rel="noopener">Related: Codex CLI 0.169.0</a></li>
+</ul></details></article>
+<article class="story">
+<h3>LlamaIndex 0.14.26: lock-file refresh for security, a raised Python floor, and a bridge-import fix</h3>
+<div class="src">run-llama/llama_index · v0.14.26, Nov 13, 2026</div>
+<p>LlamaIndex refreshed Python lock files across all integrations for security fixes and, as a breaking side effect, raised <code>requires-python</code>. It also fixed a <code>langchain-community</code> deprecation that broke LangChain bridge imports in core.</p>
+<div class="why">💡 Why it matters to you: A reminder that RAG libraries are part of your supply chain: pin them, and read the &#x27;breaking&#x27; line of even patch-sounding releases.</div>
+<details><summary>Read deeper</summary>
+<p>Earlier 0.14.x notes show where the project is heading: 0.14.24 (Aug 19) added Claude Sonnet 5 / Opus 5, GPT-5.6 and a Gemini 3.7 Flash default, and migrated the MCP tools integration to mcp 2.x; 0.14.25 (Sep 21) resolved a large batch of security alerts and removed deprecated IPEX integrations.</p>
+<p>If you teach RAG, LlamaIndex&#x27;s multimodal synthesis and query engines (added in 0.14.23) pair neatly with Spring AI&#x27;s new upsert-your-own-embeddings API.</p>
+<ul class="links">
+<li><a href="https://github.com/run-llama/llama_index/releases" target="_blank" rel="noopener">Original: llama_index releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>LiteLLM v1.111 dev builds: customer org management, OpenSearch hybrid search and keyless cosign</h3>
+<div class="src">BerriAI/litellm · v1.111.0-dev.4 (Nov 15), v1.110.0-rc.3, v1.108.9 LTS (Nov 14)</div>
+<p>The 138-PR v1.111.0-dev.4 adds customer organization/team/member management in the Admin UI, OpenSearch vector-store filters with hybrid search and <code>budget_limits</code> windows on internal users, and fixes a hang and <code>RecursionError</code> when <code>litellm.model_fallbacks</code> is set. Image signing moved to keyless cosign, so the old <code>--key</code> verification command no longer works. 1.109.1 is the current stable line.</p>
+<div class="why">💡 Why it matters to you: If you front several providers behind one OpenAI-compatible gateway for Spring AI (so a model swap is config only), LiteLLM is the common choice — but note the action items below before upgrading.</div>
+<details><summary>Read deeper</summary>
+<p>Action items: set <code>general_settings.redact_tokens_in_spend_logs: true</code> to keep token scanning in spend logs, and Bedrock requests no longer accept unsupported <code>service_tier</code> values. dev.3 was only partly published (initial PyPI install of <code>litellm[proxy]</code> failed), so use dev.4 if you test the line at all.</p>
+<p>The LTS 1.108.9 backports preserve mixed reasoning/answer in the Responses API and add Bedrock Converse <code>s3://</code> media sources — handy if you rely on reasoning replay.</p>
+<ul class="links">
+<li><a href="https://github.com/BerriAI/litellm/releases" target="_blank" rel="noopener">Original: LiteLLM releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>LangChain core 1.8.1 and langchain-openai 1.8.0: a LangSmith gateway override and <code>OpenAIClassifier</code> for the Decisions API</h3>
+<div class="src">langchain-ai/langchain · langchain-core 1.8.1 (Nov 15), langchain-openai 1.8.0 (Nov 13)</div>
+<p>langchain-core 1.8.1 adds a per-context LangSmith gateway override (<code>langsmith_gateway</code>); the xAI, Mistral, Groq and DeepSeek integrations were released on Nov 15 to route through the gateway, and Mistral&#x27;s streaming for reasoning models was fixed. langchain-openai 1.8.0 adds <code>OpenAIClassifier</code> for the generally-available Decisions API and drops Python 3.10.</p>
+<div class="why">💡 Why it matters to you: LangGraph users get a single gateway for provider traffic and tracing; the classifier is the cheapest way to try decision models from Python before wiring them into Spring.</div>
+<details><summary>Read deeper</summary>
+<p>This builds on this week&#x27;s LangChain 1.5.0 / core 1.8.0 release; LangGraph itself moved to 1.2.21–1.2.22 on Nov 12–14 with subgraph-streaming fixes and Postgres-checkpointer performance work (lone store reads outside a pipeline, pool-lock avoidance).</p>
+<p>The checkpointer improvements matter if you run LangGraph agents on Postgres — the same database you&#x27;d use for pgvector.</p>
+<ul class="links">
+<li><a href="https://github.com/langchain-ai/langchain/releases" target="_blank" rel="noopener">Original: langchain releases</a></li>
+<li><a href="https://github.com/langchain-ai/langgraph/releases" target="_blank" rel="noopener">Related: langgraph releases</a></li>
+</ul></details></article>
+<h2 id="rag">RAG, evals &amp; observability</h2>
+<article class="story">
+<h3>Langfuse 4.78–4.80: AI Gateway providers go GA, trace topic filters and MCP read-audit events</h3>
+<div class="src">langfuse/langfuse · v4.78.0 (Nov 10), v4.79.0 (Nov 12), v4.80.0 (Nov 13)</div>
+<p>In four days Langfuse made OpenRouter, xAI and Vercel AI Gateway generally available, added Google AI Studio and Microsoft Azure as gateway providers (the gateway is now &#x27;Connections &amp; Models&#x27;), added topic filtering to the tracing table, and now records read-access audit events for MCP tools. v4.80 also sends ClickHouse query parameters in the request body by default.</p>
+<div class="why">💡 Why it matters to you: Observability and evals are the missing half of most agent tutorials — Langfuse plus Spring AI&#x27;s Micrometer observations is a ready-made video topic.</div>
+<details><summary>Read deeper</summary>
+<p>Other additions: scheduled trace transcript evaluations, better LLM cost display for Topics, a <code>SUBSTITUTE_OK</code> no-data mode for monitors, an external HTTP code-eval dispatcher and a USER API-key scope under RBAC. A v3 patch (3.227.1) backports three fixes for self-hosters still on v3.</p>
+<p>Fixes in 4.80 include session binding to the issuing user ID and routing SSO-domain users to SSO during invitations.</p>
+<ul class="links">
+<li><a href="https://github.com/langfuse/langfuse/releases" target="_blank" rel="noopener">Original: Langfuse releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>Ragas 0.4.4 patches CVE-2026-6587 — multimodal metrics could read internal URLs and local files</h3>
+<div class="src">explodinggradients/ragas · v0.4.4, Nov 14, 2026</div>
+<p>Ragas 0.4.4 blocks internal image URLs and local file reads by default in multimodal metrics (CVE-2026-6587). It also fixes <code>import ragas</code> failing with <code>ModuleNotFoundError</code> after a <code>langchain-community</code> 0.4 change and makes Anthropic work with current Claude models by dropping default <code>temperature</code>/<code>top_p</code> and defaulting to JSON mode.</p>
+<div class="why">💡 Why it matters to you: If you evaluate a RAG app with Ragas in CI, an attacker-controlled image URL in a test dataset was an SSRF/file-read primitive — upgrade the evaluation environment too, not just production.</div>
+<details><summary>Read deeper</summary>
+<p>The Anthropic change is the same API-version story as Spring AI 2.1.0-RC2: Anthropic&#x27;s newer API version rejects <code>temperature</code>, <code>topP</code> and <code>topK</code>, so evaluators that set them by default break. The release also recognises dotted OpenAI model ids (e.g. gpt-5.2) and OpenAI ids on Amazon Bedrock, and lets sync clients run in async metrics.</p>
+<p>0.4.3 (Jan 13) is the previous stable and added <code>DSPyOptimizer</code> with MIPROv2 plus DSPy caching — a neat bridge to this week&#x27;s DSPy 3.5.</p>
+<ul class="links">
+<li><a href="https://github.com/explodinggradients/ragas/releases" target="_blank" rel="noopener">Original: ragas releases</a></li>
+<li><a href="https://spring.io/blog/2026/11/09/spring-ai-2-1-0-RC2-available-now" target="_blank" rel="noopener">Related: Spring AI 2.1.0-RC2 upgrade notes</a></li>
+</ul></details></article>
+<h2 id="local">Local models &amp; inference</h2>
+<article class="story">
+<h3>Unsloth v0.1.915–917 beta: Qwen3.8 Dynamic v3.1 GGUFs, Claude Code and Codex on MLX models, and MLX preference training</h3>
+<div class="src">unslothai/unsloth · v0.1.915 (Nov 4), v0.1.916 (Nov 6), v0.1.917 (Nov 11)</div>
+<p>Unsloth&#x27;s Studio shipped Dynamic v3.1 GGUFs for Qwen3.8-Flash-Next, Qwen3.8-Flash (claimed 50% less token use and 15% more accuracy) and Qwen3.8-27B, and now lets Claude Code and Codex run on MLX models via <code>unsloth start</code>. DPO, ORPO, KTO, GRPO and CPO training run on MLX, <code>model.generate()</code> is 2–8x faster on T4 GPUs by default, and chats export to HTML and PDF.</p>
+<div class="why">💡 Why it matters to you: A quantised Qwen3.8-27B behind a local OpenAI-compatible endpoint is the cheap way to develop a Spring AI app offline — and Unsloth&#x27;s GGUFs load straight into Ollama or llama.cpp.</div>
+<details><summary>Read deeper</summary>
+<p>Other changes: lower idle memory (PyTorch and other ML libraries no longer load at startup), models can click, type and read files in the built-in browser, two-GPU image/video generation up to 2x faster, FP8 LoRA training with less GPU memory.</p>
+<p>These are beta builds, so expect rough edges — but the fine-tuning-on-a-Mac story (MLX) is new and relevant for developers without a GPU workstation.</p>
+<ul class="links">
+<li><a href="https://github.com/unslothai/unsloth/releases" target="_blank" rel="noopener">Original: Unsloth releases</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Related: Ollama releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>llama.cpp b12424–b12428: speech models arrive — Zonos3-mini TTS, Higgs v3 and VibeVoice-ASR</h3>
+<div class="src">ggml-org/llama.cpp · builds b12424–b12428, Nov 15–16, 2026</div>
+<p>A run of builds added Zonos3-mini text-to-speech with voice cloning and text normalisation (b12424), reads Qwen3-VL&#x27;s output head size from the tensor to enable Qwen3-ForcedAligner timestamps (b12425), adds multimodal (mtmd) support for Higgs v3 speech-to-text and VibeVoice-ASR (b12426), skips MCP discovery for router child processes in the server (b12427) and adds four missing Jinja features (b12428).</p>
+<div class="why">💡 Why it matters to you: Local voice is now a one-binary affair — the missing piece for an offline AI receptionist demo with Spring Boot orchestrating STT → LLM → TTS.</div>
+<details><summary>Read deeper</summary>
+<p>Yesterday&#x27;s edition covered b12380–b12387 (video decoding hooks); this batch is about audio. The Jinja additions matter because chat templates drive tool calling for many open-weight models.</p>
+<p>The server change (skipping MCP discovery for router children) hints that llama-server&#x27;s router mode, which spawns child model processes, is also an MCP client now.</p>
+<ul class="links">
+<li><a href="https://github.com/ggml-org/llama.cpp/releases" target="_blank" rel="noopener">Original: llama.cpp releases</a></li>
+<li><a href="https://github.com/ollama/ollama/releases" target="_blank" rel="noopener">Related: Ollama 0.40.16 notes</a></li>
+</ul></details></article>
+<h2 id="coding">AI coding tools</h2>
+<article class="story">
+<h3>Gemini CLI 0.68: 429 cool-down countdowns, extension validation and ACP history replay</h3>
+<div class="src">google-gemini/gemini-cli · v0.68.0 (Nov 10), v0.69.0-preview.0 (Nov 10)</div>
+<p>Gemini CLI 0.68 adds an extension validation command, surfaces 429 rate-limit cool-downs with a countdown in the loading indicator, maps a <code>SubagentStop</code> hook and makes ACP <code>session/load</code> wait for history replay. The 0.69 preview adds <code>/stats heatmap</code> for daily token usage, standalone <code>theme.json</code> support, a validated <code>/model</code> command and a configurable 60-second API headers timeout.</p>
+<div class="why">💡 Why it matters to you: ACP (the agent-client protocol) keeps spreading — Gemini CLI, Goose, OpenCode and the Spring AI ACP harness client all speak it, so one Java harness can drive several agents.</div>
+<details><summary>Read deeper</summary>
+<p>Fixes include long stalls on network failures and multi-hour quota retries, a macOS PTY file-descriptor leak, Windows case-insensitive <code>isWithinRoot</code> path checks and rootless Podman sandbox support. 0.67.0 (Nov 4) added a <code>models</code> command and <code>--list-models</code> flag.</p>
+<p>Hooks (<code>SubagentStop</code>) mean the CLI is converging on the same extension surface as Claude Code.</p>
+<ul class="links">
+<li><a href="https://github.com/google-gemini/gemini-cli/releases" target="_blank" rel="noopener">Original: gemini-cli releases</a></li>
+</ul></details></article>
+<article class="story">
+<h3>OpenCode 2.3.0: background subagents by default, grouped activity rows and mutual-TLS providers</h3>
+<div class="src">sst/opencode · v2.3.0 (Nov 13), v2.2.7 (Nov 10)</div>
+<p>OpenCode 2.3.0 runs subagents in the background by default and reports back when idle, groups tool calls and thoughts into one collapsible activity row, adds experimental MCP event support and backgrounding of shell commands after a timeout, and lets providers present client certificates for mutual TLS. 2.2.7 added GitHub Copilot &#x27;Auto&#x27; model selection and session mark-as-read.</p>
+<div class="why">💡 Why it matters to you: Background subagents plus mTLS providers make OpenCode viable inside a locked-down corporate network — and it is one of the ACP agents Spring AI&#x27;s harness client can drive.</div>
+<details><summary>Read deeper</summary>
+<p>Breaking change in 2.2.7: <code>ImageResponse.image</code> was removed from <code>@opencode/ai</code> — use <code>response.images[0]</code>. Also improved: MCP login when refresh tokens rotate.</p>
+<p>Combined with Claude Code&#x27;s Code Mode (2.1.323) the trend is clear: coding agents are turning into orchestrators of many background workers.</p>
+<ul class="links">
+<li><a href="https://github.com/sst/opencode/releases" target="_blank" rel="noopener">Original: opencode releases</a></li>
+<li><a href="https://github.com/anthropics/claude-code/releases" target="_blank" rel="noopener">Related: Claude Code releases</a></li>
+</ul></details></article>
+<h2 id="startups">AI startups &amp; funding</h2>
+<article class="story">
+<h3>Anthropic&#x27;s S-1 in numbers: $16.3B first-half revenue and its first operating profit (secondary reporting)</h3>
+<div class="src">Citywire, DeepLearning.AI The Batch and others · S-1 made public Oct 26, 2026</div>
+<p>Reports on the S-1 say Anthropic booked about $16.3 billion in revenue in the first half of 2026 versus $1.2 billion a year earlier, and its first operating profit — $974 million on $11.6 billion in Q2. The last private mark was a Series H raising $65 billion at a $965 billion post-money valuation; investors reportedly expect a listing valuation between $1.5 and $2 trillion.</p>
+<div class="why">💡 Why it matters to you: The filing is a free case study in AI unit economics — useful for any &#x27;AI SaaS&#x27; you plan to build or teach, and a signal the API you depend on is a long-term business.</div>
+<details><summary>Read deeper</summary>
+<p>Yesterday&#x27;s paper covered the roadshow and price range; this card is about the financials. Treat the numbers as reported, not verified — they come from outlets summarising the filing, and I did not open the S-1 on EDGAR.</p>
+<p>Reported run-rate claims (above $47 billion) came from TechCrunch via investor communication; sources differ on timing and several are low-profile sites.</p>
+<ul class="links">
+<li><a href="https://citywire.com/americas/news/anthropic-files-for-ipo-what-the-s-1-reveals/a2502239" target="_blank" rel="noopener">Original: Citywire: what the S-1 reveals</a></li>
+<li><a href="https://www.deeplearning.ai/the-batch/anthropic-opens-its-books/" target="_blank" rel="noopener">Related: DeepLearning.AI: Anthropic opens its books</a></li>
+<li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Related: Anthropic news</a></li>
+</ul></details></article>
+<article class="story">
+<h3>AI funding, week of Nov 2–6: ~25 rounds and $9.8B — Nooks $63M, Phaze $8.75M, Finpilot $10M</h3>
+<div class="src">aifunding.me weekly roundup and trackers · Nov 2–6, 2026 (tracker totals differ)</div>
+<p>One tracker logged 25 AI funding rounds totalling $9.8B for Nov 2–6; named deals include Nooks at $63M, a16z-led Phaze at $8.75M seed and Finpilot&#x27;s $10M Series A (Nov 4, Lobby Capital). Another tracker records Nominal&#x27;s $240M Series C at a $3B valuation (Nov 9) and Shield AI&#x27;s $2.5B raise (Nov 5).</p>
+<div class="why">💡 Why it matters to you: Vertical AI agents — sales (Nooks), finance (Finpilot) — keep raising; they are the same shapes as your AI-receptionist and AI-COO ideas.</div>
+<details><summary>Read deeper</summary>
+<p>Caveat: aggregators disagree on totals (one counts $3.3B across 11 November rounds), and fal&#x27;s round is reported variously as $1.3B and $1.6B — it was covered in an earlier edition. Check original announcements before quoting amounts.</p>
+<p>For India, recent AI-agent raises include HireBound ($2M seed, Kalaari), Hunar.AI (₹40 crore, Blume) and TraqCheck ($8M Series A) in hiring, and Equal AI&#x27;s $30M Series B (June) for an AI call assistant.</p>
+<ul class="links">
+<li><a href="https://aifunding.me/insights/weekly-roundup-nov-2-6-2026" target="_blank" rel="noopener">Original: AI funding weekly roundup</a></li>
+<li><a href="https://aifunding.me/roundups/november-2026" target="_blank" rel="noopener">Related: November 2026 AI funding roundup</a></li>
+<li><a href="https://indianstartupnews.com/funding/indian-ai-recruiting-platform-hirebound-raises-2-million-from-kalaari-capital-others-11152224" target="_blank" rel="noopener">Related: HireBound seed (Indian Startup News)</a></li>
+</ul></details></article>
+<h2 id="research">Research, explained simply</h2>
+<article class="story">
+<h3>Two new arXiv agent papers: team topology + human intervention, and coding agents doing customer-facing engineering</h3>
+<div class="src">arXiv 2611.12545 (Nov 9) and 2611.03551 (Nov 2) — seen via search listings; arxiv.org was not reachable</div>
+<p>2611.12545 argues that most multi-agent frameworks bake team shape into the software and instead proposes making topology and the timing of human intervention configurable (a system description with testable hypotheses, no comparative results). 2611.03551 asks whether coding agents can do forward-deployed-engineer work — discovering customer requirements and turning them into deployment decisions — using enterprise text-to-SQL as the test case.</p>
+<div class="why">💡 Why it matters to you: Both map to design choices you make in LangGraph or Spring AI: who decides the graph shape, and where the human approval node goes.</div>
+<details><summary>Read deeper</summary>
+<p>I could only see the search-index summaries, not the full papers, so treat the descriptions as headlines. Related listings that surfaced in the same search: a paper on agents that do not learn from corrections across sessions, one on &#x27;Knowing When to Intervene: Causal Evaluation of AI Agents&#x27;, and &#x27;Phantom Consensus&#x27;, a multi-agent social-reasoning benchmark.</p>
+<p>Reading tip: for each paper find the evaluation table first — if there isn&#x27;t one (as in the topology paper) it&#x27;s a position piece, not evidence.</p>
+<ul class="links">
+<li><a href="https://papers.cool/arxiv/2611.12545" target="_blank" rel="noopener">Original: arXiv 2611.12545 (papers.cool)</a></li>
+<li><a href="https://papers.cool/arxiv/2611.03551" target="_blank" rel="noopener">Related: arXiv 2611.03551 (papers.cool)</a></li>
+<li><a href="https://lmmarketcap.com/news/archive/2026/11" target="_blank" rel="noopener">Related: November 2026 AI news archive</a></li>
+</ul></details></article>
+<p class="note">Sources were limited to hosts reachable from the routine&#x27;s sandbox (GitHub, spring.io, anthropic.com and web-search results). Items marked secondary or unverified rely on search snippets or third-party write-ups; check the linked originals before acting. Items &#x27;catch-up&#x27; are older than 14 days but new to this paper.</p>
+<nav class="bot"><a class="cur" href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>My Newspaper · generated 2026-11-16 IST</footer>
+</div></body></html>
