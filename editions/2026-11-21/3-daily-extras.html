@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Daily Extras · Saturday, November 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f3;--fg:#1c1b19;--muted:#6b665d;--card:#ffffff;--line:#e3ddd0;--accent:#b3261e;--accent2:#1d4ed8;--hl:#fff3c4;--hlfg:#4a3a00;--code:#f1ede3}
+@media (prefers-color-scheme:dark){:root{--bg:#121211;--fg:#ecE8df;--muted:#a39d90;--card:#1b1b19;--line:#2e2d29;--accent:#ff6b5e;--accent2:#7aa2ff;--hl:#3a3110;--hlfg:#ffe8a3;--code:#23221f}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:800px;margin:0 auto;padding:0 16px 40px}
+a{color:var(--accent2)}
+nav.top,nav.bot{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;font:600 14px/1 system-ui,sans-serif}
+nav a{display:inline-block;padding:12px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--fg);background:var(--card);min-height:44px}
+nav a.cur{background:var(--fg);color:var(--bg)}
+header.mast{text-align:center;border-top:4px double var(--fg);border-bottom:1px solid var(--fg);padding:18px 0 14px;margin:6px 0 20px}
+.mast h1{font:900 clamp(34px,9vw,56px)/1.05 'Playfair Display',Georgia,serif;margin:0;letter-spacing:-.5px}
+.mast .tag{font:italic 15px Georgia,serif;color:var(--muted);margin:6px 0 10px}
+.mast .meta{font:600 12px/1.6 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:800 26px/1.2 'Playfair Display',Georgia,serif;border-bottom:2px solid var(--fg);padding-bottom:6px;margin:34px 0 14px}
+.top3{background:var(--card);border:2px solid var(--fg);border-radius:10px;padding:14px 16px;margin:0 0 22px}
+.top3 h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.top3 ol{margin:0;padding-left:22px}.top3 li{margin:6px 0;font-weight:700}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.toc h3{margin:0 0 6px;font:800 13px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.toc a{display:block;padding:8px 0;text-decoration:none;font:600 15px system-ui,sans-serif;min-height:40px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:0 0 16px}
+.story h3{font:800 21px/1.25 'Playfair Display',Georgia,serif;margin:0 0 6px}
+.story .src{font:600 12.5px system-ui,sans-serif;color:var(--muted);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.why{background:var(--hl);color:var(--hlfg);padding:10px 12px;border-radius:8px;font:600 15px/1.5 system-ui,sans-serif;margin:10px 0}
+details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font:700 15px system-ui,sans-serif;color:var(--accent2);padding:10px 0;min-height:44px;list-style-position:inside}
+pre{background:var(--code);padding:12px;border-radius:8px;overflow-x:auto;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin:10px 0;-webkit-overflow-scrolling:touch}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em}
+.links{font:14px/1.9 system-ui,sans-serif;margin:8px 0 0;padding-left:18px}
+.links a{word-break:break-word}
+.note{font:italic 13px system-ui,sans-serif;color:var(--muted)}
+footer{font:12px system-ui,sans-serif;color:var(--muted);text-align:center;margin-top:30px}
+img,pre,table{max-width:100%}
+
+</style></head><body><div class="wrap">
+<nav class="top"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<header class="mast"><h1>The Daily Extras</h1><div class="tag">Tools, repos, project ideas and one thing to learn today</div><div class="meta">Saturday, November 21, 2026 · Edition No. 8 · 11 items · ~10 min read</div></header>
+<section class="top3"><h3>⚡ Top 3 in 30 seconds</h3><ol><li>Repo: embabel/embabel-agent is a Spring-based JVM agent framework with goal-directed planning (GOAP), typed domain objects and MCP and A2A support</li><li>Tool: chrome-devtools-mcp (about 58.6k stars) lets a coding agent drive and debug a live Chrome, handy for React front ends</li><li>Learn today: stop NoSQL injection in an Express and Mongoose API with sanitizeFilter plus a strict Zod schema, after this week&#x27;s Mongoose hardening</li></ol></section>
+<section class="toc"><h3>In this edition</h3><a href="#ai-tools-of-the-day">AI tools of the day (4)</a><a href="#github-repos-of-the-day">GitHub repos of the day (3)</a><a href="#project-ideas">Project ideas (3)</a><a href="#learn-this-today">Learn this today (1)</a></section>
+<h2 id="ai-tools-of-the-day">AI tools of the day</h2>
+<article class="story"><h3>Tool: chrome-devtools-mcp, Chrome DevTools for coding agents</h3><div class="src">ChromeDevTools/chrome-devtools-mcp · trending this week (about 3.3k stars gained; 58.6k total, Apache-2.0)</div><p>chrome-devtools-mcp is an MCP server, plus a CLI, that lets a coding agent control and inspect a live Chrome browser. It supports performance tracing, network and console debugging, screenshots and browser automation built on Puppeteer. A --slim flag exposes a reduced tool set for basic browser tasks.</p><div class="why">💡 Why it matters to you: Point an agent at your React app on localhost and let it read console errors, check network calls to your Spring Boot API and take screenshots, instead of copying logs by hand.</div><details><summary>Read deeper</summary><p>It needs Node.js LTS and a current stable Chrome. Add the server to any MCP client with the config below; the README&#x27;s tool reference lists the full tool set, which the page did not enumerate.</p><p>Treat a browser-controlling agent like any other powerful tool: run it against local or test sites, and do not leave signed-in sessions open in the controlled Chrome.</p><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;chrome-devtools&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;chrome-devtools-mcp@latest&quot;]
+    }
+  }
+}</code></pre><ul class="links"><li>Original: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">chrome-devtools-mcp on GitHub</a></li><li>Related: <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md" target="_blank" rel="noopener">Tool reference</a></li></ul></details></article>
+<article class="story"><h3>Tool: CodeGraph, a local code knowledge graph that cuts file-by-file searching for coding agents</h3><div class="src">colbymchenry/codegraph · trending today (about 151 stars today; 78.3k total, MIT)</div><p>CodeGraph parses your code with a native Rust parser and tree-sitter grammars into a local SQLite graph of symbols, calls, imports and inheritance, kept in sync by a file watcher with a debounce of about two seconds. Its MCP server exposes one main tool, codegraph_explore, which returns relevant source, call paths and impact information in one call. It runs entirely locally with no API keys.</p><div class="why">💡 Why it matters to you: On a large Spring Boot repo an agent can ask &#x27;what calls this service method?&#x27; without reading dozens of files, which saves tokens and time.</div><details><summary>Read deeper</summary><p>The project reports its own benchmarks of fewer tool calls and lower token use than file-by-file search, but these figures are self-reported, so test on your own repo before believing them. It supports 20+ languages including Java, Kotlin and TypeScript, and many agents such as Claude Code, Cursor, Codex CLI, Gemini CLI and GitHub Copilot.</p><p>The index lives in a .codegraph/ folder, so add it to .gitignore before committing.</p><pre><code>npm i -g @colbymchenry/codegraph
+codegraph install      # wire up your agents
+cd your-project
+codegraph init          # index this project</code></pre><ul class="links"><li>Original: <a href="https://github.com/colbymchenry/codegraph" target="_blank" rel="noopener">codegraph on GitHub</a></li></ul></details></article>
+<article class="story"><h3>Tool: Modern Web Guidance, skills that keep your coding agent on current web best practices</h3><div class="src">GoogleChrome/modern-web-guidance-src · trending this week (about 5.2k stars gained; 9.6k total, Apache-2.0)</div><p>Modern Web Guidance is a set of skills covering 262 modern web features and 204 real-world use cases, aimed at steering agents away from legacy patterns and bloated JavaScript towards native platform APIs. A CLI feeds targeted guidance into the agent&#x27;s context: search finds guides, retrieve fetches one by ID, and legacy-scan checks a codebase for patterns to modernise. It requires Node.js 22 or later.</p><div class="why">💡 Why it matters to you: Agents trained on older code often write outdated React and CSS patterns, and this gives you a cheap way to keep generated front-end code current.</div><details><summary>Read deeper</summary><p>Run the install wizard in a project, then ask your agent to run legacy-scan and propose changes. Review each change: a guidance library reduces outdated suggestions but does not replace code review.</p><p>Because the repository is large, the fetch only read part of the README; check the repo for the full list of supported agents.</p><pre><code>npx modern-web-guidance@latest install</code></pre><ul class="links"><li>Original: <a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank" rel="noopener">modern-web-guidance-src on GitHub</a></li></ul></details></article>
+<article class="story"><h3>Tool: GitHub Spec Kit, spec-driven development with slash commands for your agent</h3><div class="src">github/spec-kit · trending today (about 166 stars today; about 150.8k total, MIT)</div><p>Spec Kit is GitHub&#x27;s open source toolkit for spec-driven development. In your agent&#x27;s chat you run /speckit-constitution once for project principles, then /speckit-specify to describe what to build and why, /speckit-plan for the technical approach, /speckit-tasks to break it down and /speckit-implement to build it, repeating /speckit-converge until it reports Converged. It needs Python 3.11+, uv and a supported coding agent.</p><div class="why">💡 Why it matters to you: Writing the spec first gives you a clean structure for tutorial projects, and a record of decisions you can turn into video chapters.</div><details><summary>Read deeper</summary><p>The README&#x27;s examples use GitHub Copilot and link an integrations index for other agents. It also includes bug-fixing and idea-assessment workflows besides the main one.</p><p>Try it on a small Spring AI feature, such as the decision-model triage service idea below, and compare the result with a plain prompt.</p><pre><code>uv tool install specify-cli
+specify init my-project --integration copilot
+cd my-project</code></pre><ul class="links"><li>Original: <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener">spec-kit on GitHub</a></li></ul></details></article>
+<h2 id="github-repos-of-the-day">GitHub repos of the day</h2>
+<article class="story"><h3>Repo: embabel/embabel-agent, goal-directed agents on the JVM and Spring</h3><div class="src">embabel/embabel-agent · Apache-2.0 · about 4.6k stars; latest release 1.5.4 (Oct 28)</div><p>Embabel is a Kotlin framework with a Java-friendly API, built on Spring, for authoring agentic flows. You define agents with annotations such as @Agent, @Action and @AchievesGoal (or a Kotlin DSL), and the platform plans a sequence of actions toward a goal using GOAP by default, replanning after each step. Different models can be assigned to different steps, including local ones through Ollama, Docker or LM Studio, and it includes MCP client and server support, A2A support and OpenTelemetry observability.</p><div class="why">💡 Why it matters to you: It is the most Spring-native way to learn agent planning, and it works with typed domain objects you already know how to model.</div><details><summary>Read deeper</summary><p>Actions and goals operate on strongly typed domain objects, so hand-written code and prompts work together, and agents are plain Spring beans that can be unit-tested with mocks. Its execution modes are Focused (code asks for a specific agent), Closed (intent selects an agent) and Open (the platform picks a goal and builds a plan).</p><p>Recent releases added decision and classification service contracts (1.5.4), agent process snapshot and restore for human-in-the-loop persistence (1.5.2) and MCP over Streamable HTTP (1.5.3). Spring AI Agent starts incubating in early December, so this is a good project to compare it against.</p><pre><code>@Agent(description = &quot;Summarise a person&#x27;s horoscope&quot;)
+public class HoroscopeAgent {
+
+    @Action
+    public Horoscope fetch(StarPerson person) {
+        return new Horoscope(&quot;Today favours bold moves.&quot;);
+    }
+
+    @AchievesGoal(description = &quot;Write a short, cheerful reading for the person&quot;)
+    @Action
+    public Writeup write(StarPerson person, Horoscope horoscope, Ai ai) {
+        return ai.withDefaultLlm()
+                 .createObject(&quot;Write a cheerful reading for &quot; + person.name()
+                         + &quot;: &quot; + horoscope.summary(), Writeup.class);
+    }
+}</code></pre><ul class="links"><li>Original: <a href="https://github.com/embabel/embabel-agent" target="_blank" rel="noopener">embabel-agent on GitHub</a></li><li>Related: <a href="https://github.com/embabel/embabel-agent/releases" target="_blank" rel="noopener">Embabel releases</a></li></ul></details></article>
+<article class="story"><h3>Repo: microsoft/markitdown, turn PDFs, Word, Excel and more into Markdown for LLM pipelines</h3><div class="src">microsoft/markitdown · MIT · about 197.3k stars; trending today (+281)</div><p>MarkItDown converts PDF, PowerPoint, Word, Excel, images (EXIF and captioning), audio (EXIF and transcription), HTML, CSV, JSON, XML, ZIP files, YouTube URLs and EPub into Markdown. The README says the output is meant to be consumed by text-analysis tools rather than for high-fidelity human reading. A markitdown-mcp package is in the repo, and it needs Python 3.10 to 3.14.</p><div class="why">💡 Why it matters to you: It is the quickest ingestion step for a RAG tutorial: convert a folder of documents to Markdown, then chunk and embed into pgvector with Spring AI.</div><details><summary>Read deeper</summary><p>Image captioning and speech transcription rely on web-hosted services, so keep sensitive files out of those paths. The Python API takes a path and returns an object with a markdown field.</p><p>Compare its output with Apache Tika, which Spring AI&#x27;s TikaDocumentReader uses; Spring AI 2.1 now caps Tika extraction at 10,000,000 characters by default.</p><pre><code>pip install &#x27;markitdown[all]&#x27;
+markitdown path-to-file.pdf -o document.md
+
+# Python
+from markitdown import MarkItDown
+md = MarkItDown(enable_plugins=False)
+result = md.convert(&quot;test.xlsx&quot;)
+print(result.markdown)</code></pre><ul class="links"><li>Original: <a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">markitdown on GitHub</a></li></ul></details></article>
+<article class="story"><h3>Repo: SWE-agent/mini-swe-agent, a coding agent in about 100 lines of Python that only uses bash</h3><div class="src">SWE-agent/mini-swe-agent · MIT · about 9.9k stars; trending today (+66)</div><p>mini-swe-agent is a minimal software engineering agent from the SWE-agent team. The agent class is about 100 lines, it uses only bash as its tool without the model&#x27;s tool-calling interface, each action runs independently through subprocess.run and the message history is linear. The project claims above 74% on SWE-bench Verified, and it works with many models through LiteLLM, OpenRouter and Portkey.</p><div class="why">💡 Why it matters to you: Reading 100 lines of agent loop teaches more than any framework diagram, which makes it a great base for a &#x27;build an agent from scratch&#x27; video.</div><details><summary>Read deeper</summary><p>It supports local execution, Docker or Podman, Singularity or Apptainer and Bubblewrap, so you can choose how much isolation to run it with. The benchmark number is the project&#x27;s own claim and depends on the model used.</p><p>Pair it with the Spring AI tool-confirmation features: both are about deciding what an agent may run, one at framework level and one as a tiny loop.</p><pre><code>pip install uv &amp;&amp; uvx mini-swe-agent
+# or
+pip install mini-swe-agent
+mini</code></pre><ul class="links"><li>Original: <a href="https://github.com/SWE-agent/mini-swe-agent" target="_blank" rel="noopener">mini-swe-agent on GitHub</a></li></ul></details></article>
+<h2 id="project-ideas">Project ideas</h2>
+<article class="story"><h3>Idea: a support-ticket triage service with Spring AI Decision Models, sessions and approvals</h3><div class="src">Built from the Spring AI 2.1.0 GA release (Nov 20, 2026)</div><p>Build a Spring Boot service that reads an incoming support message and answers typed questions with probabilities: is it a defect, which team owns it, how urgent is it. Use the new DecisionModel with a confidence threshold, the Session API to keep each customer&#x27;s history separate, and tool-call confirmation before any refund or email is sent. Show the decisions in a React inbox with an approve or edit button.</p><div class="why">💡 Why it matters to you: It uses most of the new Spring AI 2.1 features in one realistic app, and the React approval inbox makes a good full-stack tutorial.</div><details><summary>Read deeper</summary><p>Start with Ollama and the default decision model, which needs no API key, then swap in OpenAI for comparison. Log each decision&#x27;s probability so you can plot how many go to human review at 0.8, 0.9 and 0.95.</p><p>Stretch goals: add the modular RAG pipeline for answering from a help centre, and track cost per ticket in Langfuse.</p><ul class="links"><li>Original: <a href="https://spring.io/blog/2026/11/20/spring-ai-2-1-0-GA-available-now" target="_blank" rel="noopener">Spring AI 2.1.0 GA post</a></li><li>Related: <a href="https://spring.io/blog/2026/09/21/spring-ai-typesafe-structured-judgment" target="_blank" rel="noopener">Decision Models in Spring AI (TypeSafe post)</a></li></ul></details></article>
+<article class="story"><h3>Idea: a UPI dispute-evidence assistant using RAG over NPCI circulars (confirm the circular first)</h3><div class="src">Built from the NPCI dispute-management circular dated Nov 4 (effective Nov 25), as reported via search; verify on npci.org.in</div><p>Create an assistant for small merchants that answers &#x27;what evidence do I need for this UPI dispute type?&#x27; from NPCI circulars. Convert the circular PDFs to Markdown with MarkItDown, embed them into pgvector with Spring AI, and answer with citations to the circular and section. Add a checklist output that can feed a Razorpay or UPI refund workflow.</p><div class="why">💡 Why it matters to you: It is India-specific, uses your RAG and Razorpay knowledge and solves a real compliance chore, which makes it a good SaaS demo and a strong portfolio piece.</div><details><summary>Read deeper</summary><p>The effective date of Nov 25 and the circular number come from a search-result summary, so build the first version around documents you have downloaded yourself and cite them exactly. Do not present the output as legal advice.</p><p>For evaluation, write 20 questions with known answers from the circular and run them as a regression test whenever you change chunking or the model.</p><ul class="links"><li>Original: <a href="https://teamleaseregtech.com/updates/article/61096/npci-standardisation-of-upi-dispute-management-rules-in-urcs/" target="_blank" rel="noopener">TeamLease RegTech summary of the NPCI circular</a></li><li>Related: <a href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">MarkItDown</a></li></ul></details></article>
+<article class="story"><h3>Idea: a Spring Boot upgrade copilot that reads release notes and opens a reviewed migration PR</h3><div class="src">Built from this week&#x27;s Spring Boot 4.2, Spring Cloud 2026.0.0 and Micrometer 1.18 releases</div><p>Build an agent that takes a project&#x27;s pom.xml, fetches the release notes for Spring Boot 4.2.0, Spring Cloud 2026.0.0 and Micrometer 1.18.0, lists the behaviour changes that apply (for example Atlas timers, Spring Cloud Bus moving into Stream, Pulsar deprecation) and proposes edits on a branch. A human approves each change through tool-call confirmation before anything is written.</p><div class="why">💡 Why it matters to you: Every Spring developer needs this every few months, and it is a perfect showcase for agents with approval gates and a good tutorial series idea.</div><details><summary>Read deeper</summary><p>Use a small loop in the style of mini-swe-agent for the editing step, or Embabel for planning, and give the agent only read access plus a branch-write tool. Add CodeGraph so it can find where deprecated classes are used.</p><p>Measure it honestly: count how many of its suggested changes you accept, and publish the failure cases too.</p><ul class="links"><li>Original: <a href="https://github.com/spring-projects/spring-boot/releases" target="_blank" rel="noopener">Spring Boot releases</a></li><li>Related: <a href="https://github.com/SWE-agent/mini-swe-agent" target="_blank" rel="noopener">mini-swe-agent</a></li></ul></details></article>
+<h2 id="learn-this-today">Learn this today</h2>
+<article class="story"><h3>Learn today: stop NoSQL injection in an Express and Mongoose API with sanitizeFilter and a strict Zod schema</h3><div class="src">Prompted by Mongoose 9.12.2 and 8.24.10 (Nov 16, 2026) and the MongoDB Node driver 7.9.1 security fixes</div><p>NoSQL injection happens when a request body like {&quot;email&quot;: {&quot;$ne&quot;: null}} reaches a query filter and matches every user. Two cheap defences stack: validate the body shape with a strict Zod schema so operators never arrive, and turn on Mongoose&#x27;s sanitizeFilter as a safety net. This week&#x27;s Mongoose release closed a bypass of sanitizeFilter that used top-level fields starting with $, so update first.</p><div class="why">💡 Why it matters to you: It is a ten-minute fix that every MERN project you teach or ship should have, and it makes a good short video.</div><details><summary>Read deeper</summary><p>Order of work: update mongoose and the mongodb driver (7.9.1 or newer), set sanitizeFilter globally, then validate every request body with .strict() so unknown keys fail. Test with curl using a body such as {&quot;email&quot;:{&quot;$ne&quot;:null},&quot;password&quot;:&quot;x&quot;} and expect a 400.</p><p>Sanitising removes dangerous operators but is not a replacement for schema validation, and it does not protect other query builders you might use, such as raw aggregation pipelines.</p><pre><code>import express from &#x27;express&#x27;;
+import mongoose from &#x27;mongoose&#x27;;
+import { z } from &#x27;zod&#x27;;
+
+mongoose.set(&#x27;sanitizeFilter&#x27;, true);
+
+const LoginBody = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+}).strict();
+
+const app = express();
+app.use(express.json());
+
+app.post(&#x27;/login&#x27;, async (req, res) =&gt; {
+  const parsed = LoginBody.safeParse(req.body);
+  if (!parsed.success) return res.status(400).json({ error: &#x27;invalid body&#x27; });
+
+  const user = await User.findOne({ email: parsed.data.email });
+  // ...compare the password hash here
+  res.sendStatus(user ? 200 : 401);
+});</code></pre><ul class="links"><li>Original: <a href="https://github.com/Automattic/mongoose/releases" target="_blank" rel="noopener">Mongoose releases</a></li><li>Related: <a href="https://github.com/mongodb/node-mongodb-native/releases" target="_blank" rel="noopener">MongoDB Node driver releases</a></li></ul></details></article>
+
+<nav class="bot"><a href="1-ai-engineer.html">The AI Engineer</a><a href="2-dev-digest.html">The Dev Digest</a><a class="cur" href="3-daily-extras.html">The Daily Extras</a><a href="../../index.html">🏠 Home / Archive</a></nav>
+<footer>Saturday, November 21, 2026 · Compiled from primary sources (release notes, advisories, vendor blogs). Items marked “unverified” rest on secondary reports or search snippets.</footer>
+</div></body></html>
